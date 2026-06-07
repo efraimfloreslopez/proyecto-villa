@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head><meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Institucional Municipal - POEL</title>
+    <link rel="icon" href="../static/img/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/global.css">
+    <link rel="stylesheet" href="../static/css/poel.css">
+
+</head>
+
+<body>
+
+    <!-- Franja negra superior -->
+    <div class="header-top"></div>
+
+    <!-- Contenedor dorado con esquinas inferiores redondeadas -->
+    <header class="site-header">
+        <div class="header-inner">
+
+            <!-- FILA 1: Contacto primero, luego redes sociales -->
+            <div class="top-contact-row">
+                <!-- Contacto items primero -->
+                <div class="contact-items">
+                    <div class="contact-item">
+                        <img src="../static/img/phone.png" alt="">
+                        <span>Tel: (771) 123-4567</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <img src="../static/img/mail.png" alt="">
+                        <a href="mailto:contacto@municipio.demo">
+                            contacto@municipio.demo
+                        </a>
+                    </div>
+
+                    <div class="contact-item">
+                        <img src="../static/img/location.png" alt="">
+                        <span>Ciudad Demo, México</span>
+                    </div>
+                </div>
+
+                <!-- Redes sociales despu�s -->
+                <div class="social-icons">
+                    <a href="#" title="Instagram">
+                        <img src="../static/img/instagram.png" alt="">
+                    </a>
+                    <a href="#" target="_blank" title="Facebook">
+                        <img src="../static/img/facebook.png" alt="">
+                    </a>
+                    <a href="#" target="_blank" title="YouTube">
+                        <img src="../static/img/youtube.png" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <!-- L�nea blanca separadora -->
+            <div class="separator-line"></div>
+
+            <!-- FILA 2: IZQUIERDA LOGO+TEXTOS, DERECHA MEN� -->
+            <div class="brand-row">
+                <!-- Logo + textos (izquierda) -->
+                <div class="brand">
+                    <a href="/" class="brand-logo-circle">
+                        <img src="../static/img/logo.svg" alt="">
+                    </a>
+                    <div class="brand-texts">
+                        <div class="brand-text-main">Portal Institucional Municipal</div>
+                        <div class="brand-text-sub">Administraci�n Municipal 2022-2026</div>
+                    </div>
+                </div>
+
+                <!-- Men� (derecha) -->
+                <nav class="main-nav">
+                    <!-- Bot�n hamburguesa -->
+                    <div class="hamburger" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <!-- Bot�n X para cerrar el men� m�vil -->
+                    <button class="menu-close-btn" onclick="toggleMenu()">?</button>
+
+                    <ul id="navMenu">
+                        <li><a href="tramitesyservicios.html">TR�MITES Y SERVICIOS</a></li>
+                        <li><a href="directoriomunicipal.html">DIRECTORIO MUNICIPAL</a></li>
+                        <li><a href="hayuntamiento.html">H. AYUNTAMIENTO</a></li>
+                        <li><a href="registrofamiliar.html">REGISTRO FAMILIAR</a></li>
+                        <li><a href="poel.html">POEL</a></li>
+
+                        <!-- �REAS con atributo data-submenu-id para control consistente -->
+                        <li class="has-submenu" data-submenu-id="areas" onclick="toggleSubmenu(event)">
+                            <a href="#">�REAS <span class="arrow">?</span></a>
+                            <ul class="submenu">
+                                <li><a href="dif.html">DIF</a></li>
+                                <li><a href="turismo.html">TURISMO</a></li>
+                                <li><a href="multideportivo.html">MULTIDEPORTIVO</a></li>
+                                <li><a href="pcivil.html">PROTECCI�N CIVIL</a></li>
+                                <li><a href="ubr.html">UNIDAD B�SICA DE REHABILITACI�N</a></li>
+                                <li><a href="ob.html">OBRA P�BLICA</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="transparencia.html">TRANSPARENCIA</a></li>
+                        <li><a href="comisiones.html">COMISIONES</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- CONTENIDO DE LA P�GINA -->
+    <main class="contenido">
+        <div class="page-header">
+            <h1>Programa de Ordenamiento Ecol�gico Local</h1>
+            <p>Participa en la consulta ciudadana para el desarrollo sustentable de nuestro municipio</p>
+        </div>
+
+        <div class="highlight-section">
+            <h2>ENCUESTA CIUDADANA</h2>
+            <p>Tu opini�n es fundamental para el Programa de Ordenamiento Ecol�gico Local de Portal Institucional Municipal</p>
+            <a href="https://forms.gle/5YxJAfm5ADqzsiLi7" target="_blank" class="btn-secondary">
+                <i class="fas fa-poll"></i> Participar en la Encuesta
+            </a>
+        </div>
+
+        <div class="content-grid">
+            <div class="content-card">
+                <h3><i class="fas fa-file-alt"></i> Consulta P�blica</h3>
+                <p>Programa De Ordenamiento Ecol�gico Local</p>
+                <p><strong>Per�odo de consulta:</strong><br>Del 10 de junio al 10 de julio</p>
+            </div>
+
+            <!-- Reemplazo tarjeta de formulario con opciones interactivas -->
+            <div class="content-card">
+                <h3><i class="fas fa-download"></i> Formulario de Consulta</h3>
+                <p>Descarga el formulario oficial para participar en la consulta p�blica del POEL</p>
+                <div class="form-options">
+                    <div class="form-options">
+                        <button class="btn-primary btn-fill-form" onclick="viewFormPDFModal()">
+                            <i class="fas fa-eye"></i> Ver Formulario
+                        </button>
+                        <button class="btn-primary btn-download-only" onclick="downloadOnly()">
+                            <i class="fas fa-file-pdf"></i> Descargar PDF
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h3><i class="fas fa-calendar-alt"></i> Fechas Importantes</h3>
+                <p>Mantente informado sobre las fechas clave del proceso de consulta p�blica</p>
+                <ul style="text-align: left; color: #666; margin-bottom: 20px;">
+                    <li>Inicio de consulta: 10 de junio</li>
+                    <li>Fin de consulta: 10 de julio</li>
+                    <li>Publicaci�n de resultados: 20 de julio</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Nueva secci�n de mapa interactivo con ancho reducido y bot�n de enlace -->
+        <div class="map-section">
+            <h2>Mapa Interactivo de Zonificaci�n</h2>
+            <p>Visualiza las zonas del Programa de Ordenamiento Ecol�gico Local</p>
+            <div class="map-wrapper">
+                <div class="map-container">
+                    <iframe
+                        src="https://semarnath1.maps.arcgis.com/apps/webappviewer/index.html?id=7fb79e27e08649c392452578c353d602"
+                        title="Mapa Interactivo de Zonificaci�n POEL Portal Institucional Municipal" allowfullscreen=""
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <!-- Bot�n en esquina inferior derecha del mapa -->
+                <a href="https://semarnath1.maps.arcgis.com/apps/webappviewer/index.html?id=7fb79e27e08649c392452578c353d602"
+                    target="_blank" class="map-link-btn" title="Abrir mapa en pantalla completa">
+                    <i class="fas fa-external-link-alt"></i> Ver en pantalla completa
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- ========================================= -->
+    <!-- MODAL PARA LLENAR FORMULARIO              -->
+    <!-- ========================================= -->
+    <!-- Agregado modal interactivo para llenar el formulario -->
+    <div id="formFillerModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Llenar Formulario de Consulta</h2>
+                <button class="modal-close-btn" onclick="closeFormFiller()">&times;</button>
+            </div>
+
+            <form id="consultaForm" class="consulta-form">
+                <div class="form-group">
+                    <label for="folio">N�mero de Folio:</label>
+                    <input type="text" id="folio" name="folio" placeholder="Ej: POEL-2025-001">
+                </div>
+
+                <div class="form-group">
+                    <label for="lugar">Lugar donde se entrega el formato:</label>
+                    <input type="text" id="lugar" name="lugar" placeholder="Ej: Direcci�n Municipal">
+                </div>
+
+                <div class="form-group">
+                    <label for="fecha">Fecha de entrega:</label>
+                    <input type="date" id="fecha" name="fecha">
+                </div>
+
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre del participante" required>
+                </div>
+
+                <!-- Agregados campos edad, g�nero y escolaridad del PDF original -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="edad">Edad:</label>
+                        <input type="number" id="edad" name="edad" placeholder="Edad" min="0" max="120">
+                    </div>
+                    <div class="form-group">
+                        <label for="genero">G�nero:</label>
+                        <select id="genero" name="genero">
+                            <option value="">Seleccionar...</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Otro">Otro</option>
+                            <option value="Prefiero no decir">Prefiero no decir</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="escolaridad">Escolaridad:</label>
+                        <select id="escolaridad" name="escolaridad">
+                            <option value="">Seleccionar...</option>
+                            <option value="Primaria">Primaria</option>
+                            <option value="Secundaria">Secundaria</option>
+                            <option value="Preparatoria">Preparatoria</option>
+                            <option value="Licenciatura">Licenciatura</option>
+                            <option value="Posgrado">Posgrado</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Agregado campo Delegaci�n/Ejido -->
+                <div class="form-group">
+                    <label for="delegacion">Delegaci�n / Ejido:</label>
+                    <input type="text" id="delegacion" name="delegacion" placeholder="Nombre de la delegaci�n o ejido">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo Electr�nico:</label>
+                    <input type="email" id="email" name="email" placeholder="tu@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Tel�fono:</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="N�mero de tel�fono">
+                </div>
+
+                <!-- Agregado campo Actividad Econ�mica -->
+                <div class="form-group">
+                    <label for="actividad">�A qu� actividad econ�mica se dedica?</label>
+                    <input type="text" id="actividad" name="actividad"
+                        placeholder="Ej: Agricultura, Comercio, Servicios, etc.">
+                </div>
+
+                <div class="form-group">
+                    <label for="colonia">Colonia/Comunidad:</label>
+                    <input type="text" id="colonia" name="colonia" placeholder="Nombre de la colonia o comunidad">
+                </div>
+
+                <!-- Agregados campos de datos no personales del POEL -->
+                <div class="form-group">
+                    <label for="uga">N�mero de UGA:</label>
+                    <input type="text" id="uga" name="uga" placeholder="Ej: UGA-001">
+                </div>
+
+                <div class="form-group">
+                    <label for="politicaActual">Pol�tica Ambiental Actual:</label>
+                    <input type="text" id="politicaActual" name="politicaActual"
+                        placeholder="Descripci�n de la pol�tica actual">
+                </div>
+
+                <div class="form-group">
+                    <label for="politicaPropuesta">Pol�tica Ambiental Propuesta:</label>
+                    <input type="text" id="politicaPropuesta" name="politicaPropuesta"
+                        placeholder="Descripci�n de la pol�tica propuesta">
+                </div>
+
+                <div class="form-group">
+                    <label for="justificacion">Justificaci�n de la Pol�tica Propuesta:</label>
+                    <textarea id="justificacion" name="justificacion"
+                        placeholder="Explica la justificaci�n de tu propuesta..." rows="4"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="opinion">Tu Opini�n o Propuesta (M�ximo 500 caracteres):</label>
+                    <textarea id="opinion" name="opinion" placeholder="Expresa tu opini�n o propuesta para el POEL..."
+                        maxlength="500" rows="6"></textarea>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn-secondary" onclick="closeFormFiller()">Cancelar</button>
+                    <button type="submit" class="btn-primary">Descargar Documento DOCX</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ========================================= -->
+    <!-- SECCI�N: CONTACTO + HORARIOS (BLANCO)    -->
+    <!-- ========================================= -->
+    <section class="contact-hours-section">
+        <div class="contact-hours-inner">
+
+            <!-- FILA PRINCIPAL: CONTACTO + HORARIOS (SIN MAPA) -->
+            <div class="ch-main-row">
+
+                <!-- COLUMNA CONTACTO -->
+                <div class="ch-contact">
+                    <h2>Contacto</h2>
+
+                    <ul class="ch-contact-list">
+                        <li>
+                            <img src="../static/img/location.png" alt="Direcci�n">
+                            <div>
+                                <span class="ch-label">Direcci�n</span>
+                                <p>
+                                    Plaza Principal S/N, Centro<br>
+                                    Ciudad Demo, México, M�xico
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <img src="../static/img/phone.png" alt="Tel�fono">
+                            <div>
+                                <span class="ch-label">Tel�fono</span>
+                                <p>(771) 123-4567</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <img src="../static/img/mail.png" alt="Correo Electr�nico">
+                            <div>
+                                <span class="ch-label">Correo Electr�nico</span>
+                                <p>
+                                    <a href="mailto:contacto@municipio.demo">
+                                        contacto@municipio.demo
+                                    </a>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- TARJETA HORARIOS -->
+                <div class="ch-hours-card">
+                    <h3>Horarios de Atenci�n</h3>
+
+                    <div class="ch-hours-content">
+                        <div class="ch-hours-row">
+                            <span class="ch-day">Lunes a Viernes</span>
+                            <span class="ch-time">8:00 AM � 4:00 PM</span>
+                        </div>
+
+                        <div class="ch-hours-row">
+                            <span class="ch-day">S�bados</span>
+                            <span class="ch-time">9:00 AM � 1:00 PM</span>
+                        </div>
+
+                        <div class="ch-hours-row">
+                            <span class="ch-day">Domingos</span>
+                            <span class="ch-time ch-closed">Cerrado</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- ========== FIN SECCI�N CONTACTO+HORARIOS ========== -->
+
+    <!-- ========================================= -->
+    <!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+    <!-- ========================================= -->
+    <!-- ========================================= -->
+<!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+<!-- ========================================= -->
+<!-- ========================================= -->
+<!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+<!-- ========================================= -->
+<!-- ========================================= -->
+<!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+<!-- ========================================= -->
+<!-- ========================================= -->
+<!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+<!-- ========================================= -->
+<footer class="main-footer">
+    <div class="footer-inner">
+
+        <div class="footer-grid">
+
+            <div class="footer-column">
+                <h4>Gobierno Municipal</h4>
+                <ul>
+                    <li><a href="hayuntamiento.html">H. Ayuntamiento</a></li>
+                    <li><a href="directoriomunicipal.html">Directorio Municipal</a></li>
+                    <li><a href="comisiones.html">Comisiones</a></li>
+                    <li><a href="poel.html">POEL</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>�reas</h4>
+                <ul>
+                    <li><a href="dif.html">DIF</a></li>
+                    <li><a href="turismo.html">Turismo</a></li>
+                    <li><a href="multideportivo.html">Multideportivo</a></li>
+                    <li><a href="pcivil.html">Protecci�n Civil</a></li>
+                    <li><a href="ubr.html">Unidad B�sica de Rehabilitaci�n</a></li>
+                    <li><a href="ob.html">Obra P�blica</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Transparencia</h4>
+                <ul>
+                    <li><a href="transparencia.html">Portal de Transparencia</a></li>
+                    <li><a href="tramitesyservicios.html">Tr�mites y Servicios</a></li>
+                    <li><a href="registrofamiliar.html">Registro Familiar</a></li>
+                    <li><a href="videos.html">Videos</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Enlaces de Inter�s</h4>
+                <ul>
+                    <li><a href="https://www.valleverde.gob.example.com/" target="_blank">Gobierno del Estado</a></li>
+                    <li><a href="https://www.gob.mx/" target="_blank">Gobierno Federal</a></li>
+                    <li><a href="https://www.inegi.org.mx/" target="_blank">INEGI</a></li>
+                    <li><a href="https://www.plataformadetransparencia.org.mx/" target="_blank">Plataforma Nacional</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <span class="footer-divider"></span>
+
+        <div class="footer-copy">
+            � 2025 Portal Institucional Municipal. Todos los derechos reservados.
+        </div>
+
+    </div>
+</footer>
+<!-- ========== FIN FOOTER REAL ========== -->
+
+    <!-- Link al archivo JavaScript externo -->
+    <script src="../static/js/menu.js"></script>
+    <!-- Script para funcionalidad de formulario y descargas -->
+    <script src="../static/js/poel-form-handler.js"></script>
+    <script>
+        // Verificar que las librer�as se cargaron
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log('PizZip disponible?', typeof window.PizZip !== 'undefined');
+            console.log('docxtemplater disponible?', typeof window.docxtemplater !== 'undefined');
+            console.log('jsPDF disponible?', typeof window.jspdf !== 'undefined');
+        });
+    </script>
+    <!-- Para im�genes din�micas -->
+<script src="../static/js/dynamic-image-loader.js"></script>
+
+<!-- Para PDFs din�micos (solo en p�ginas de transparencia) -->
+<script src="../static/js/transparencia-loader.js"></script>
+
+</body>
+
+</html>
+
+
+
+

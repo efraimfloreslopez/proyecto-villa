@@ -1,0 +1,1060 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head><meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trámites y Servicios - Portal Institucional Municipal</title>
+    <meta name="description"
+        content="Trámites y servicios municipales de Portal Institucional Municipal. Inscripciones a talleres artísticos, servicios de catastro, ecología y más.">
+    <meta name="keywords"
+        content="trámites municipales, Portal Institucional Municipal, talleres artísticos, cédula de inscripción, servicios municipales, ecología, catastro">
+    <link rel="icon" href="../static/img/logo.svg">
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../static/css/global.css">
+    <link rel="stylesheet" href="../static/css/tramites.css">
+
+    <!-- jsPDF para generar PDFs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- Preconnect para recursos externos -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Estilos adicionales para mejoras -->
+    <style>
+        .input-hint {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 5px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .required-asterisk {
+            color: #dc3545;
+            margin-left: 4px;
+        }
+
+        .loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 10001;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #c9a961;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        *:focus {
+            outline: 2px solid #c9a961;
+            outline-offset: 2px;
+        }
+
+        #mensajes-flotantes {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 10001;
+            max-width: 400px;
+        }
+
+        .form-message {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            animation: slideIn 0.3s ease-out;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border-left: 4px solid;
+        }
+
+        .form-message.exito {
+            border-left-color: #28a745;
+        }
+
+        .form-message.error {
+            border-left-color: #dc3545;
+        }
+
+        .form-message.advertencia {
+            border-left-color: #ffc107;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .form-message .cerrar {
+            margin-left: auto;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .form-message .cerrar:hover {
+            color: #333;
+        }
+
+        [data-tooltip] {
+            position: relative;
+        }
+
+        [data-tooltip]:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            z-index: 1000;
+            margin-bottom: 5px;
+        }
+
+        [data-tooltip]:hover::before {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: #333;
+            margin-bottom: -5px;
+        }
+
+        @media (max-width: 768px) {
+            #mensajes-flotantes {
+                left: 20px;
+                right: 20px;
+                max-width: none;
+            }
+
+            .form-message {
+                width: 100%;
+            }
+        }
+
+        /* Estilos para botones de ecología */
+        .ecologia-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .ecologia-btn {
+            background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .ecologia-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+            background: linear-gradient(135deg, #1e7e34 0%, #145a21 100%);
+        }
+
+        .ecologia-btn i {
+            font-size: 1.1rem;
+        }
+
+        .ecologia-btn.descargar {
+            background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+        }
+
+        .ecologia-btn.descargar:hover {
+            background: linear-gradient(135deg, #138496 0%, #0c5460 100%);
+            box-shadow: 0 4px 12px rgba(23, 162, 184, 0.3);
+        }
+
+        /* Estilos para imágenes preview de ecología */
+        .ecologia-image-container {
+            width: 100%;
+            height: 180px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .ecologia-preview {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .pdf-document-card:hover .ecologia-preview {
+            transform: scale(1.05);
+        }
+
+        /* Estilos para botón de vista de imagen */
+        .image-view-btn {
+            background: linear-gradient(135deg, #0a1f44 0%, #132d5f 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .image-view-btn:hover {
+            background: linear-gradient(135deg, #132d5f 0%, #1b3971 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(10, 31, 68, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Franja negra superior -->
+    <div class="header-top"></div>
+
+    <!-- Contenedor dorado con esquinas inferiores redondeadas -->
+    <header class="site-header">
+        <div class="header-inner">
+
+            <!-- FILA 1: Contacto primero, luego redes sociales -->
+            <div class="top-contact-row">
+                <!-- Contacto items primero -->
+                <div class="contact-items">
+                    <div class="contact-item">
+                        <img src="../static/img/phone.png" alt="Icono teléfono">
+                        <span>Tel: (771) 123-4567</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <img src="../static/img/mail.png" alt="Icono correo">
+                        <a href="mailto:contacto@municipio.demo">
+                            contacto@municipio.demo
+                        </a>
+                    </div>
+
+                    <div class="contact-item">
+                        <img src="../static/img/location.png" alt="Icono ubicación">
+                        <span>Ciudad Demo, México</span>
+                    </div>
+                </div>
+
+                <!-- Redes sociales después -->
+                <div class="social-icons">
+                    <a href="#" title="Instagram" aria-label="Instagram">
+                        <img src="../static/img/instagram.png" alt="Instagram">
+                    </a>
+                    <a href="#" target="_blank" title="Facebook"
+                        aria-label="Facebook">
+                        <img src="../static/img/facebook.png" alt="Facebook">
+                    </a>
+                    <a href="#" target="_blank" title="YouTube"
+                        aria-label="YouTube">
+                        <img src="../static/img/youtube.png" alt="YouTube">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Línea blanca separadora -->
+            <div class="separator-line"></div>
+
+            <!-- FILA 2: IZQUIERDA LOGO+TEXTOS, DERECHA MENÚ -->
+            <div class="brand-row">
+                <!-- Logo + textos (izquierda) -->
+                <div class="brand">
+                    <a href="/" class="brand-logo-circle">
+                        <img src="../static/img/logo.svg" alt="Logo Portal Institucional Municipal">
+                    </a>
+                    <div class="brand-texts">
+                        <div class="brand-text-main">Portal Institucional Municipal</div>
+                        <div class="brand-text-sub">Administración Municipal 2022-2026</div>
+                    </div>
+                </div>
+
+                <!-- Menú (derecha) -->
+                <nav class="main-nav" aria-label="Menú principal">
+                    <!-- Botón hamburguesa -->
+                    <button class="hamburger" onclick="toggleMenu()" aria-label="Abrir menú" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <!-- Botón X para cerrar el menú móvil -->
+                    <button class="menu-close-btn" onclick="toggleMenu()" aria-label="Cerrar menú">?</button>
+
+                    <ul id="navMenu">
+                        <li><a href="index.html">INICIO</a></li>
+                        <li><a href="tramitesyservicios.html">TRÁMITES Y SERVICIOS</a></li>
+                        <li><a href="directoriomunicipal.html">DIRECTORIO MUNICIPAL</a></li>
+                        <li><a href="transparencia.html">TRANSPARENCIA</a></li>
+                        <li><a href="login.html" class="btn-login-nav" style="background: #c9a961; color: white !important; padding: 8px 15px; border-radius: 4px; margin-left: 10px;">ACCESO</a></li>
+                    </ul>
+                        </li>
+
+                        <li><a href="transparencia.html">TRANSPARENCIA</a></li>
+                        <li><a href="comisiones.html">COMISIONES</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- CONTENIDO DE LA PÁGINA -->
+    <main class="contenido">
+        <div class="container">
+
+            <!-- Overlay de carga -->
+            <div id="loadingOverlay" class="loading-overlay">
+                <div class="loading-spinner"></div>
+            </div>
+
+            <!-- Contenedor para mensajes flotantes -->
+            <div id="mensajes-flotantes"></div>
+
+            <section class="page-header">
+                <h1>Trámites y Servicios</h1>
+                <p>Encuentra todos los trámites municipales organizados por departamentos para facilitar tu búsqueda y
+                    gestión.</p>
+            </section>
+
+            <!-- ===========================================================
+                 DEPARTAMENTOS
+            ============================================================ -->
+            <section class="departamentos-grid">
+
+                <!-- ===== Casa de Cultura ===== -->
+                <div class="departamento-card">
+                    <div class="departamento-header">
+                        <div class="departamento-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 2L2 7V10H22V7L12 2Z" fill="currentColor" />
+                                <path d="M4 12V20H8V12H4ZM10 12V20H14V12H10ZM16 12V20H20V12H16Z" fill="currentColor" />
+                                <rect x="2" y="20" width="20" height="2" fill="currentColor" />
+                            </svg>
+                        </div>
+                        <h2 class="departamento-title">CASA DE CULTURA</h2>
+                    </div>
+
+                    <div class="servicio-item">
+                        <h3 class="servicio-titulo">Inscripción de talleres</h3>
+                        <ul class="requisitos-lista">
+                            <li>2 fotografías tamaño infantil</li>
+                            <li>Copia CURP</li>
+                            <li>Acta de nacimiento</li>
+                            <li>Comprobante de domicilio</li>
+                        </ul>
+                    </div>
+
+                    <div class="servicio-item">
+                        <h3 class="servicio-titulo">Trámite credencial préstamos de libros</h3>
+                        <ul class="requisitos-lista">
+                            <li>2 fotografías tamaño infantil</li>
+                            <li>Comprobante de domicilio</li>
+                            <li>Copia del INE del responsable</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ===== Desarrollo Social ===== -->
+                <div class="departamento-card">
+                    <div class="departamento-header">
+                        <div class="departamento-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <circle cx="9" cy="7" r="4" fill="currentColor" />
+                                <circle cx="15" cy="9" r="3" fill="currentColor" />
+                                <path d="M9 13C5.69 13 3 15.12 3 17.75V21H15V17.75C15 15.12 12.31 13 9 13Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </div>
+                        <h2 class="departamento-title">DESARROLLO SOCIAL</h2>
+                    </div>
+
+                    <div class="servicio-item">
+                        <h3 class="servicio-titulo">Requisitos para entrega de apoyos</h3>
+                        <ul class="requisitos-lista">
+                            <li>Oficio de solicitud</li>
+                            <li>CURP</li>
+                            <li>INE</li>
+                            <li>Comprobante de domicilio</li>
+                            <li>Constancia de residencia</li>
+                            <li>Oficio de agradecimiento</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ===== Conciliación Municipal ===== -->
+                <div class="departamento-card">
+                    <div class="departamento-header">
+                        <div class="departamento-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 2L4 5V11C4 16.55 7.84 21.74 13 23C18.16 21.74 22 16.55 22 11V5L14 2Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </div>
+                        <h2 class="departamento-title">CONCILIACIÓN MUNICIPAL</h2>
+                    </div>
+
+                    <div class="servicio-item">
+                        <h3 class="servicio-titulo">Constancia de no infracción</h3>
+                        <ul class="requisitos-lista">
+                            <li>INE</li>
+                            <li>Factura</li>
+                            <li>Tarjeta de circulación</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- ===========================================================
+                 CATASTRO – PDFs con botón VER
+            ============================================================ -->
+            <section class="catastro-section" aria-labelledby="catastro-titulo">
+                <h2 id="catastro-titulo">CATASTRO</h2>
+
+                <div class="pdf-documents-grid">
+
+                    <!-- Documento ejemplo -->
+                    <div class="pdf-document-card">
+                        <div class="pdf-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M14 2H6V22H18V8L14 2Z" fill="#D32F2F" />
+                            </svg>
+                        </div>
+
+                        <div class="pdf-title">Requisitos Avalúo Catastral</div>
+                        <div class="pdf-description">Documento con requisitos indispensables</div>
+                        <div class="pdf-size">PDF • 120 KB</div>
+
+                        <div class="pdf-buttons">
+                            <a href="#demo-pdf"
+                                class="pdf-download-btn" download>
+                                <span>Descargar</span>
+                            </a>
+
+                            <button class="pdf-view-btn"
+                                onclick="window.open('#demo-pdfTramites y Servicios/solicitud-de-avaluo-catastral.pdf', '_blank')"
+                                aria-label="Ver requisitos avalúo catastral">
+                                <span>Ver</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ===========================================================
+                 ECOLOGÍA – TRÁMITES AMBIENTALES CON IMÁGENES PNG
+            ============================================================ -->
+            <section class="ecologia-section" aria-labelledby="ecologia-titulo">
+                <h2 id="ecologia-titulo">ECOLOGÍA Y MEDIO AMBIENTE</h2>
+                <p class="ecologia-subtitle">Trámites relacionados con protección ambiental, manejo de residuos y
+                    conservación de áreas verdes</p>
+
+                <div class="ecologia-documents-grid">
+
+                    <!-- Constancia de no afectación de áreas verdes -->
+                    <div class="pdf-document-card">
+                        <div class="ecologia-image-container">
+                            <img src="../static/img/Tramites y Servicios/constancia-de-no-afectacin-de-reas-verdes.png"
+                                class="ecologia-preview"
+                                alt="Vista previa: Constancia de no afectación de áreas verdes">
+                        </div>
+
+                        <div class="pdf-title">Constancia de no afectación de áreas verdes</div>
+                        <div class="pdf-description">Certificación de que no se afectarán áreas verdes en proyectos de
+                            construcción</div>
+                        <div class="pdf-size">Imagen PNG • 85 KB</div>
+
+                        <div class="pdf-buttons">
+                            <a href="../static/img/Tramites y Servicios/constancia-de-no-afectacin-de-reas-verdes.png"
+                                class="pdf-download-btn" download>
+                                <span>Descargar</span>
+                            </a>
+
+                            <button class="image-view-btn"
+                                onclick="window.open('../static/img/Tramites y Servicios/constancia-de-no-afectacin-de-reas-verdes.png', '_blank')"
+                                aria-label="Ver imagen de constancia de no afectación de áreas verdes">
+                                <span>Ver Imagen</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Factibilidad de recolección de residuos -->
+                    <div class="pdf-document-card">
+                        <div class="ecologia-image-container">
+                            <img src="../static/img/Tramites y Servicios/factibilidad-de-recoleccin-de-residuos-slidos-urbanos.png"
+                                class="ecologia-preview"
+                                alt="Vista previa: Factibilidad de recolección de residuos sólidos urbanos">
+                        </div>
+
+                        <div class="pdf-title">Factibilidad de recolección de residuos sólidos urbanos</div>
+                        <div class="pdf-description">Autorización para servicio de recolección de basura en nuevos
+                            desarrollos</div>
+                        <div class="pdf-size">Imagen PNG • 92 KB</div>
+
+                        <div class="pdf-buttons">
+                            <a href="../static/img/Tramites y Servicios/factibilidad-de-recoleccin-de-residuos-slidos-urbanos.png"
+                                class="pdf-download-btn" download>
+                                <span>Descargar</span>
+                            </a>
+
+                            <button class="image-view-btn"
+                                onclick="window.open('../static/img/Tramites y Servicios/factibilidad-de-recoleccin-de-residuos-slidos-urbanos.png', '_blank')"
+                                aria-label="Ver imagen de factibilidad de recolección de residuos">
+                                <span>Ver Imagen</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Dictamen de impacto ambiental -->
+                    <div class="pdf-document-card">
+                        <div class="ecologia-image-container">
+                            <img src="../static/img/Tramites y Servicios/dictamen-de-impacto-ambiental-municipal.png"
+                                class="ecologia-preview" alt="Vista previa: Dictamen de impacto ambiental municipal">
+                        </div>
+
+                        <div class="pdf-title">Dictamen de impacto ambiental municipal</div>
+                        <div class="pdf-description">Evaluación de impacto ambiental para proyectos dentro del municipio
+                        </div>
+                        <div class="pdf-size">Imagen PNG • 110 KB</div>
+
+                        <div class="pdf-buttons">
+                            <a href="../static/img/Tramites y Servicios/dictamen-de-impacto-ambiental-municipal.png"
+                                class="pdf-download-btn" download>
+                                <span>Descargar</span>
+                            </a>
+
+                            <button class="image-view-btn"
+                                onclick="window.open('../static/img/Tramites y Servicios/dictamen-de-impacto-ambiental-municipal.png', '_blank')"
+                                aria-label="Ver imagen de dictamen de impacto ambiental">
+                                <span>Ver Imagen</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Inspección y autorización para tala/poda -->
+                    <div class="pdf-document-card">
+                        <div class="ecologia-image-container">
+                            <img src="../static/img/Tramites y Servicios/inspeccin-y-autorizacin-para-realizar-labores-de-tala-yo-poda.png"
+                                class="ecologia-preview"
+                                alt="Vista previa: Inspección y autorización para tala y/o poda">
+                        </div>
+
+                        <div class="pdf-title">Inspección y autorización para tala y/o poda</div>
+                        <div class="pdf-description">Permiso para realizar trabajos de tala o poda de árboles en el
+                            municipio</div>
+                        <div class="pdf-size">Imagen PNG • 78 KB</div>
+
+                        <div class="pdf-buttons">
+                            <a href="../static/img/Tramites y Servicios/inspeccin-y-autorizacin-para-realizar-labores-de-tala-yo-poda.png"
+                                class="pdf-download-btn" download>
+                                <span>Descargar</span>
+                            </a>
+
+                            <button class="image-view-btn"
+                                onclick="window.open('../static/img/Tramites y Servicios/inspeccin-y-autorizacin-para-realizar-labores-de-tala-yo-poda.png', '_blank')"
+                                aria-label="Ver imagen de autorización para tala y poda">
+                                <span>Ver Imagen</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Recepción de basura en relleno sanitario -->
+                    <div class="pdf-document-card">
+                        <div class="ecologia-image-container">
+                            <img src="../static/img/Tramites y Servicios/recepcin-de-basura-en-el-relleno-sanitario.png"
+                                class="ecologia-preview"
+                                alt="Vista previa: Recepción de basura en el relleno sanitario">
+                        </div>
+
+                        <div class="pdf-title">Recepción de basura en el relleno sanitario</div>
+                        <div class="pdf-description">Autorización para disposición de residuos en el relleno sanitario
+                            municipal</div>
+                        <div class="pdf-size">Imagen PNG • 95 KB</div>
+
+                        <div class="pdf-buttons">
+                            <a href="../static/img/Tramites y Servicios/recepcin-de-basura-en-el-relleno-sanitario.png"
+                                class="pdf-download-btn" download>
+                                <span>Descargar</span>
+                            </a>
+
+                            <button class="image-view-btn"
+                                onclick="window.open('../static/img/Tramites y Servicios/recepcin-de-basura-en-el-relleno-sanitario.png', '_blank')"
+                                aria-label="Ver imagen de recepción de basura en relleno sanitario">
+                                <span>Ver Imagen</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </section>
+
+            <!-- ===========================================================
+                 COLONIAS – FORMULARIO PARA CÉDULA PDF
+            ============================================================ -->
+
+            <section class="colonias-section" aria-labelledby="colonias-titulo">
+                <h2 id="colonias-titulo">CÉDULAS DE INSCRIPCIÓN - TALLERES ARTÍSTICOS</h2>
+                <p class="colonias-subtitle">Selecciona tu colonia y genera tu cédula oficial</p>
+
+                <div class="colonias-grid">
+
+                    <!-- Puerto Juárez -->
+                    <div class="colonia-document-card" onclick="openFormModal('puertojuarez')" role="button"
+                        tabindex="0">
+                        <img src="../static/img/Tramites y Servicios/col.juarez.png" class="colonia-preview"
+                            alt="Colonia Puerto Juárez">
+                        <div class="colonia-name">Colonia Puerto Juárez</div>
+                        <div class="colonia-type">FOLIO: PUE-JUA</div>
+                        <button class="colonia-fill-btn"
+                            onclick="event.stopPropagation(); openFormModal('puertojuarez');">
+                            Rellenar y Descargar
+                        </button>
+                    </div>
+
+                    <!-- Acozac -->
+                    <div class="colonia-document-card" onclick="openFormModal('acozac')" role="button" tabindex="0">
+                        <img src="../static/img/Tramites y Servicios/acozac.png" class="colonia-preview" alt="Acozac">
+                        <div class="colonia-name">Acozac</div>
+                        <div class="colonia-type">FOLIO: ACZ</div>
+                        <button class="colonia-fill-btn" onclick="event.stopPropagation(); openFormModal('acozac');">
+                            Rellenar y Descargar
+                        </button>
+                    </div>
+
+                    <!-- La Cantera -->
+                    <div class="colonia-document-card" onclick="openFormModal('cantera')" role="button" tabindex="0">
+                        <img src="../static/img/Tramites y Servicios/cantera.png" class="colonia-preview"
+                            alt="La Cantera">
+                        <div class="colonia-name">La Cantera</div>
+                        <div class="colonia-type">FOLIO: CAN</div>
+                        <button class="colonia-fill-btn" onclick="event.stopPropagation(); openFormModal('cantera');">
+                            Rellenar y Descargar
+                        </button>
+                    </div>
+
+                    <!-- Col. Morelos -->
+                    <div class="colonia-document-card" onclick="openFormModal('morelos')" role="button" tabindex="0">
+                        <!-- IMPORTANTE: Cambiar la imagen a morelos.png -->
+                        <img src="../static/img/Tramites y Servicios/morelos.png" class="colonia-preview"
+                            alt="Col. Morelos">
+                        <div class="colonia-name">Col. Morelos</div>
+                        <div class="colonia-type">FOLIO: MOR</div>
+                        <button class="colonia-fill-btn" onclick="event.stopPropagation(); openFormModal('morelos');">
+                            Rellenar y Descargar
+                        </button>
+                    </div>
+
+                    <!-- Colonia Guadalupe -->
+                    <div class="colonia-document-card" onclick="openFormModal('guadalupe')" role="button" tabindex="0">
+                        <img src="../static/img/Tramites y Servicios/guadalupe.png" class="colonia-preview"
+                            alt="Colonia Guadalupe">
+                        <div class="colonia-name">Colonia Guadalupe</div>
+                        <div class="colonia-type">FOLIO: GUA</div>
+                        <button class="colonia-fill-btn" onclick="event.stopPropagation(); openFormModal('guadalupe');">
+                            Rellenar y Descargar
+                        </button>
+                    </div>
+
+                    <!-- Centro Cultural Sixto Valencia -->
+                    <div class="colonia-document-card" onclick="openFormModal('sixtovalencia')" role="button"
+                        tabindex="0">
+                        <img src="../static/img/Tramites y Servicios/sixto_valencia.png" class="colonia-preview"
+                            alt="Centro Cultural Sixto Valencia">
+                        <div class="colonia-name">Centro Cultural "Sixto Valencia"</div>
+                        <div class="colonia-type">FOLIO: SIX</div>
+                        <button class="colonia-fill-btn"
+                            onclick="event.stopPropagation(); openFormModal('sixtovalencia');">
+                            Rellenar y Descargar
+                        </button>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- ===========================================================
+         MODAL DEL FORMULARIO + BOTÓN VER PDF
+    ============================================================ -->
+
+    <div id="formModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitulo"
+        aria-describedby="modalDescripcion">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeFormModal()" aria-label="Cerrar modal">&times;</button>
+
+            <h2 id="modalTitulo">Cédula de Inscripción - Talleres Artísticos</h2>
+            <p id="modalDescripcion" class="modal-subtitle"></p>
+
+            <form id="cedulaForm" novalidate>
+
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <label for="nombreAlumno" class="required">Nombre del Alumno<span class="required-asterisk"
+                                aria-hidden="true">*</span></label>
+                        <input id="nombreAlumno" name="nombreAlumno" required
+                            data-tooltip="Ingrese el nombre completo del alumno">
+                        <div class="input-hint">
+                            <i>??</i> <span>Ingrese el nombre completo del alumno</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="apellidoPaterno" class="required">Apellido Paterno<span class="required-asterisk"
+                                aria-hidden="true">*</span></label>
+                        <input id="apellidoPaterno" name="apellidoPaterno" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidoMaterno" class="required">Apellido Materno<span class="required-asterisk"
+                                aria-hidden="true">*</span></label>
+                        <input id="apellidoMaterno" name="apellidoMaterno" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="edad" class="required">Edad<span class="required-asterisk"
+                                aria-hidden="true">*</span></label>
+                        <input id="edad" name="edad" type="number" min="3" max="100" required
+                            data-tooltip="Edad entre 3 y 100 años">
+                        <div class="input-hint">
+                            <i>??</i> <span>Entre 3 y 100 años</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaNacimiento" class="required">Fecha de nacimiento<span class="required-asterisk"
+                                aria-hidden="true">*</span></label>
+                        <input id="fechaNacimiento" name="fechaNacimiento" type="date" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <label for="domicilio" class="required">Domicilio<span class="required-asterisk"
+                                aria-hidden="true">*</span></label>
+                        <input id="domicilio" name="domicilio" required data-tooltip="Calle, número, colonia">
+                        <div class="input-hint">
+                            <i>??</i> <span>Calle, número, colonia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="colonia" class="required">Colonia<span class="required-asterisk"
+                                aria-hidden="true">*</span></label>
+                        <input id="colonia" name="colonia" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="municipio" class="required">Municipio<span class="required-asterisk"
+                                aria-hidden="true">*</span></label>
+                        <input id="municipio" name="municipio" value="Portal Institucional Municipal" required readonly>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <label for="telefono" class="required">Teléfono<span class="required-asterisk"
+                                aria-hidden="true">*</span></label>
+                        <input id="telefono" name="telefono" type="tel" required pattern="[0-9]{10}"
+                            data-tooltip="10 dígitos sin espacios">
+                        <div class="input-hint">
+                            <i>??</i> <span>10 dígitos (ej. 7711234567)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="form-section-title">Taller</h3>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="tipoTaller" class="required">Tipo de taller<span class="required-asterisk"
+                                aria-hidden="true">*</span></label>
+                        <select id="tipoTaller" name="tipoTaller" required>
+                            <option value="">Seleccione...</option>
+                            <option value="Pintura">Pintura</option>
+                            <option value="Danza">Danza</option>
+                            <option value="Música">Música</option>
+                            <option value="Teatro">Teatro</option>
+                            <option value="Manualidades">Manualidades</option>
+                            <option value="Deportes">Deportes</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="horario" class="required">Horario<span class="required-asterisk"
+                                aria-hidden="true">*</span></label>
+                        <select id="horario" name="horario" required>
+                            <option value="">Seleccione...</option>
+                            <option value="Matutino (9:00-12:00)">Matutino (9:00-12:00)</option>
+                            <option value="Vespertino (15:00-18:00)">Vespertino (15:00-18:00)</option>
+                            <option value="Sabatino (9:00-13:00)">Sabatino (9:00-13:00)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <h3 class="form-section-title">Tutor</h3>
+
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <label for="nombreTutor" class="required">Nombre completo del tutor<span
+                                class="required-asterisk" aria-hidden="true">*</span></label>
+                        <input id="nombreTutor" name="nombreTutor" required
+                            data-tooltip="Nombre del padre, madre o tutor">
+                        <div class="input-hint">
+                            <i>???????????</i> <span>Nombre del padre, madre o tutor</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <!-- El botón VER PDF se insertará aquí automáticamente por JavaScript -->
+                    <button type="button" class="btn-cancel" onclick="closeFormModal()">Cancelar</button>
+                    <button type="submit" class="btn-submit">
+                        <span class="btn-text">Generar PDF</span>
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- ========================================= -->
+    <!-- SECCIÓN: CONTACTO + HORARIOS (BLANCO)    -->
+    <!-- ========================================= -->
+    <section class="contact-hours-section">
+        <div class="contact-hours-inner">
+
+            <!-- FILA PRINCIPAL: CONTACTO + HORARIOS (SIN MAPA) -->
+            <div class="ch-main-row">
+
+                <!-- COLUMNA CONTACTO -->
+                <div class="ch-contact">
+                    <h2>Contacto</h2>
+
+                    <ul class="ch-contact-list">
+                        <li>
+                            <img src="../static/img/location.png" alt="Dirección">
+                            <div>
+                                <span class="ch-label">Dirección</span>
+                                <p>
+                                    Plaza Principal S/N, Centro<br>
+                                    Ciudad Demo, México, México
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <img src="../static/img/phone.png" alt="Teléfono">
+                            <div>
+                                <span class="ch-label">Teléfono</span>
+                                <p>(771) 123-4567</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <img src="../static/img/mail.png" alt="Correo Electrónico">
+                            <div>
+                                <span class="ch-label">Correo Electrónico</span>
+                                <p>
+                                    <a href="mailto:contacto@municipio.demo">
+                                        contacto@municipio.demo
+                                    </a>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- TARJETA HORARIOS -->
+                <div class="ch-hours-card">
+                    <h3>Horarios de Atención</h3>
+
+                    <div class="ch-hours-content">
+                        <div class="ch-hours-row">
+                            <span class="ch-day">Lunes a Viernes</span>
+                            <span class="ch-time">8:00 AM – 4:00 PM</span>
+                        </div>
+
+                        <div class="ch-hours-row">
+                            <span class="ch-day">Sábados</span>
+                            <span class="ch-time">9:00 AM – 1:00 PM</span>
+                        </div>
+
+                        <div class="ch-hours-row">
+                            <span class="ch-day">Domingos</span>
+                            <span class="ch-time ch-closed">Cerrado</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- ========== FIN SECCIÓN CONTACTO+HORARIOS ========== -->
+
+    <!-- ========================================= -->
+    <!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+    <!-- ========================================= -->
+    <!-- ========================================= -->
+    <!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+    <!-- ========================================= -->
+    <!-- ========================================= -->
+    <!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+    <!-- ========================================= -->
+    <!-- ========================================= -->
+    <!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+    <!-- ========================================= -->
+    <!-- ========================================= -->
+    <!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+    <!-- ========================================= -->
+    <footer class="main-footer">
+        <div class="footer-inner">
+
+            <div class="footer-grid">
+
+                <div class="footer-column">
+                    <h4>Gobierno Municipal</h4>
+                    <ul>
+                        <li><a href="hayuntamiento.html">H. Ayuntamiento</a></li>
+                        <li><a href="directoriomunicipal.html">Directorio Municipal</a></li>
+                        <li><a href="comisiones.html">Comisiones</a></li>
+                        <li><a href="poel.html">POEL</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Áreas</h4>
+                    <ul>
+                        <li><a href="dif.html">DIF</a></li>
+                        <li><a href="turismo.html">Turismo</a></li>
+                        <li><a href="multideportivo.html">Multideportivo</a></li>
+                        <li><a href="pcivil.html">Protección Civil</a></li>
+                        <li><a href="ubr.html">Unidad Básica de Rehabilitación</a></li>
+                        <li><a href="ob.html">Obra Pública</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Transparencia</h4>
+                    <ul>
+                        <li><a href="transparencia.html">Portal de Transparencia</a></li>
+                        <li><a href="tramitesyservicios.html">Trámites y Servicios</a></li>
+                        <li><a href="registrofamiliar.html">Registro Familiar</a></li>
+                        <li><a href="videos.html">Videos</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Enlaces de Interés</h4>
+                    <ul>
+                        <li><a href="https://www.valleverde.gob.example.com/" target="_blank">Gobierno del Estado</a></li>
+                        <li><a href="https://www.gob.mx/" target="_blank">Gobierno Federal</a></li>
+                        <li><a href="https://www.inegi.org.mx/" target="_blank">INEGI</a></li>
+                        <li><a href="https://www.plataformadetransparencia.org.mx/" target="_blank">Plataforma
+                                Nacional</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <span class="footer-divider"></span>
+
+            <div class="footer-copy">
+                © 2025 Portal Institucional Municipal. Todos los derechos reservados.
+            </div>
+
+        </div>
+    </footer>
+    <!-- ========== FIN FOOTER REAL ========== -->
+
+    <!-- JavaScript Files -->
+    <script src="../static/js/menu.js"></script>
+    <script src="../static/js/tramites.js"></script>
+    <!-- Para imágenes dinámicas -->
+    <script src="../static/js/dynamic-image-loader.js"></script>
+
+    <!-- Para PDFs dinámicos (solo en páginas de transparencia) -->
+    <script src="../static/js/transparencia-loader.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+

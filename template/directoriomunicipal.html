@@ -1,0 +1,280 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directorio Municipal - Portal Institucional Municipal</title>
+    <link rel="icon" href="../static/img/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/global.css">
+    <link rel="stylesheet" href="../static/css/directorio.css">
+    <!-- [PRIVACIDAD] Directorio cargado dinámicamente desde mock-api.js con datos ficticios -->
+    <script src="../static/js/protection.js"></script>
+    <style>
+        .carousel-track { transition: transform 0.3s ease-in-out; will-change: transform; }
+        .carousel-track.no-transition { transition: none; }
+    </style>
+</head>
+
+<body>
+
+    <div class="header-top"></div>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="top-contact-row">
+                <div class="contact-items">
+                    <div class="contact-item">
+                        <img src="../static/img/phone.png" alt="">
+                        <span>Tel: (555) 100-0000</span>
+                    </div>
+                    <div class="contact-item">
+                        <img src="../static/img/mail.png" alt="">
+                        <a href="mailto:contacto@municipio.demo">contacto@municipio.demo</a>
+                    </div>
+                    <div class="contact-item">
+                        <img src="../static/img/location.png" alt="">
+                        <span>Ciudad Demo, México</span>
+                    </div>
+                </div>
+                <div class="social-icons">
+                    <a href="#" title="Instagram"><img src="../static/img/instagram.png" alt=""></a>
+                    <a href="#" title="Facebook"><img src="../static/img/facebook.png" alt=""></a>
+                    <a href="#" title="YouTube"><img src="../static/img/youtube.png" alt=""></a>
+                </div>
+            </div>
+            <div class="separator-line"></div>
+            <div class="brand-row">
+                <div class="brand">
+                    <a href="index.html" class="brand-logo-circle">
+                        <img src="../static/img/logo.svg" alt="Logo municipal">
+                    </a>
+                    <div class="brand-texts">
+                        <div class="brand-text-main">Portal Institucional Municipal</div>
+                        <div class="brand-text-sub">Administración Municipal 2024-2027</div>
+                    </div>
+                </div>
+                <nav class="main-nav">
+                    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+                    <ul id="navMenu">
+                        <li><a href="index.html">INICIO</a></li>
+                        <li><a href="tramitesyservicios.html">TRÁMITES Y SERVICIOS</a></li>
+                        <li><a href="directoriomunicipal.html">DIRECTORIO MUNICIPAL</a></li>
+                        <li><a href="transparencia.html">TRANSPARENCIA</a></li>
+                        <li><a href="login.html" class="btn-login-nav" style="background:#c9a961;color:white!important;padding:8px 15px;border-radius:4px;margin-left:10px;">ACCESO</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h2>Directorio Municipal</h2>
+                <p>Equipo de gobierno — datos de demostración para portafolio</p>
+            </div>
+
+            <section class="president-highlight">
+                <div class="president-photo">
+                    <img src="../static/img/user-placeholder.svg" alt="Presidente Municipal (demo)"
+                        style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
+                </div>
+                <div class="president-info">
+                    <h3>LIC. CARLOS MENDOZA RIVERA</h3>
+                    <div class="president-position">Presidente Municipal</div>
+                    <div class="president-message">
+                        <p>Ejemplo de mensaje institucional. Los nombres, cargos y contactos mostrados son ficticios
+                            y forman parte de una demostración de diseño web para portafolio profesional.</p>
+                    </div>
+                    <div class="president-contact">
+                        <div class="contact-item-president">
+                            <div class="contact-icon">✉</div>
+                            <span>presidente@municipio.demo</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="carousel-section">
+                <h3 class="section-title">Principales Funcionarios</h3>
+                <div class="carousel-container">
+                    <button class="carousel-btn carousel-btn-prev" onclick="moveCarousel('principales', -1)">‹</button>
+                    <div class="carousel" id="carousel-principales">
+                        <div class="carousel-track" id="track-principales"></div>
+                    </div>
+                    <button class="carousel-btn carousel-btn-next" onclick="moveCarousel('principales', 1)">›</button>
+                </div>
+            </section>
+
+            <section class="carousel-section">
+                <h3 class="section-title">Directores y Secretarías</h3>
+                <div class="carousel-container">
+                    <button class="carousel-btn carousel-btn-prev" onclick="moveCarousel('directores', -1)">‹</button>
+                    <div class="carousel" id="carousel-directores">
+                        <div class="carousel-track" id="track-directores"></div>
+                    </div>
+                    <button class="carousel-btn carousel-btn-next" onclick="moveCarousel('directores', 1)">›</button>
+                </div>
+            </section>
+
+            <section class="carousel-section">
+                <h3 class="section-title">DIF y Programas Sociales</h3>
+                <div class="carousel-container">
+                    <button class="carousel-btn carousel-btn-prev" onclick="moveCarousel('dif', -1)">‹</button>
+                    <div class="carousel" id="carousel-dif">
+                        <div class="carousel-track" id="track-dif"></div>
+                    </div>
+                    <button class="carousel-btn carousel-btn-next" onclick="moveCarousel('dif', 1)">›</button>
+                </div>
+            </section>
+
+            <section class="carousel-section">
+                <h3 class="section-title">Encargados y Coordinadores</h3>
+                <div class="carousel-container">
+                    <button class="carousel-btn carousel-btn-prev" onclick="moveCarousel('encargados', -1)">‹</button>
+                    <div class="carousel" id="carousel-encargados">
+                        <div class="carousel-track" id="track-encargados"></div>
+                    </div>
+                    <button class="carousel-btn carousel-btn-next" onclick="moveCarousel('encargados', 1)">›</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <section class="contact-hours-section">
+        <div class="contact-hours-inner">
+            <div class="ch-main-row">
+                <div class="ch-contact">
+                    <h2>Contacto</h2>
+                    <ul class="ch-contact-list">
+                        <li>
+                            <img src="../static/img/location.png" alt="Dirección">
+                            <div>
+                                <span class="ch-label">Dirección</span>
+                                <p>Av. Constitución #100, Centro<br>Ciudad Demo, México</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="../static/img/phone.png" alt="Teléfono">
+                            <div>
+                                <span class="ch-label">Teléfono</span>
+                                <p>(555) 100-0000</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="../static/img/mail.png" alt="Correo">
+                            <div>
+                                <span class="ch-label">Correo Electrónico</span>
+                                <p><a href="mailto:contacto@municipio.demo">contacto@municipio.demo</a></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ch-hours-card">
+                    <h3>Horarios de Atención</h3>
+                    <div class="ch-hours-content">
+                        <div class="ch-hours-row"><span class="ch-day">Lunes a Viernes</span><span class="ch-time">8:00 AM – 4:00 PM</span></div>
+                        <div class="ch-hours-row"><span class="ch-day">Sábados</span><span class="ch-time">9:00 AM – 1:00 PM</span></div>
+                        <div class="ch-hours-row"><span class="ch-day">Domingos</span><span class="ch-time ch-closed">Cerrado</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-inner">
+            <div class="footer-copy">
+                © 2025 Portal Institucional Municipal — Proyecto de demostración para portafolio.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../static/js/menu.js"></script>
+    <script src="../static/js/mock-api.js"></script>
+    <script src="../static/js/officials-loader.js"></script>
+    <script>
+        const carousels = {
+            principales: { currentIndex: 0 },
+            directores: { currentIndex: 0 },
+            dif: { currentIndex: 0 },
+            encargados: { currentIndex: 0 }
+        };
+        const lastClickTime = {};
+
+        function initializeInfiniteCarousel(carouselName) {
+            const track = document.getElementById('track-' + carouselName);
+            if (!track) return;
+            const originalCards = Array.from(track.querySelectorAll('.official-card-carousel'));
+            carousels[carouselName].totalOriginalCards = originalCards.length;
+            if (!originalCards.length) return;
+            for (let i = 0; i < 3; i++) {
+                originalCards.forEach(card => track.appendChild(card.cloneNode(true)));
+            }
+        }
+
+        function updateCarouselLayout() {
+            Object.keys(carousels).forEach(carouselName => {
+                const track = document.getElementById('track-' + carouselName);
+                if (!track || !track.children.length) return;
+                const container = track.parentElement;
+                let cardsPerView = 4;
+                if (window.innerWidth <= 992) cardsPerView = 3;
+                if (window.innerWidth <= 768) cardsPerView = 2;
+                if (window.innerWidth <= 480) cardsPerView = 1;
+                const cardWidth = container.offsetWidth / cardsPerView;
+                track.querySelectorAll('.official-card-carousel').forEach(card => {
+                    card.style.width = cardWidth + 'px';
+                    card.style.minWidth = cardWidth + 'px';
+                    card.style.maxWidth = cardWidth + 'px';
+                    card.style.flex = '0 0 ' + cardWidth + 'px';
+                });
+                track.style.transform = 'translateX(' + (-(carousels[carouselName].currentIndex * cardWidth)) + 'px)';
+            });
+        }
+
+        function moveCarousel(carouselName, direction) {
+            const now = Date.now();
+            if (lastClickTime[carouselName] && now - lastClickTime[carouselName] < 300) return;
+            lastClickTime[carouselName] = now;
+            const carousel = carousels[carouselName];
+            const track = document.getElementById('track-' + carouselName);
+            if (!track || !carousel.totalOriginalCards) return;
+            let cardsPerView = 4;
+            if (window.innerWidth <= 992) cardsPerView = 3;
+            if (window.innerWidth <= 768) cardsPerView = 2;
+            if (window.innerWidth <= 480) cardsPerView = 1;
+            const cardWidth = track.parentElement.offsetWidth / cardsPerView;
+            carousel.currentIndex += direction;
+            const total = carousel.totalOriginalCards;
+            if (carousel.currentIndex >= total * 2) {
+                carousel.currentIndex = total;
+                track.style.transition = 'none';
+                track.style.transform = 'translateX(' + (-(carousel.currentIndex * cardWidth)) + 'px)';
+                void track.offsetHeight;
+                track.style.transition = 'transform 0.3s ease-in-out';
+            } else if (carousel.currentIndex < 0) {
+                carousel.currentIndex = total * 2 - 1;
+                track.style.transition = 'none';
+                track.style.transform = 'translateX(' + (-(carousel.currentIndex * cardWidth)) + 'px)';
+                void track.offsetHeight;
+                track.style.transition = 'transform 0.3s ease-in-out';
+            }
+            track.style.transform = 'translateX(' + (-(carousel.currentIndex * cardWidth)) + 'px)';
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(function () {
+                Object.keys(carousels).forEach(initializeInfiniteCarousel);
+                updateCarouselLayout();
+            }, 600);
+        });
+        window.addEventListener('resize', updateCarouselLayout);
+    </script>
+</body>
+
+</html>

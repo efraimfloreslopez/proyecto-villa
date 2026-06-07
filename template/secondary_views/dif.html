@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head><meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Institucional Municipal</title>
+    <link rel="icon" href="../static/img/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/global.css">
+    <link rel="stylesheet" href="../static/css/areas/dif.css">
+</head>
+
+<body>
+
+    <!-- Franja negra superior -->
+    <div class="header-top"></div>
+
+    <!-- Contenedor dorado con esquinas inferiores redondeadas -->
+    <header class="site-header">
+        <div class="header-inner">
+
+            <!-- FILA 1: Contacto primero, luego redes sociales -->
+            <div class="top-contact-row">
+                <!-- Contacto items primero -->
+                <div class="contact-items">
+                    <div class="contact-item">
+                        <img src="../static/img/phone.png" alt="">
+                        <span>Tel: (771) 123-4567</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <img src="../static/img/mail.png" alt="">
+                        <a href="mailto:contacto@municipio.demo">
+                            contacto@municipio.demo
+                        </a>
+                    </div>
+
+                    <div class="contact-item">
+                        <img src="../static/img/location.png" alt="">
+                        <span>Ciudad Demo, México</span>
+                    </div>
+                </div>
+
+                <!-- Redes sociales despu�s -->
+                <div class="social-icons">
+                    <a href="#" title="Instagram">
+                        <img src="../static/img/instagram.png" alt="">
+                    </a>
+                    <a href="#" target="_blank" title="Facebook">
+                        <img src="../static/img/facebook.png" alt="">
+                    </a>
+                    <a href="#" target="_blank" title="YouTube">
+                        <img src="../static/img/youtube.png" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <!-- L�nea blanca separadora -->
+            <div class="separator-line"></div>
+
+            <!-- FILA 2: IZQUIERDA LOGO+TEXTOS, DERECHA MEN� -->
+            <div class="brand-row">
+                <!-- Logo + textos (izquierda) -->
+                <div class="brand">
+                    <a href="/" class="brand-logo-circle">
+                        <img src="../static/img/logo.svg" alt="">
+                    </a>
+                    <div class="brand-texts">
+                        <div class="brand-text-main">Portal Institucional Municipal</div>
+                        <div class="brand-text-sub">Administraci�n Municipal 2022-2026</div>
+                    </div>
+                </div>
+
+                <!-- Men� (derecha) -->
+                <nav class="main-nav">
+                    <!-- Bot�n hamburguesa -->
+                    <div class="hamburger" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <!-- Bot�n X para cerrar el men� m�vil -->
+                    <button class="menu-close-btn" onclick="toggleMenu()">?</button>
+
+                    <ul id="navMenu">
+                        <li><a href="tramitesyservicios.html">TR�MITES Y SERVICIOS</a></li>
+                        <li><a href="directoriomunicipal.html">DIRECTORIO MUNICIPAL</a></li>
+                        <li><a href="hayuntamiento.html">H. AYUNTAMIENTO</a></li>
+                        <li><a href="registrofamiliar.html">REGISTRO FAMILIAR</a></li>
+                        <li><a href="poel.html">POEL</a></li>
+
+                        <!-- �REAS con atributo data-submenu-id para control consistente -->
+                        <li class="has-submenu" data-submenu-id="areas" onclick="toggleSubmenu(event)">
+                            <a href="#">�REAS <span class="arrow">?</span></a>
+                            <ul class="submenu">
+                                <li><a href="dif.html">DIF</a></li>
+                                <li><a href="turismo.html">TURISMO</a></li>
+                                <li><a href="multideportivo.html">MULTIDEPORTIVO</a></li>
+                                <li><a href="pcivil.html">PROTECCI�N CIVIL</a></li>
+                                <li><a href="ubr.html">UNIDAD B�SICA DE REHABILITACI�N</a></li>
+                                <li><a href="ob.html">OBRA P�BLICA</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="transparencia.html">TRANSPARENCIA</a></li>
+                        <li><a href="comisiones.html">COMISIONES</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- CONTENIDO DE LA P�GINA -->
+    <main class="contenido">
+
+        <!-- ========================================================= -->
+        <!-- =============== BANNER DIF ============================== -->
+        <!-- ========================================================= -->
+        <section class="dif-banner">
+            <!-- Imagen de fondo (usa tu banner del DIF) -->
+            <img data-dynamic-image data-section="dif" src="../static/img/dif/dif-banner.png"
+                alt="Banner DIF Portal Institucional Municipal" class="dif-banner-media banner">
+
+            <!-- Capa dorada semitransparente -->
+            <div class="dif-banner-overlay"></div>
+
+            <!-- Contenido centrado (pastilla con el t�tulo) -->
+            <div class="dif-banner-content">
+                <div class="dif-banner-title-box">
+                    <h1 class="dif-banner-title">
+                        Sistema DIF Municipal
+                    </h1>
+                </div>
+            </div>
+        </section>
+        <!-- ===================== FIN BANNER DIF ==================== -->
+
+
+
+        <!-- ========================================================= -->
+        <!-- =============== INFO DIF (VIDEO + TEXTO) ================ -->
+        <!-- ========================================================= -->
+        <section class="dif-info-section">
+            <div class="dif-info-layout">
+                <!-- -------- VIDEO DIF -------- -->
+                <div class="dif-video-wrapper">
+                    <video class="dif-video" src="../static/img/dif/dif.mp4" controls playsinline></video>
+                    <div class="dif-video-glow"></div>
+                </div>
+
+                <!-- -------- TEXTO DIF -------- -->
+                <div class="dif-text-container">
+                    <article class="dif-text-card">
+                        <div class="dif-badge">
+                            <span class="dif-badge-dot"></span>
+                            Atenci�n a la familia
+                        </div>
+
+                        <h2 class="dif-text-title">
+                            �Qu� es el DIF?
+                        </h2>
+
+                        <div class="dif-divider"></div>
+
+                        <p class="dif-paragraph">
+                            <span class="dif-paragraph-strong">
+                                El Sistema para el Desarrollo Integral de la Familia (DIF)
+                            </span>
+                            brinda asistencia social a los sectores m�s vulnerables de la poblaci�n,
+                            como ni�as, ni�os, adolescentes, personas adultas mayores, personas con
+                            discapacidad y familias en situaci�n de pobreza o riesgo.
+                        </p>
+
+                        <p class="dif-paragraph">
+                            Su objetivo es promover el desarrollo integral de la familia y la comunidad
+                            mediante programas de alimentaci�n, protecci�n de derechos, orientaci�n
+                            psicol�gica y jur�dica, as� como atenci�n especializada en distintas �reas.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- ================ FIN INFO DIF (VIDEO + TEXTO) =========== -->
+
+
+        <!-- ========================================================= -->
+        <!-- =============== SECCI�N DIF: EVENTOS ==================== -->
+        <!-- ========================================================= -->
+        <section class="dif-events-section">
+            <div class="dif-events-container">
+                <div class="dif-events-header">
+                    <h1 class="dif-events-main-title">Eventos y Actividades</h1>
+                    <div class="dif-events-divider"></div>
+                </div>
+
+                <div class="dif-events-grid">
+                    <!-- ========== EVENTO 1 ========== -->
+                    <article class="dif-event-card">
+                        <div class="dif-event-image-wrapper">
+                            <img src="../static/img/dif/1d.jpeg" alt="2do informe" class="dif-event-image">
+                            <div class="dif-event-overlay"></div>
+                        </div>
+                        <div class="dif-event-body">
+                            <h2 class="dif-event-title">Asistencia al 2.� informe por parte de la Presidenta del
+                                Patronato Edda
+                                Vite</h2>
+                        </div>
+                    </article>
+
+                    <!-- ========== EVENTO 2 ========== -->
+                    <article class="dif-event-card">
+                        <div class="dif-event-image-wrapper">
+                            <img src="../static/img/dif/2d.jpeg" alt="Jornada de mastograf�as" class="dif-event-image">
+                            <div class="dif-event-overlay"></div>
+                        </div>
+                        <div class="dif-event-body">
+                            <h2 class="dif-event-title">Jornada de mastograf�as organizada para promover la prevenci�n
+                                del
+                                c�ncer de mama � DIF 2024</h2>
+                        </div>
+                    </article>
+
+                    <!-- ========== EVENTO 3 ========== -->
+                    <article class="dif-event-card">
+                        <div class="dif-event-image-wrapper">
+                            <img src="../static/img/dif/3d.jpeg" alt="Jornada de lentes" class="dif-event-image">
+                            <div class="dif-event-overlay"></div>
+                        </div>
+                        <div class="dif-event-body">
+                            <h2 class="dif-event-title">Primera jornada de lentes en coordinaci�n con Fundaci�n
+                                Hidalguense</h2>
+                        </div>
+                    </article>
+
+                    <!-- ========== EVENTO 4 ========== -->
+                    <article class="dif-event-card">
+                        <div class="dif-event-image-wrapper">
+                            <img src="../static/img/dif/DIF MUNICIPAL.mhtml" alt="Encendida del �rbol 2024"
+                                class="dif-event-image">
+                            <div class="dif-event-overlay"></div>
+                        </div>
+                        <div class="dif-event-body">
+                            <h2 class="dif-event-title">Encendida del �rbol 2024. Gracias por acompa�arnos en este
+                                evento
+                                navide�o tan especial, una oportunidad para compartir alegr�a, amor y gratitud.</h2>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- ============ FIN SECCI�N DIF: EVENTOS ================== -->
+
+
+    </main>
+
+    <!-- ========================================= -->
+    <!-- SECCI�N: CONTACTO + HORARIOS (BLANCO)    -->
+    <!-- ========================================= -->
+    <section class="contact-hours-section">
+        <div class="contact-hours-inner">
+
+            <!-- FILA PRINCIPAL: CONTACTO + HORARIOS (SIN MAPA) -->
+            <div class="ch-main-row">
+
+                <!-- COLUMNA CONTACTO -->
+                <div class="ch-contact">
+                    <h2>Contacto</h2>
+
+                    <ul class="ch-contact-list">
+                        <li>
+                            <img src="../static/img/location.png" alt="Direcci�n">
+                            <div>
+                                <span class="ch-label">Direcci�n</span>
+                                <p>
+                                    Plaza Principal S/N, Centro<br>
+                                    Ciudad Demo, México, M�xico
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <img src="../static/img/phone.png" alt="Tel�fono">
+                            <div>
+                                <span class="ch-label">Tel�fono</span>
+                                <p>(771) 123-4567</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <img src="../static/img/mail.png" alt="Correo Electr�nico">
+                            <div>
+                                <span class="ch-label">Correo Electr�nico</span>
+                                <p>
+                                    <a href="mailto:contacto@municipio.demo">
+                                        contacto@municipio.demo
+                                    </a>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- TARJETA HORARIOS -->
+                <div class="ch-hours-card">
+                    <h3>Horarios de Atenci�n</h3>
+
+                    <div class="ch-hours-content">
+                        <div class="ch-hours-row">
+                            <span class="ch-day">Lunes a Viernes</span>
+                            <span class="ch-time">8:00 AM � 4:00 PM</span>
+                        </div>
+
+                        <div class="ch-hours-row">
+                            <span class="ch-day">S�bados</span>
+                            <span class="ch-time">9:00 AM � 1:00 PM</span>
+                        </div>
+
+                        <div class="ch-hours-row">
+                            <span class="ch-day">Domingos</span>
+                            <span class="ch-time ch-closed">Cerrado</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- ========== FIN SECCI�N CONTACTO+HORARIOS ========== -->
+
+    <!-- ========================================= -->
+    <!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+    <!-- ========================================= -->
+    <!-- ========================================= -->
+<!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+<!-- ========================================= -->
+<!-- ========================================= -->
+<!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+<!-- ========================================= -->
+<!-- ========================================= -->
+<!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+<!-- ========================================= -->
+<!-- ========================================= -->
+<!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+<!-- ========================================= -->
+<footer class="main-footer">
+    <div class="footer-inner">
+
+        <div class="footer-grid">
+
+            <div class="footer-column">
+                <h4>Gobierno Municipal</h4>
+                <ul>
+                    <li><a href="hayuntamiento.html">H. Ayuntamiento</a></li>
+                    <li><a href="directoriomunicipal.html">Directorio Municipal</a></li>
+                    <li><a href="comisiones.html">Comisiones</a></li>
+                    <li><a href="poel.html">POEL</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>�reas</h4>
+                <ul>
+                    <li><a href="dif.html">DIF</a></li>
+                    <li><a href="turismo.html">Turismo</a></li>
+                    <li><a href="multideportivo.html">Multideportivo</a></li>
+                    <li><a href="pcivil.html">Protecci�n Civil</a></li>
+                    <li><a href="ubr.html">Unidad B�sica de Rehabilitaci�n</a></li>
+                    <li><a href="ob.html">Obra P�blica</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Transparencia</h4>
+                <ul>
+                    <li><a href="transparencia.html">Portal de Transparencia</a></li>
+                    <li><a href="tramitesyservicios.html">Tr�mites y Servicios</a></li>
+                    <li><a href="registrofamiliar.html">Registro Familiar</a></li>
+                    <li><a href="videos.html">Videos</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Enlaces de Inter�s</h4>
+                <ul>
+                    <li><a href="https://www.valleverde.gob.example.com/" target="_blank">Gobierno del Estado</a></li>
+                    <li><a href="https://www.gob.mx/" target="_blank">Gobierno Federal</a></li>
+                    <li><a href="https://www.inegi.org.mx/" target="_blank">INEGI</a></li>
+                    <li><a href="https://www.plataformadetransparencia.org.mx/" target="_blank">Plataforma Nacional</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <span class="footer-divider"></span>
+
+        <div class="footer-copy">
+            � 2025 Portal Institucional Municipal. Todos los derechos reservados.
+        </div>
+
+    </div>
+</footer>
+<!-- ========== FIN FOOTER REAL ========== -->
+
+    <!-- Link al archivo JavaScript externo -->
+    <script src="../static/js/menu.js"></script>
+    <script src="../static/js/dynamic-image-loader.js"></script>
+
+
+    <!-- Para PDFs din�micos (solo en p�ginas de transparencia) -->
+    <script src="../static/js/transparencia-loader.js"></script>
+
+</body>
+
+</html>
+
+
+
+

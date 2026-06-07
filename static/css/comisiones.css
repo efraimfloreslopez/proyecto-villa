@@ -1,0 +1,357 @@
+/* ========================================= */
+/* ESTILOS BASE PARA COMISIONES */
+/* ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Main Content */
+.main-content {
+  background-color: white;
+  min-height: 60vh;
+  padding: 40px 0;
+}
+
+.container {
+  max-width: 1688px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.page-title {
+  text-align: center;
+  color: rgba(151, 115, 44, 1);
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.page-subtitle {
+  text-align: center;
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+/* ========================================= */
+/* BARRA DE BÚSQUEDA */
+/* ========================================= */
+.search-container {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 15px 50px 15px 20px;
+  border: 2px solid rgba(151, 115, 44, 0.3);
+  border-radius: 25px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.search-input:focus {
+  border-color: rgba(151, 115, 44, 1);
+}
+
+.search-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(151, 115, 44, 1);
+  font-size: 1.2rem;
+}
+
+/* ========================================= */
+/* GRID DE COMISIONES */
+/* ========================================= */
+.commissions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.commission-card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-left: 5px solid rgba(151, 115, 44, 1);
+}
+
+.commission-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.commission-code {
+  background: rgba(151, 115, 44, 0.1);
+  color: rgba(151, 115, 44, 1);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.commission-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.commission-description {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.commission-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ========================================= */
+/* BOTONES */
+/* ========================================= */
+.btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: rgba(151, 115, 44, 1);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: rgba(131, 95, 24, 1);
+  transform: translateY(-2px);
+}
+
+.btn-download-card {
+  background: #10b981 !important;
+  color: white !important;
+  border: none !important;
+  padding: 8px 16px !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  font-size: 0.9rem !important;
+  transition: background 0.3s !important;
+}
+
+.btn-download-card:hover {
+  background: #059669 !important;
+  transform: translateY(-2px);
+}
+
+/* ========================================= */
+/* MODAL SIMPLE (ESTILO BÁSICO) */
+/* ========================================= */
+.pdf-modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+
+.pdf-modal {
+  background: white;
+  width: 80%;
+  max-width: 900px;
+  max-height: 90vh;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  padding: 15px 20px;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa;
+}
+
+.modal-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.close-modal-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.close-modal-btn:hover {
+  color: #333;
+}
+
+.modal-body {
+  flex: 1;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.pdf-frame-container {
+  width: 100%;
+  height: 70vh;
+  padding: 0;
+  margin: 0;
+}
+
+.pdf-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.modal-footer {
+  padding: 15px 20px;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  background: #f8f9fa;
+}
+
+.btn-modal {
+  padding: 8px 20px;
+  border: 1px solid #ddd;
+  background: #f5f5f5;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.btn-modal:hover {
+  background: #e9e9e9;
+}
+
+.btn-download-modal {
+  background: #97732c;
+  color: white;
+  border: 1px solid #87622c;
+}
+
+.btn-download-modal:hover {
+  background: #87622c;
+}
+
+/* ========================================= */
+/* MENSAJE SIN RESULTADOS */
+/* ========================================= */
+.no-results {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+  grid-column: 1 / -1;
+}
+
+.no-results p {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ========================================= */
+/* RESPONSIVE */
+/* ========================================= */
+@media (max-width: 768px) {
+  .pdf-modal {
+    width: 95%;
+    height: 95vh;
+    max-height: 95vh;
+  }
+
+  .pdf-frame-container {
+    height: 75vh;
+  }
+
+  .commissions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .commission-card {
+    padding: 20px;
+  }
+
+  .modal-footer {
+    flex-direction: column;
+  }
+
+  .btn-modal {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .commission-actions {
+    flex-direction: column;
+  }
+
+  .btn,
+  .btn-download-card {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+
+

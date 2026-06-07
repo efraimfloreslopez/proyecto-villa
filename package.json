@@ -1,0 +1,18 @@
+{
+    "name": "portal-institucional-municipal",
+    "version": "2.0.0",
+    "description": "Rediseño de portal gubernamental municipal — demo estática para portafolio",
+    "private": true,
+    "scripts": {
+        "start": "npx serve .",
+        "sanitize": "python scripts/sanitize-portfolio.py"
+    },
+    "keywords": [
+        "gobierno",
+        "portal",
+        "accesibilidad",
+        "wcag",
+        "portfolio"
+    ],
+    "license": "MIT"
+}

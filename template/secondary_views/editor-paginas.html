@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de Pùginas - Sistema Municipal</title>
+
+    <!-- [PRIVACIDAD] Auth demo + editor simulado -->
+    <script src="../static/js/auth-demo.js"></script>
+    <script src="../static/js/auth-guard.js"></script>
+    <script src="../static/js/mock-api.js"></script>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../static/css/admin-global.css">
+    <link rel="stylesheet" href="../static/css/code-editor.css">
+
+    <!-- Protecciùn -->
+    <script src="../static/js/protection.js"></script>
+</head>
+
+<body>
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">??</span>
+                </div>
+                <h1>Sistema<br>Municipal</h1>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="dashboard-tic.html" class="nav-item">
+                    <span class="nav-icon">??</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="editor-paginas.html" class="nav-item active">
+                    <span class="nav-icon">??</span>
+                    <span>Editor de Pùginas</span>
+                </a>
+                <a href="gestion-publicaciones.html" class="nav-item">
+                    <span class="nav-icon">??</span>
+                    <span>Publicaciones</span>
+                </a>
+                <a href="gestion-videos.html" class="nav-item">
+                    <span class="nav-icon">??</span>
+                    <span>Videos</span>
+                </a>
+                <a href="gestion-gobierno.html" class="nav-item">
+                    <span class="nav-icon">???</span>
+                    <span>Gobierno</span>
+                </a>
+                <a href="gestion-pdfs.html" class="nav-item">
+                    <span class="nav-icon">??</span>
+                    <span>PDFs</span>
+                </a>
+                <a href="gestion-imagenes.html" class="nav-item">
+                    <span class="nav-icon">???</span>
+                    <span>Imùgenes</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" class="logout-btn" onclick="logout(); return false;">Cerrar Sesiùn</a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <h2>Editor de Pùginas en Vivo</h2>
+                <div class="header-actions">
+                    <button class="btn btn-primary" id="save-btn">?? Guardar (Ctrl+S)</button>
+                </div>
+            </header>
+
+            <div class="editor-container">
+                <!-- File Browser (Izquierda) - Estilo VS Code -->
+                <div class="file-browser">
+                    <div class="file-browser-header">
+                        EXPLORADOR DE ARCHIVOS
+                    </div>
+                    <div id="file-list" class="file-tree"></div>
+                </div>
+
+                <!-- Editor Area (Derecha) - Un solo panel -->
+                <div class="editor-area">
+                    <div class="editor-header">
+                        <div class="editor-file-info">
+                            <span id="current-file-name">Selecciona un archivo para editar</span>
+                        </div>
+                    </div>
+
+                    <!-- ùrea de trabajo del editor -->
+                    <div class="editor-workspace">
+                        <div class="editor-panel active" id="code-editor-panel">
+                            <div id="code-editor"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Notificaciones -->
+    <div id="notifications"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+    <script src="../static/js/code-editor.js"></script>
+    <script src="../static/js/admin-common.js"></script>
+
+    <style>
+        /* ========================================= */
+        /* ESTILOS DEL ùRBOL DE ARCHIVOS - VS CODE */
+        /* ========================================= */
+
+        .file-tree {
+            padding: 8px;
+            color: #ccc;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 13px;
+        }
+
+        .tree-folder {
+            margin-bottom: 2px;
+        }
+
+        .tree-folder-header {
+            display: flex;
+            align-items: center;
+            padding: 6px 8px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background 0.15s ease;
+        }
+
+        .tree-folder-header:hover {
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .tree-toggle {
+            width: 16px;
+            font-size: 10px;
+            color: #888;
+            flex-shrink: 0;
+        }
+
+        .tree-icon {
+            margin-right: 6px;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .tree-label {
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .tree-count {
+            margin-left: auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 11px;
+            color: #888;
+            font-weight: normal;
+        }
+
+        .tree-content {
+            margin-left: 8px;
+            padding-left: 12px;
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            display: none;
+        }
+
+        .tree-content.expanded {
+            display: block;
+        }
+
+        .tree-item {
+            padding: 5px 8px;
+            cursor: pointer;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            font-size: 13px;
+            transition: background 0.15s ease;
+        }
+
+        .tree-item:hover {
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .tree-item.active {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        .tree-item.active .tree-icon {
+            color: white !important;
+            opacity: 1 !important;
+        }
+
+        /* Header del explorador */
+        .file-browser-header {
+            padding: 10px 12px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #888;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-transform: uppercase;
+        }
+
+        /* El editor ocupa todo el espacio */
+        #code-editor {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</body>
+
+</html>
+
+
+
+

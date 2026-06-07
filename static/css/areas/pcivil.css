@@ -1,0 +1,529 @@
+/* ========================================================= */
+/* =============== BANNER VIDEO PROTECCIÓN CIVIL =========== */
+/* ========================================================= */
+
+.pcivil-banner {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    min-height: 200px;
+    /* hero bajito */
+    background: #000;
+    /* por si el video tarda en cargar */
+}
+
+.pcivil-banner-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.pcivil-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(151, 115, 44, 0.55);
+    /* gold #97732c con transparencia */
+    z-index: 2;
+}
+
+.pcivil-banner-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(10px, 3vw, 20px);
+}
+
+.pcivil-banner-title-box {
+    background: var(--gold, #97732c);
+    padding: clamp(6px, 1vw, 10px) clamp(18px, 3vw, 32px);
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 90%;
+}
+
+.pcivil-banner-title {
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: clamp(16px, 3vw, 24px);
+    letter-spacing: clamp(1px, 0.4vw, 3px);
+}
+
+@media (min-width: 768px) {
+    .pcivil-banner {
+        min-height: 220px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .pcivil-banner {
+        min-height: 260px;
+    }
+}
+
+
+/* ========================================================= */
+/* =============== INFO PROTECCIÓN CIVIL (VIDEO + TEXTO) === */
+/* ========================================================= */
+
+.pcivil-info-section {
+    width: 100%;
+    padding: 48px 16px 56px;
+    display: flex;
+    justify-content: center;
+    background: #ffffff;
+    box-sizing: border-box;
+}
+
+.pcivil-info-layout {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* -------- VIDEO -------- */
+
+.pcivil-video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    /* tamaño base */
+    aspect-ratio: 9 / 16;
+    /* vertical en móvil/tablet */
+    margin: 0 auto;
+    border-radius: 22px;
+    overflow: hidden;
+    background: #000;
+    box-shadow:
+        0 16px 40px rgba(0, 0, 0, 0.20),
+        0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.pcivil-video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.pcivil-video-glow {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right,
+            rgba(151, 115, 44, 0.35),
+            rgba(0, 0, 0, 0.0) 60%,
+            transparent 80%);
+    mix-blend-mode: screen;
+}
+
+/* -------- TEXTO -------- */
+
+.pcivil-text-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.pcivil-text-card {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 24px 24px 26px;
+    box-shadow:
+        0 16px 40px rgba(0, 0, 0, 0.06),
+        0 0 0 1px rgba(0, 0, 0, 0.02);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-top: 3px solid rgba(151, 115, 44, 0.85);
+}
+
+.pcivil-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    color: var(--gold, #97732c);
+    background: rgba(151, 115, 44, 0.08);
+    padding: 6px 14px;
+    border-radius: 999px;
+    align-self: flex-start;
+}
+
+.pcivil-badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold, #97732c);
+    animation: pcivil-pulse 2s ease-in-out infinite;
+}
+
+@keyframes pcivil-pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(0.85);
+    }
+}
+
+.pcivil-text-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--black, #221f1f);
+    margin: 2px 0 0 0;
+    line-height: 1.4;
+    letter-spacing: -0.2px;
+}
+
+.pcivil-divider {
+    width: 72px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold, #97732c), transparent);
+    margin: 2px 0 4px 0;
+}
+
+.pcivil-paragraph {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #444;
+    margin: 0;
+    text-align: justify;
+}
+
+.pcivil-paragraph-strong {
+    font-weight: 600;
+    color: var(--black, #221f1f);
+}
+
+/* -------- RESPONSIVE -------- */
+
+/* Escritorio: lado a lado y video cuadrado/compacto */
+@media (min-width: 900px) {
+    .pcivil-info-layout {
+        flex-direction: row;
+        align-items: stretch;
+        gap: 40px;
+    }
+
+    .pcivil-video-wrapper {
+        flex: 0 0 260px;
+        max-width: 260px;
+        aspect-ratio: 1 / 1;
+        /* cuadrado en desktop */
+        margin: 0;
+    }
+
+    .pcivil-text-container {
+        flex: 1;
+    }
+
+    .pcivil-text-card {
+        padding: 28px 28px 30px;
+    }
+
+    .pcivil-text-title {
+        font-size: 22px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 899px) and (min-width: 600px) {
+    .pcivil-info-section {
+        padding: 44px 20px 52px;
+    }
+
+    .pcivil-video-wrapper {
+        max-width: 320px;
+        aspect-ratio: 9 / 16;
+    }
+}
+
+/* Móviles */
+@media (max-width: 599px) {
+    .pcivil-info-section {
+        padding: 36px 12px 44px;
+    }
+
+    .pcivil-video-wrapper {
+        max-width: 280px;
+        aspect-ratio: 9 / 16;
+    }
+
+    .pcivil-text-card {
+        border-radius: 20px;
+        padding: 22px 18px 24px;
+    }
+
+    .pcivil-text-title {
+        font-size: 18px;
+    }
+
+    .pcivil-paragraph {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+}
+
+
+/* ========================================================= */
+/* =============== RALLY PROTECCIÓN CIVIL ================== */
+/* ========================================================= */
+
+.pcivil-rally-section {
+    width: 100%;
+    padding: 40px 16px 48px;
+    background: #ffffff;
+    box-sizing: border-box;
+}
+
+.pcivil-rally-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* -------- TEXTO EN TARJETA BLANCA -------- */
+
+.pcivil-rally-text {
+    position: relative;
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 24px 22px;
+    background: #ffffff;
+    border-radius: 22px;
+    box-shadow:
+        0 16px 40px rgba(0, 0, 0, 0.08),
+        0 2px 10px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.pcivil-rally-text::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 18px;
+    right: 18px;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #97732c 0%, #57a639 100%);
+}
+
+.pcivil-rally-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    color: #97732c;
+    background: rgba(151, 115, 44, 0.08);
+}
+
+.pcivil-rally-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #221f1f;
+    line-height: 1.3;
+    letter-spacing: -0.2px;
+}
+
+.pcivil-rally-paragraph {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #444;
+    margin: 4px 0 0;
+    text-align: justify;
+}
+
+/* -------- CARRUSEL -------- */
+
+.pcivil-rally-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.pcivil-rally-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 22px;
+    overflow: hidden;
+    background: #000;
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.18),
+        0 2px 8px rgba(0, 0, 0, 0.10);
+}
+
+.pcivil-rally-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.45s ease;
+}
+
+.pcivil-rally-image-active {
+    opacity: 1;
+}
+
+/* Flechas */
+
+.pcivil-rally-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.92);
+    color: #221f1f;
+    font-size: 22px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.pcivil-rally-prev {
+    left: 10px;
+}
+
+.pcivil-rally-next {
+    right: 10px;
+}
+
+.pcivil-rally-arrow:hover {
+    transform: translateY(-50%) scale(1.06);
+    background: #ffffff;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
+}
+
+/* Puntos */
+
+.pcivil-rally-dots {
+    display: flex;
+    gap: 6px;
+    margin-top: 6px;
+}
+
+.pcivil-rally-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 999px;
+    border: none;
+    background: rgba(0, 0, 0, 0.18);
+    cursor: pointer;
+    transition: width 0.18s ease, background 0.18s ease, opacity 0.18s ease;
+    opacity: 0.7;
+}
+
+.pcivil-rally-dot-active {
+    width: 18px;
+    background: #97732c;
+    opacity: 1;
+}
+
+/* -------- RESPONSIVE RALLY -------- */
+
+@media (min-width: 900px) {
+    .pcivil-rally-inner {
+        flex-direction: row;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .pcivil-rally-text {
+        flex: 1;
+    }
+
+    .pcivil-rally-carousel {
+        flex: 1;
+        max-width: 520px;
+    }
+
+    .pcivil-rally-section {
+        padding: 40px 32px 48px;
+    }
+}
+
+@media (max-width: 899px) and (min-width: 600px) {
+    .pcivil-rally-section {
+        padding: 36px 22px 44px;
+    }
+
+    .pcivil-rally-title {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 599px) {
+    .pcivil-rally-section {
+        padding: 30px 12px 36px;
+    }
+
+    .pcivil-rally-title {
+        font-size: 20px;
+    }
+
+    .pcivil-rally-paragraph {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .pcivil-rally-frame {
+        border-radius: 18px;
+    }
+
+    .pcivil-rally-arrow {
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+    }
+}
+
+
+
+

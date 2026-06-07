@@ -1,0 +1,608 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head><meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Institucional Municipal</title>
+    <link rel="icon" href="../static/img/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/global.css">
+    <script src="../static/js/protection.js"></script>
+    <script src="../static/js/Asistente.js"></script>
+
+    <link rel="stylesheet" href="../static/css/index.css">
+</head>
+
+<body>
+
+    <!-- Franja negra superior -->
+    <div class="header-top"></div>
+
+    <!-- Contenedor dorado con esquinas inferiores redondeadas -->
+    <header class="site-header">
+        <div class="header-inner">
+
+            <!-- FILA 1: Contacto primero, luego redes sociales -->
+            <div class="top-contact-row">
+                <!-- Contacto items primero -->
+                <div class="contact-items">
+                    <div class="contact-item">
+                        <img src="../static/img/phone.png" alt="">
+                        <span>Tel: (771) 123-4567</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <img src="../static/img/mail.png" alt="">
+                        <a href="mailto:contacto@municipio.demo">
+                            contacto@municipio.demo
+                        </a>
+                    </div>
+
+                    <div class="contact-item">
+                        <img src="../static/img/location.png" alt="">
+                        <span>Ciudad Demo, México</span>
+                    </div>
+                </div>
+
+                <!-- Redes sociales después -->
+                <div class="social-icons">
+                    <a href="#" title="Instagram">
+                        <img src="../static/img/instagram.png" alt="">
+                    </a>
+                    <a href="#" target="_blank" title="Facebook">
+                        <img src="../static/img/facebook.png" alt="">
+                    </a>
+                    <a href="#" target="_blank" title="YouTube">
+                        <img src="../static/img/youtube.png" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Línea blanca separadora -->
+            <div class="separator-line"></div>
+
+            <!-- FILA 2: IZQUIERDA LOGO+TEXTOS, DERECHA MENÚ -->
+            <div class="brand-row">
+                <!-- Logo + textos (izquierda) -->
+                <div class="brand">
+                    <a href="/" class="brand-logo-circle">
+                        <img src="../static/img/logo.svg" alt="">
+                    </a>
+                    <div class="brand-texts">
+                        <div class="brand-text-main">Portal Institucional Municipal</div>
+                        <div class="brand-text-sub">Administración Municipal 2022-2026</div>
+                    </div>
+                </div>
+
+                <!-- Menú (derecha) -->
+                <nav class="main-nav">
+                    <div class="hamburger" onclick="toggleMenu()">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <ul id="navMenu">
+                        <li><a href="index.html">INICIO</a></li>
+                        <li><a href="tramitesyservicios.html">TRÁMITES Y SERVICIOS</a></li>
+                        <li><a href="directoriomunicipal.html">DIRECTORIO MUNICIPAL</a></li>
+                        <li><a href="transparencia.html">TRANSPARENCIA</a></li>
+                        <li><a href="login.html" class="btn-login-nav" style="background: #c9a961; color: white !important; padding: 8px 15px; border-radius: 4px; margin-left: 10px;">ACCESO</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- CONTENIDO DE LA PÁGINA -->
+    <main class="contenido">
+
+        <section class="convocatoria-section">
+            <div class="convocatoria-inner">
+
+                <div class="convocatoria-icon-circle">
+                    <!-- Usa el icono que quieras, aquí PONER IMAGENES PA REMPLAZAR ICONO -->
+                    <img src="../static/img/icono-convocatoria.png" alt="Convocatoria">
+
+                </div>
+
+                <h2 class="convocatoria-title">CONVOCATORIA DELEGADOS</h2>
+                <p class="convocatoria-subtitle">
+                    Proceso de selección para delegados municipales
+                </p>
+
+                <a href="#demo-pdf" class="btn-convocatoria" target="_blank"
+                    rel="noopener noreferrer">
+                    Ver Convocatoria Completa
+                </a>
+
+
+            </div>
+        </section>
+
+        <!-- NUEVA SECCIÓN: BIENVENIDA -->
+        <section class="bienvenida-section">
+            <div class="bienvenida-inner">
+
+
+                <div class="bienvenida-text">
+                    <h2>Bienvenidos a Portal Institucional Municipal</h2>
+                    <p class="bienvenida-parrafo">
+                        Trabajamos juntos por el desarrollo y bienestar de nuestra comunidad.
+                        Gobierno transparente, cercano y comprometido con los ciudadanos.
+                    </p>
+
+                    <div class="bienvenida-buttons">
+                        <a href="../template/transparencia.html" class="btn-borde-dorado">
+                            Portal de Transparencia
+                        </a>
+                        <a href="../template/vista_pdfs.html" class="btn-borde-dorado btn-borde-secundario">
+                            Aviso y Privacidad
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="bienvenida-image">
+                    <a href="#demo-pdf" target="_blank" rel="noopener noreferrer">
+                        <img src="../static/img/Catalogo.svg" alt="Portal Institucional Municipal">
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="home-divider"></div>
+        </section>
+        <!-- ====== GALERÍA MUNICIPAL ====== -->
+        <section class="galeria-municipal">
+            <div class="galeria-inner">
+
+                <h2 class="galeria-titulo">Galería Municipal</h2>
+
+                <!-- FILA 1 -->
+                <div class="galeria-row">
+
+                    <!-- ARTESANÍAS -->
+                    <article class="galeria-card">
+                        <div class="galeria-img-wrapper">
+                            <img src="../static/img/galeria-artesanias.png" alt="Artesanías">
+
+                    </article>
+
+                    <!-- PLAZA / JARDÍN PRINCIPAL -->
+                    <article class="galeria-card">
+                        <div class="galeria-img-wrapper">
+                            <img src="../static/img/galeria-plaza.jpeg" alt="Plaza principal">
+                        </div>
+                    </article>
+
+                    <!-- GASTRONOMÍA -->
+                    <article class="galeria-card">
+                        <div class="galeria-img-wrapper">
+                            <img src="../static/img/galeria-gastronomia.png" alt="Gastronomía">
+
+                    </article>
+
+                </div>
+
+                <!-- FILA 2 -->
+                <div class="galeria-row galeria-row-bottom">
+
+                    <!-- ESTABLECIMIENTOS DE HOSPEDAJE -->
+                    <article class="galeria-card">
+                        <div class="galeria-img-wrapper">
+                            <img src="../static/img/galeria-hospedaje.png" alt="Establecimientos de hospedaje">
+                            <div class="galeria-label galeria-label-largo">
+                                ESTABLECIMIENTOS<br>DE HOSPEDAJE
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- CROQUIS -->
+                    <article class="galeria-card galeria-card-croquis">
+                        <div class="galeria-img-wrapper">
+                            <img src="../static/img/galeria-croquis.png" alt="Croquis municipal">
+
+                        </div>
+                    </article>
+
+                    <!-- TIANGUIS -->
+                    <article class="galeria-card">
+                        <div class="galeria-img-wrapper">
+                            <img src="../static/img/galeria-tianguis.png" alt="Tianguis">
+                            <div class="galeria-label">TIANGUIS</div>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+            <div class="home-divider"></div>
+        </section>
+        <!-- ====== FIN GALERÍA MUNICIPAL ====== -->
+
+        <!-- ====== TARJETAS DESTACADAS: -->
+        <section class="servicios-destacados">
+            <div class="servicios-inner">
+
+                <!-- CARD 1: FACEBOOK -->
+                <article class="servicio-card servicio-facebook">
+                    <div class="servicio-icon-circle">
+                        <!-- Puedes cambiar la F por un ícono o img -->
+                        <span class="servicio-icon-text">f</span>
+                    </div>
+
+                    <h3 class="servicio-title">Síguenos en Facebook</h3>
+                    <p class="servicio-subtitle">
+                        Mantente conectado con las últimas noticias
+                    </p>
+
+                    <a href="#"
+                        class="servicio-btn servicio-btn-pink">
+                        Visitar Página
+                    </a>
+                </article>
+
+                <!-- CARD 2: PAGOS -->
+                <article class="servicio-card servicio-pagos">
+                    <div class="pagos-icon-circle">
+                        <img src="../static/img/ICONO_PAGOS.png" alt="pagos en línea">
+                    </div>
+
+                    <h3 class="servicio-title">Portal de Pagos</h3>
+                    <p class="servicio-subtitle">
+                        Realiza tus pagos municipales en línea
+                    </p>
+
+                    <a href="https://ehacienda.valleverde.gob.example.com/Transparencia/VentanillaCiudadana"
+                        class="servicio-btn servicio-btn-gold">
+                        Pagar en Línea
+                    </a>
+                </article>
+
+                <!-- CARD 3: BOLSA DE TRABAJO -->
+                <article class="servicio-card servicio-bolsa">
+                    <div class="bolsa-icon-circle">
+                        <img src="../static/img/ICONO_BOLSA.png" alt="bolsa de trabajo">
+                    </div>
+
+                    <h3 class="servicio-title">Bolsa de Trabajo</h3>
+                    <p class="servicio-subtitle">
+                        Oportunidades laborales en el municipio
+                    </p>
+
+                    <a href="#demo-pdf" class="servicio-btn servicio-btn-purple"
+                        target="_blank" rel="noopener noreferrer">
+                        Ver convocatoria
+                    </a>
+                </article>
+
+            </div>
+            <div class="home-divider"></div>
+        </section>
+        <!-- ====== FIN TARJETAS DESTACADAS ====== -->
+
+        <!-- ========== ASISTENTE MUNICIPAL ========== -->
+        <div class="chat-assistant">
+
+            <!-- BOTÓN FLOTANTE -->
+            <button class="chat-assistant-toggle" onclick="toggleAssistant()">
+                <span class="chat-assistant-icon">??</span>
+
+            </button>
+
+            <!-- PANEL DEL ASISTENTE -->
+            <div class="chat-assistant-panel" id="assistantPanel">
+
+                <!-- ENCABEZADO -->
+                <header class="chat-assistant-header">
+                    <div class="chat-assistant-title-group">
+                        <div class="chat-assistant-title">Asistente Municipal</div>
+                        <div class="chat-assistant-subtitle">Portal Institucional Municipal</div>
+                    </div>
+                    <button class="chat-assistant-close" onclick="toggleAssistant()">?</button>
+                </header>
+
+                <!-- MENSAJE DE BIENVENIDA -->
+                <div class="chat-assistant-body">
+
+                    <!-- VISTA INICIAL (MENÚ) -->
+                    <div class="chat-view chat-view-active" id="chatViewMenu">
+                        <div class="chat-bubble chat-bubble-system">
+                            ¡Hola! Soy el asistente virtual de Portal Institucional Municipal.
+                            Estoy aquí para ayudarte con tus quejas y sugerencias.
+                            ¿En qué puedo asistirte hoy?
+                        </div>
+
+                        <p class="chat-menu-label">Selecciona una opción:</p>
+
+                        <div class="chat-menu-grid">
+                            <button class="chat-menu-btn" onclick="openChatView('queja')">
+                                Presentar una queja
+                            </button>
+                            <button class="chat-menu-btn" onclick="openChatView('sugerencia')">
+                                Hacer una sugerencia
+                            </button>
+                            <button class="chat-menu-btn" onclick="openChatView('contacto')">
+                                Información de contacto
+                            </button>
+                            <button class="chat-menu-btn" onclick="openChatView('horarios')">
+                                Horarios de atención
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- VISTA: QUEJA -->
+                    <div class="chat-view" id="chatViewQueja">
+                        <div class="chat-view-header">
+                            <button class="chat-back-btn" onclick="openChatView('menu')">? Regresar</button>
+                            <h3>Formulario de Queja</h3>
+                        </div>
+
+                        <form class="chat-form" onsubmit="enviarQueja(event)">
+                            <label class="chat-label">
+                                Nombre completo
+                                <input type="text" id="quejaNombre" class="chat-input" required>
+                            </label>
+
+                            <label class="chat-label">
+                                Correo electrónico de quien presenta la queja
+                                <input type="email" id="quejaCorreo" class="chat-input" required>
+                            </label>
+
+                            <label class="chat-label">
+                                Selecciona el área
+                                <select id="quejaArea" class="chat-input" required>
+                                    <option value="">Selecciona el área</option>
+                                    <option>Presidencia</option>
+                                    <option>Secretaría Municipal</option>
+                                    <option>Obras Públicas</option>
+                                    <option>Desarrollo Social</option>
+                                    <option>Seguridad Pública</option>
+                                    <option>Tesorería</option>
+                                    <option>Otro</option>
+                                </select>
+                            </label>
+
+                            <label class="chat-label">
+                                Describe tu queja
+                                <textarea id="quejaDescripcion" class="chat-textarea" rows="4" required></textarea>
+                            </label>
+
+                            <p class="chat-helper-text">
+                                Tu queja se enviará al correo oficial del Ayuntamiento para su seguimiento.
+                            </p>
+
+                            <button type="submit" class="chat-submit-btn">
+                                Enviar queja
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- VISTA: SUGERENCIA -->
+                    <div class="chat-view" id="chatViewSugerencia">
+                        <div class="chat-view-header">
+                            <button class="chat-back-btn" onclick="openChatView('menu')">? Regresar</button>
+                            <h3>Enviar sugerencia</h3>
+                        </div>
+
+                        <div class="chat-bubble chat-bubble-system chat-bubble-small">
+                            Por favor escribe tu sugerencia.
+                            Se enviará al correo privado de nuestra presidencia.
+                            (Máximo 300 palabras)
+                        </div>
+                        <br>
+
+                        <form class="chat-form" onsubmit="enviarSugerencia(event)">
+                            <label class="chat-label">
+                                Nombre (opcional)
+                                <input type="text" id="sugNombre" class="chat-input">
+                            </label>
+
+                            <label class="chat-label">
+                                Tu sugerencia
+                                <textarea id="sugTexto" class="chat-textarea" rows="4"
+                                    oninput="actualizarContadorSugerencia()"></textarea>
+                            </label>
+
+                            <p class="chat-helper-text">
+                                Palabras restantes: <span id="sugRestantes">300</span>
+                            </p>
+
+                            <button type="submit" class="chat-submit-btn">
+                                Enviar sugerencia
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- VISTA: CONTACTO -->
+                    <div class="chat-view" id="chatViewContacto">
+                        <div class="chat-view-header">
+                            <button class="chat-back-btn" onclick="openChatView('menu')">? Regresar</button>
+                            <h3>Información de contacto</h3>
+                        </div>
+
+                        <ul class="chat-contact-list">
+                            <li>
+                                <strong>Dirección</strong><br>
+                                Plaza Principal S/N, Centro<br>
+                                Ciudad Demo, México, México
+                            </li>
+                            <li>
+                                <strong>Teléfono</strong><br>
+                                (771) 123-4567
+                            </li>
+                            <li>
+                                <strong>Correo electrónico</strong><br>
+                                <a href="mailto:contacto@municipio.demo">
+                                    contacto@municipio.demo
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- VISTA: HORARIOS -->
+                    <div class="chat-view" id="chatViewHorarios">
+                        <div class="chat-view-header">
+                            <button class="chat-back-btn" onclick="openChatView('menu')">? Regresar</button>
+                            <h3>Horarios de atención</h3>
+                        </div>
+
+                        <div class="chat-hours-card">
+                            <div class="chat-hours-row">
+                                <span>Lunes a Viernes</span>
+                                <span>8:00 AM – 4:00 PM</span>
+                            </div>
+                            <div class="chat-hours-row">
+                                <span>Sábados</span>
+                                <span>9:00 AM – 1:00 PM</span>
+                            </div>
+                            <div class="chat-hours-row">
+                                <span>Domingos</span>
+                                <span class="chat-hours-closed">Cerrado</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- ========== FIN ASISTENTE MUNICIPAL ========== -->
+
+
+    </main>
+
+    <!-- ========================================= -->
+    <!-- SECCIÓN: CONTACTO + HORARIOS (BLANCO)    -->
+    <!-- ========================================= -->
+    <section class="contact-hours-section">
+        <div class="contact-hours-inner">
+
+            <!-- FILA PRINCIPAL: CONTACTO + HORARIOS (SIN MAPA) -->
+            <div class="ch-main-row">
+
+                <!-- COLUMNA CONTACTO -->
+                <div class="ch-contact">
+                    <h2>Contacto</h2>
+
+                    <ul class="ch-contact-list">
+                        <li>
+                            <img src="../static/img/location.png" alt="Dirección">
+                            <div>
+                                <span class="ch-label">Dirección</span>
+                                <p>
+                                    Plaza Principal S/N, Centro<br>
+                                    Ciudad Demo, México, México
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <img src="../static/img/phone.png" alt="Teléfono">
+                            <div>
+                                <span class="ch-label">Teléfono</span>
+                                <p>(771) 123-4567</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <img src="../static/img/mail.png" alt="Correo Electrónico">
+                            <div>
+                                <span class="ch-label">Correo Electrónico</span>
+                                <p>
+                                    <a href="mailto:contacto@municipio.demo">
+                                        contacto@municipio.demo
+                                    </a>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- TARJETA HORARIOS -->
+                <div class="ch-hours-card">
+                    <h3>Horarios de Atención</h3>
+
+                    <div class="ch-hours-content">
+                        <div class="ch-hours-row">
+                            <span class="ch-day">Lunes a Viernes</span>
+                            <span class="ch-time">8:00 AM – 4:00 PM</span>
+                        </div>
+
+                        <div class="ch-hours-row">
+                            <span class="ch-day">Sábados</span>
+                            <span class="ch-time">9:00 AM – 1:00 PM</span>
+                        </div>
+
+                        <div class="ch-hours-row">
+                            <span class="ch-day">Domingos</span>
+                            <span class="ch-time ch-closed">Cerrado</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- ========== FIN SECCIÓN CONTACTO+HORARIOS ========== -->
+
+    <!-- ========================================= -->
+    <!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+    <!-- ========================================= -->
+    <!-- ========================================= -->
+<!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+<!-- ========================================= -->
+<!-- ========================================= -->
+<!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+<!-- ========================================= -->
+<!-- ========================================= -->
+<!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+<!-- ========================================= -->
+<!-- ========================================= -->
+<!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+<!-- ========================================= -->
+<footer class="main-footer">
+    <div class="footer-inner">
+
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h4>Gobierno Municipal</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="directoriomunicipal.html">Directorio Municipal</a></li>
+                    <li><a href="tramitesyservicios.html">Trámites y Servicios</a></li>
+                    <li><a href="transparencia.html">Transparencia</a></li>
+                    <li><a href="login.html">Acceso Admin</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <span class="footer-divider"></span>
+
+        <div class="footer-copy">
+            © 2025 Portal Institucional Municipal. Todos los derechos reservados.
+        </div>
+
+    </div>
+</footer>
+<!-- ========== FIN FOOTER REAL ========== -->
+
+    <!-- Link al archivo JavaScript externo -->
+    <script src="../static/js/menu.js"></script>
+    <!-- Para imágenes dinámicas -->
+    <script src="../static/js/dynamic-image-loader.js"></script>
+
+    <!-- Para PDFs dinámicos (solo en páginas de transparencia) -->
+    <script src="../static/js/transparencia-loader.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+

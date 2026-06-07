@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head><meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Institucional Municipal</title>
+    <link rel="icon" href="../static/img/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/global.css">
+    <link rel="stylesheet ???? stylesheet" href="../static/css/directorio.css">
+
+</head>
+
+<body>
+
+    <!-- Franja negra superior -->
+    <div class="header-top"></div>
+
+    <!-- Contenedor dorado con esquinas inferiores redondeadas -->
+    <header class="site-header">
+        <div class="header-inner">
+
+            <!-- FILA 1: Contacto primero, luego redes sociales -->
+            <div class="top-contact-row">
+                <!-- Contacto items primero -->
+                <div class="contact-items">
+                    <div class="contact-item">
+                        <img src="../static/img/phone.png" alt="">
+                        <span>Tel: (771) 123-4567</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <img src="../static/img/mail.png" alt="">
+                        <a href="mailto:contacto@municipio.demo">
+                            contacto@municipio.demo
+                        </a>
+                    </div>
+
+                    <div class="contact-item">
+                        <img src="../static/img/location.png" alt="">
+                        <span>Ciudad Demo, México</span>
+                    </div>
+                </div>
+
+                <!-- Redes sociales despu�s -->
+                <div class="social-icons">
+                    <a href="#" title="Instagram">
+                        <img src="../static/img/instagram.png" alt="">
+                    </a>
+                    <a href="#" target="_blank" title="Facebook">
+                        <img src="../static/img/facebook.png" alt="">
+                    </a>
+                    <a href="#" target="_blank" title="YouTube">
+                        <img src="../static/img/youtube.png" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <!-- L�nea blanca separadora -->
+            <div class="separator-line"></div>
+
+            <!-- FILA 2: IZQUIERDA LOGO+TEXTOS, DERECHA MEN� -->
+            <div class="brand-row">
+                <!-- Logo + textos (izquierda) -->
+                <div class="brand">
+                    <a href="/" class="brand-logo-circle">
+                        <img src="../static/img/logo.svg" alt="">
+                    </a>
+                    <div class="brand-texts">
+                        <div class="brand-text-main">Portal Institucional Municipal</div>
+                        <div class="brand-text-sub">Administraci�n Municipal 2022-2026</div>
+                    </div>
+                </div>
+
+                <!-- Men� (derecha) -->
+                <nav class="main-nav">
+                    <!-- Bot�n hamburguesa -->
+                    <div class="hamburger" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <!-- Bot�n X para cerrar el men� m�vil -->
+                    <button class="menu-close-btn" onclick="toggleMenu()">?</button>
+
+                    <ul id="navMenu">
+                        <li><a href="tramitesyservicios.html">TR�MITES Y SERVICIOS</a></li>
+                        <li><a href="directoriomunicipal.html">DIRECTORIO MUNICIPAL</a></li>
+                        <li><a href="hayuntamiento.html">H. AYUNTAMIENTO</a></li>
+                        <li><a href="registrofamiliar.html">REGISTRO FAMILIAR</a></li>
+                        <li><a href="poel.html">POEL</a></li>
+
+                        <!-- �REAS con atributo data-submenu-id para control consistente -->
+                        <li class="has-submenu" data-submenu-id="areas" onclick="toggleSubmenu(event)">
+                            <a href="#">�REAS <span class="arrow">?</span></a>
+                            <ul class="submenu">
+                                <li><a href="dif.html">DIF</a></li>
+                                <li><a href="turismo.html">TURISMO</a></li>
+                                <li><a href="multideportivo.html">MULTIDEPORTIVO</a></li>
+                                <li><a href="pcivil.html">PROTECCI�N CIVIL</a></li>
+                                <li><a href="ubr.html">UNIDAD B�SICA DE REHABILITACI�N</a></li>
+                                <li><a href="ob.html">OBRA P�BLICA</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="transparencia.html">TRANSPARENCIA</a></li>
+                        <li><a href="comisiones.html">COMISIONES</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h2>Directorio Municipal</h2>
+                <p>Conoce a nuestro equipo de gobierno comprometido con el servicio a la comunidad</p>
+            </div>
+
+            <!-- President Highlight -->
+            <section class="president-highlight">
+                <div class="president-photo">
+                    <img src="../static/img/user-placeholder.svg"
+                        alt="LIC. MIGUEL MOIS�S GONZ�LEZ BAUTISTA"
+                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                </div>
+                <div class="president-info">
+                    <h3>LIC. MIGUEL MOIS�S GONZ�LEZ BAUTISTA</h3>
+                    <div class="president-position">Presidente Municipal</div>
+                    <div class="president-message">
+                        <p>Es un honor servir a nuestra comunidad como Presidente Municipal de Portal Institucional Municipal.
+                            Nuestro compromiso es trabajar incansablemente por el desarrollo y bienestar de todos los
+                            ciudadanos, promoviendo la transparencia, la participaci�n ciudadana y el progreso
+                            sostenible de nuestro municipio. Juntos construiremos un mejor futuro para las pr�ximas
+                            generaciones.</p>
+                    </div>
+                    <div class="president-contact">
+                        <div class="contact-item-president">
+                            <div class="contact-icon">??</div>
+                            <span>presidente@municipio.demo</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Primer Carrusel: Principales Funcionarios -->
+            <section class="carousel-section">
+                <h3 class="section-title">Principales Funcionarios</h3>
+                <div class="carousel-container">
+                    <button class="carousel-btn carousel-btn-prev" onclick="moveCarousel('principales', -1)">�</button>
+                    <div class="carousel" id="carousel-principales">
+                        <div class="carousel-track" id="track-principales">
+                            <div class="official-card-carousel">
+                                <div class="official-photo-carousel">
+                                    <img src="../static/img/user-placeholder.svg"
+                                        alt="C. LORENA RODR�GUEZ ELIZALDE" loading="lazy"
+                                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                                </div>
+                                <h3>C. LORENA RODR�GUEZ ELIZALDE</h3>
+                                <div class="official-position-carousel">S�ndico Municipal</div>
+                                <p class="official-email">sindicoprocurador@municipio.demo</p>
+                                <a href="tel:+527437410011" class="phone-btn">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="official-card-carousel">
+                                <div class="official-photo-carousel">
+                                    <img src="../static/img/user-placeholder.svg"
+                                        alt="LIC. JOEL HERN�NDEZ Castaneda" loading="lazy"
+                                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                                </div>
+                                <h3>LIC. JOEL HERN�NDEZ Castaneda</h3>
+                                <div class="official-position-carousel">Secretario General Municipal</div>
+                                <p class="official-email">secretario@municipio.demo</p>
+                                <a href="tel:+527437410011" class="phone-btn">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="official-card-carousel">
+                                <div class="official-photo-carousel">
+                                    <img src="../static/img/user-placeholder.svg"
+                                        alt="L.C. Beatriz Solis" loading="lazy"
+                                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                                </div>
+                                <h3>L.C. Beatriz Solis</h3>
+                                <div class="official-position-carousel">Tesorera Municipal</div>
+                                <p class="official-email">secretaria_tesoreria@municipio.demo</p>
+                                <a href="tel:+527437410011" class="phone-btn">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="official-card-carousel">
+                                <div class="official-photo-carousel">
+                                    <img src="../static/img/user-placeholder.svg"
+                                        alt="C. MAURO ALEJANDRO ISLAS CRUZ" loading="lazy"
+                                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                                </div>
+                                <h3>C. MAURO ALEJANDRO ISLAS CRUZ</h3>
+                                <div class="official-position-carousel">Oficial Mayor</div>
+                                <p class="official-email">oficialmayor@municipio.demo</p>
+                                <a href="tel:+527437410011" class="phone-btn">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn carousel-btn-next" onclick="moveCarousel('principales', 1)">�</button>
+                </div>
+            </section>
+
+            <!-- Segundo Carrusel: Directores -->
+            <section class="carousel-section">
+                <h3 class="section-title">Directores</h3>
+                <div class="carousel-container">
+                    <button class="carousel-btn carousel-btn-prev" onclick="moveCarousel('directores', -1)">�</button>
+                    <div class="carousel" id="carousel-directores">
+                        <div class="carousel-track" id="track-directores">
+                            <div class="official-card-carousel">
+                                <div class="official-photo-carousel">
+                                    <img src="../static/img/user-placeholder.svg"
+                                        alt="ARQ. Juan Bautista" loading="lazy"
+                                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                                </div>
+                                <h3>ARQ. Juan Bautista</h3>
+                                <div class="official-position-carousel">Director General de Obras P�blicas</div>
+                                <p class="official-email">secretaria_obraspublicas@municipio.demo</p>
+                                <a href="tel:+527437410011" class="phone-btn">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="official-card-carousel">
+                                <div class="official-photo-carousel">
+                                    <img src="../static/img/user-placeholder.svg"
+                                        alt="C. David Hernandez" loading="lazy"
+                                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                                </div>
+                                <h3>C. DAVID TOLENTINO HERN�NDEZ</h3>
+                                <div class="official-position-carousel">Director de Servicios Municipales</div>
+                                <p class="official-email">serviciosmunicipales@municipio.demo</p>
+                                <a href="tel:+527437410011" class="phone-btn">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="official-card-carousel">
+                                <div class="official-photo-carousel">
+                                    <img src="../static/img/user-placeholder.svg"
+                                        alt="CMDTE. Santos Hernandez" loading="lazy"
+                                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                                </div>
+                                <h3>CMDTE. SANTOS HERN�NDEZ RAM�REZ</h3>
+                                <div class="official-position-carousel">Director de Seguridad P�blica</div>
+                                <p class="official-email">secretaria_seguridadytransito@municipio.demo</p>
+                                <a href="tel:+527437410011" class="phone-btn">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="official-card-carousel">
+                                <div class="official-photo-carousel">
+                                    <img src="../static/img/user-placeholder.svg"
+                                        alt="C. Daniel Perez" loading="lazy"
+                                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                                </div>
+                                <h3>C. DANIEL ALEJANDRO P�REZ AMEZCUA</h3>
+                                <div class="official-position-carousel">Director de Reglamentos y Espect�culos</div>
+                                <p class="official-email">dir_reglamentos@municipio.demo</p>
+                                <a href="tel:+527437410011" class="phone-btn">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="official-card-carousel">
+                                <div class="official-photo-carousel">
+                                    <img src="../static/img/user-placeholder.svg"
+                                        alt="LIC. Diego Marin" loading="lazy"
+                                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                                </div>
+                                <h3>LIC. Diego Marin</h3>
+                                <div class="official-position-carousel">Director de Educaci�n y Desarrollo Econ�mico
+                                </div>
+                                <p class="official-email">educacion@municipio.demo</p>
+                                <a href="tel:+527437410011" class="phone-btn">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="official-card-carousel">
+                                <div class="official-photo-carousel">
+                                    <img src="../static/img/user-placeholder.svg"
+                                        alt="LIC. Julian Castillo" loading="lazy"
+                                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                                </div>
+                                <h3>LIC. Julian Castillo</h3>
+                                <div class="official-position-carousel">Director de Salud y Bienestar</div>
+                                <p class="official-email">salud@municipio.demo</p>
+                                <a href="tel:+527437410011" class="phone-btn">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn carousel-btn-next" onclick="moveCarousel('directores', 1)">�</button>
+                </div>
+            </section>
+
+            <!-- Tercer Carrusel: DIF y Otras Direcciones -->
+            <section class="carousel-section">
+                <h3 class="section-title">DIF Municipal y M�s</h3>
+                <div class="carousel-container">
+                    <button class="carousel-btn carousel-btn-prev" onclick="moveCarousel('dif', -1)">�</button>
+                    <div class="carousel" id="carousel-dif">
+                        <div class="carousel-track" id="track-dif">
+                            <div class="official-card-carousel">
+                                <div class="official-photo-carousel">
+                                    <img src="../static/img/user-placeholder.svg"
+                                        alt="C. Yesenia Lucio" loading="lazy"
+                                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                                </div>
+                                <h3>C. YESENIA LUCIO RODR�GUEZ</h3>
+                                <div class="official-position-carousel">Directora de DIF Municipal</div>
+                                <p class="official-email">sistema_dif@municipio.demo</p>
+                                <a href="tel:+527437410011" class="phone-btn">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="official-card-carousel">
+                                <div class="official-photo-carousel">
+                                    <img src="../static/img/user-placeholder.svg"
+                                        alt="ARQ. Alexis Gonzalez" loading="lazy"
+                                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                                </div>
+                                <h3>ARQ. ALEYOIS GONZ�LEZ RODR�GUEZ</h3>
+                                <div class="official-position-carousel">Directora de Catastro</div>
+                                <p class="official-email">catastro@municipio.demo</p>
+                                <a href="tel:+527437410011" class="phone-btn">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="official-card-carousel">
+                                <div class="official-photo-carousel">
+                                    <img src="../static/img/user-placeholder.svg"
+                                        alt="ING. Lucia Parra" loading="lazy"
+                                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                                </div>
+                                <h3>ING. Lucia Parra �VILA</h3>
+                                <div class="official-position-carousel">Directora de Ecolog�a</div>
+                                <p class="official-email">ecologia@municipio.demo</p>
+                                <a href="tel:+527437410011" class="phone-btn">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="official-card-carousel">
+                                <div class="official-photo-carousel">
+                                    <img src="../static/img/user-placeholder.svg"
+                                        alt="ING. Fabian Ortega" loading="lazy"
+                                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                                </div>
+                                <h3>ING. ARMANDO RODR�GUEZ LIM�N</h3>
+                                <div class="official-position-carousel">Jefe Desarrollo Urbano</div>
+                                <p class="official-email">desarrollo_urbano@municipio.demo</p>
+                                <a href="tel:+527437410011" class="phone-btn">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="official-card-carousel">
+                                <div class="official-photo-carousel">
+                                    <img src="../static/img/user-placeholder.svg"
+                                        alt="C. Juan Pablo Mejia" loading="lazy"
+                                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                                </div>
+                                <h3>C. JUAN PABLO MEJ�A MENESES</h3>
+                                <div class="official-position-carousel">Jefe de Recursos Humanos</div>
+                                <p class="official-email">recursos_humanos@municipio.demo</p>
+                                <a href="tel:+527437410011" class="phone-btn">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="official-card-carousel">
+                                <div class="official-photo-carousel">
+                                    <img src="../static/img/user-placeholder.svg"
+                                        alt="LIC. MARIA FERNANDA MU�OZ" loading="lazy"
+                                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                                </div>
+                                <h3>LIC. MAR�A FERNANDA MU�OZ</h3>
+                                <div class="official-position-carousel">Jefe de Planeaci�n</div>
+                                <p class="official-email">planeacion@municipio.demo</p>
+                                <a href="tel:+527437410011" class="phone-btn">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn carousel-btn-next" onclick="moveCarousel('dif', 1)">�</button>
+                </div>
+            </section>
+
+            <!-- Cuarto Carrusel: Encargados y Coordinadores -->
+            <section class="carousel-section">
+                <h3 class="section-title">Encargados y Coordinadores</h3>
+                <div class="carousel-container">
+                    <button class="carousel-btn carousel-btn-prev" onclick="moveCarousel('encargados', -1)">�</button>
+                    <div class="carousel" id="carousel-encargados">
+                        <div class="carousel-track" id="track-encargados">
+                            <div class="official-card-carousel">
+                                <div class="official-photo-carousel">
+                                    <img src="../static/img/user-placeholder.svg"
+                                        alt="C. Michelle Juarez" loading="lazy"
+                                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                                </div>
+                                <h3>C. MITZI MICHELLE JU�REZ Granados</h3>
+                                <div class="official-position-carousel">Encargada de Turismo</div>
+                                <p class="official-email">turismo@municipio.demo</p>
+                                <a href="tel:+527437410011" class="phone-btn">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="official-card-carousel">
+                                <div class="official-photo-carousel">
+                                    <img src="../static/img/user-placeholder.svg"
+                                        alt="C. MARIANA BEATRIZ MEDINA Castaneda" loading="lazy"
+                                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                                </div>
+                                <h3>C. MARIANA BEATRIZ MEDINA Castaneda</h3>
+                                <div class="official-position-carousel">Titular de Transparencia</div>
+                                <p class="official-email">unidadtransparencia@municipio.demo</p>
+                                <a href="tel:+527437410011" class="phone-btn">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="official-card-carousel">
+                                <div class="official-photo-carousel">
+                                    <img src="../static/img/user-placeholder.svg"
+                                        alt="C. Sandra Orozco" loading="lazy"
+                                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                                </div>
+                                <h3>C. Sandra Orozco</h3>
+                                <div class="official-position-carousel">Encargada de Programa Alimentario</div>
+                                <p class="official-email">programa_alimentariodif@municipio.demo</p>
+                                <a href="tel:+527437410011" class="phone-btn">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="official-card-carousel">
+                                <div class="official-photo-carousel">
+                                    <img src="../static/img/user-placeholder.svg"
+                                        alt="ING. Silvio Montes" loading="lazy"
+                                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                                </div>
+                                <h3>ING. EDGAR JES�S Montes</h3>
+                                <div class="official-position-carousel">Encargado de Comunicaci�n Social</div>
+                                <p class="official-email">comunicacion_social@municipio.demo</p>
+                                <a href="tel:+527437410011" class="phone-btn">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="official-card-carousel">
+                                <div class="official-photo-carousel">
+                                    <img src="../static/img/user-placeholder.svg"
+                                        alt="ING. Sergio Rojas" loading="lazy"
+                                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                                </div>
+                                <h3>ING. RAUL CRUZ RODR�GUEZ</h3>
+                                <div class="official-position-carousel">Encargado de TICs</div>
+                                <p class="official-email">dir_tics@municipio.demo</p>
+                                <a href="tel:+527437410011" class="phone-btn">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="official-card-carousel">
+                                <div class="official-photo-carousel">
+                                    <img src="../static/img/user-placeholder.svg"
+                                        alt="LIC. Mario Rivera" loading="lazy"
+                                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                                </div>
+                                <h3>LIC. Mario Rivera</h3>
+                                <div class="official-position-carousel">Encargado de Fomento Agropecuario</div>
+                                <p class="official-email">desarrolloagropecuario@municipio.demo</p>
+                                <a href="tel:+527437410011" class="phone-btn">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn carousel-btn-next" onclick="moveCarousel('encargados', 1)">�</button>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+
+    <!-- ========================================= -->
+    <!-- SECCI�N: CONTACTO + HORARIOS (BLANCO)    -->
+    <!-- ========================================= -->
+    <section class="contact-hours-section">
+        <div class="contact-hours-inner">
+
+            <!-- FILA PRINCIPAL: CONTACTO + HORARIOS (SIN MAPA) -->
+            <div class="ch-main-row">
+
+                <!-- COLUMNA CONTACTO -->
+                <div class="ch-contact">
+                    <h2>Contacto</h2>
+
+                    <ul class="ch-contact-list">
+                        <li>
+                            <img src="../static/img/location.png" alt="Direcci�n">
+                            <div>
+                                <span class="ch-label">Direcci�n</span>
+                                <p>
+                                    Plaza Principal S/N, Centro<br>
+                                    Ciudad Demo, México, M�xico
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <img src="../static/img/phone.png" alt="Tel�fono">
+                            <div>
+                                <span class="ch-label">Tel�fono</span>
+                                <p>(771) 123-4567</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <img src="../static/img/mail.png" alt="Correo Electr�nico">
+                            <div>
+                                <span class="ch-label">Correo Electr�nico</span>
+                                <p>
+                                    <a href="mailto:contacto@municipio.demo">
+                                        contacto@municipio.demo
+                                    </a>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- TARJETA HORARIOS -->
+                <div class="ch-hours-card">
+                    <h3>Horarios de Atenci�n</h3>
+
+                    <div class="ch-hours-content">
+                        <div class="ch-hours-row">
+                            <span class="ch-day">Lunes a Viernes</span>
+                            <span class="ch-time">8:00 AM � 4:00 PM</span>
+                        </div>
+
+                        <div class="ch-hours-row">
+                            <span class="ch-day">S�bados</span>
+                            <span class="ch-time">9:00 AM � 1:00 PM</span>
+                        </div>
+
+                        <div class="ch-hours-row">
+                            <span class="ch-day">Domingos</span>
+                            <span class="ch-time ch-closed">Cerrado</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- ========== FIN SECCI�N CONTACTO+HORARIOS ========== -->
+
+    <!-- ========================================= -->
+    <!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+    <!-- ========================================= -->
+    <!-- ========================================= -->
+<!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+<!-- ========================================= -->
+<!-- ========================================= -->
+<!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+<!-- ========================================= -->
+<!-- ========================================= -->
+<!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+<!-- ========================================= -->
+<!-- ========================================= -->
+<!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+<!-- ========================================= -->
+<footer class="main-footer">
+    <div class="footer-inner">
+
+        <div class="footer-grid">
+
+            <div class="footer-column">
+                <h4>Gobierno Municipal</h4>
+                <ul>
+                    <li><a href="hayuntamiento.html">H. Ayuntamiento</a></li>
+                    <li><a href="directoriomunicipal.html">Directorio Municipal</a></li>
+                    <li><a href="comisiones.html">Comisiones</a></li>
+                    <li><a href="poel.html">POEL</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>�reas</h4>
+                <ul>
+                    <li><a href="dif.html">DIF</a></li>
+                    <li><a href="turismo.html">Turismo</a></li>
+                    <li><a href="multideportivo.html">Multideportivo</a></li>
+                    <li><a href="pcivil.html">Protecci�n Civil</a></li>
+                    <li><a href="ubr.html">Unidad B�sica de Rehabilitaci�n</a></li>
+                    <li><a href="ob.html">Obra P�blica</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Transparencia</h4>
+                <ul>
+                    <li><a href="transparencia.html">Portal de Transparencia</a></li>
+                    <li><a href="tramitesyservicios.html">Tr�mites y Servicios</a></li>
+                    <li><a href="registrofamiliar.html">Registro Familiar</a></li>
+                    <li><a href="videos.html">Videos</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Enlaces de Inter�s</h4>
+                <ul>
+                    <li><a href="https://www.valleverde.gob.example.com/" target="_blank">Gobierno del Estado</a></li>
+                    <li><a href="https://www.gob.mx/" target="_blank">Gobierno Federal</a></li>
+                    <li><a href="https://www.inegi.org.mx/" target="_blank">INEGI</a></li>
+                    <li><a href="https://www.plataformadetransparencia.org.mx/" target="_blank">Plataforma Nacional</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <span class="footer-divider"></span>
+
+        <div class="footer-copy">
+            � 2025 Portal Institucional Municipal. Todos los derechos reservados.
+        </div>
+
+    </div>
+</footer>
+<!-- ========== FIN FOOTER REAL ========== -->
+
+    <!-- Link al archivo JavaScript externo -->
+    <script src="../static/js/menu.js"></script>
+    <script>
+        function initInfiniteCarousel(name) {
+            const track = document.getElementById(`track-${name}`);
+            const cards = Array.from(track.children);
+            const total = cards.length;
+
+            // Clonar primero y �ltimo
+            const first = cards[0].cloneNode(true);
+            const last = cards[total - 1].cloneNode(true);
+
+            track.insertBefore(last, cards[0]);
+            track.appendChild(first);
+
+            const state = {
+                index: 1,
+                total: total,
+                cardWidth: 0
+            };
+
+            window.addEventListener("resize", () => updatePosition(name, state));
+            updatePosition(name, state);
+
+            track.dataset.carouselState = JSON.stringify(state);
+        }
+
+        function updatePosition(name, state) {
+            const track = document.getElementById(`track-${name}`);
+            const container = track.parentElement;
+
+            const width = container.offsetWidth;
+            let perView = 4;
+
+            if (window.innerWidth <= 992) perView = 3;
+            if (window.innerWidth <= 768) perView = 2;
+            if (window.innerWidth <= 480) perView = 1;
+
+            state.cardWidth = width / perView;
+
+            track.style.transform = `translateX(${-(state.index * state.cardWidth)}px)`;
+        }
+
+        function moveCarousel(name, dir) {
+            const track = document.getElementById(`track-${name}`);
+            const state = JSON.parse(track.dataset.carouselState);
+
+            state.index += dir;
+
+            track.style.transition = "transform 0.3s ease";
+            track.style.transform = `translateX(${-(state.index * state.cardWidth)}px)`;
+
+            // Cuando termina animaci�n, revisamos si est� en clon
+            track.addEventListener("transitionend", function handler() {
+                track.removeEventListener("transitionend", handler);
+
+                if (state.index === 0) {
+                    // Est�s en el clon del final
+                    state.index = state.total;
+                    track.style.transition = "none";
+                    track.style.transform = `translateX(${-(state.index * state.cardWidth)}px)`;
+                } else if (state.index === state.total + 1) {
+                    // Est�s en el clon del principio
+                    state.index = 1;
+                    track.style.transition = "none";
+                    track.style.transform = `translateX(${-(state.index * state.cardWidth)}px)`;
+                }
+
+                track.dataset.carouselState = JSON.stringify(state);
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            ["principales", "directores", "dif", "encargados"].forEach(initInfiniteCarousel);
+        });
+    </script>
+    <!-- Para im�genes din�micas -->
+    <script src="../static/js/dynamic-image-loader.js"></script>
+
+    <!-- Para PDFs din�micos (solo en p�ginas de transparencia) -->
+    <script src="../static/js/transparencia-loader.js"></script>
+
+
+</body>
+
+</html>
+
+
+
+

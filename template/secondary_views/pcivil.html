@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head><meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Institucional Municipal</title>
+    <link rel="icon" href="../static/img/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/global.css">
+    <link rel="stylesheet" href="../static/css/areas/pcivil.css">
+</head>
+
+<body>
+
+    <!-- Franja negra superior -->
+    <div class="header-top"></div>
+
+    <!-- Contenedor dorado con esquinas inferiores redondeadas -->
+    <header class="site-header">
+        <div class="header-inner">
+
+            <!-- FILA 1: Contacto primero, luego redes sociales -->
+            <div class="top-contact-row">
+                <!-- Contacto items primero -->
+                <div class="contact-items">
+                    <div class="contact-item">
+                        <img src="../static/img/phone.png" alt="">
+                        <span>Tel: (771) 123-4567</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <img src="../static/img/mail.png" alt="">
+                        <a href="mailto:contacto@municipio.demo">
+                            contacto@municipio.demo
+                        </a>
+                    </div>
+
+                    <div class="contact-item">
+                        <img src="../static/img/location.png" alt="">
+                        <span>Ciudad Demo, México</span>
+                    </div>
+                </div>
+
+                <!-- Redes sociales despu�s -->
+                <div class="social-icons">
+                    <a href="#" title="Instagram">
+                        <img src="../static/img/instagram.png" alt="">
+                    </a>
+                    <a href="#" target="_blank" title="Facebook">
+                        <img src="../static/img/facebook.png" alt="">
+                    </a>
+                    <a href="#" target="_blank" title="YouTube">
+                        <img src="../static/img/youtube.png" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <!-- L�nea blanca separadora -->
+            <div class="separator-line"></div>
+
+            <!-- FILA 2: IZQUIERDA LOGO+TEXTOS, DERECHA MEN� -->
+            <div class="brand-row">
+                <!-- Logo + textos (izquierda) -->
+                <div class="brand">
+                    <a href="/" class="brand-logo-circle">
+                        <img src="../static/img/logo.svg" alt="">
+                    </a>
+                    <div class="brand-texts">
+                        <div class="brand-text-main">Portal Institucional Municipal</div>
+                        <div class="brand-text-sub">Administraci�n Municipal 2022-2026</div>
+                    </div>
+                </div>
+
+                <!-- Men� (derecha) -->
+                <nav class="main-nav">
+                    <!-- Bot�n hamburguesa -->
+                    <div class="hamburger" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <!-- Bot�n X para cerrar el men� m�vil -->
+                    <button class="menu-close-btn" onclick="toggleMenu()">?</button>
+
+                    <ul id="navMenu">
+                        <li><a href="tramitesyservicios.html">TR�MITES Y SERVICIOS</a></li>
+                        <li><a href="directoriomunicipal.html">DIRECTORIO MUNICIPAL</a></li>
+                        <li><a href="hayuntamiento.html">H. AYUNTAMIENTO</a></li>
+                        <li><a href="registrofamiliar.html">REGISTRO FAMILIAR</a></li>
+                        <li><a href="poel.html">POEL</a></li>
+
+                        <!-- �REAS con atributo data-submenu-id para control consistente -->
+                        <li class="has-submenu" data-submenu-id="areas" onclick="toggleSubmenu(event)">
+                            <a href="#">�REAS <span class="arrow">?</span></a>
+                            <ul class="submenu">
+                                <li><a href="dif.html">DIF</a></li>
+                                <li><a href="turismo.html">TURISMO</a></li>
+                                <li><a href="multideportivo.html">MULTIDEPORTIVO</a></li>
+                                <li><a href="pcivil.html">PROTECCI�N CIVIL</a></li>
+                                <li><a href="ubr.html">UNIDAD B�SICA DE REHABILITACI�N</a></li>
+                                <li><a href="ob.html">OBRA P�BLICA</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="transparencia.html">TRANSPARENCIA</a></li>
+                        <li><a href="comisiones.html">COMISIONES</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- CONTENIDO DE LA P�GINA -->
+    <main class="contenido">
+
+        <!-- =============== BANNER VIDEO PROTECCI�N CIVIL =============== -->
+        <section class="pcivil-banner">
+            <!-- Video de fondo -->
+            <video src="../static/img/proteccioncivil/intro.mp4" class="pcivil-banner-video" autoplay muted loop
+                playsinline>
+            </video>
+
+            <!-- Filtro dorado encima del video -->
+            <div class="pcivil-banner-overlay"></div>
+
+            <!-- Contenido centrado -->
+            <div class="pcivil-banner-content">
+                <div class="pcivil-banner-title-box">
+                    <h1 class="pcivil-banner-title">PROTECCI�N CIVIL</h1>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =============== SECCI�N INFO PROTECCI�N CIVIL =============== -->
+        <!-- =============== SECCI�N INFO PROTECCI�N CIVIL =============== -->
+        <!-- =============== SECCI�N INFO PROTECCI�N CIVIL =============== -->
+        <!-- =============== SECCI�N INFO PROTECCI�N CIVIL =============== -->
+        <section class="pcivil-info-section">
+            <div class="pcivil-info-layout">
+
+                <!-- VIDEO IZQUIERDA (FORMATO VERTICAL / CUADRADO SEG�N PANTALLA) -->
+                <div class="pcivil-video-wrapper">
+                    <video src="../static/img/proteccioncivil/proteccioncivil.mp4" class="pcivil-video" controls
+                        playsinline>
+                    </video>
+                    <div class="pcivil-video-glow"></div>
+                </div>
+
+                <!-- TEXTO DERECHA -->
+                <div class="pcivil-text-container">
+                    <article class="pcivil-text-card">
+
+                        <div class="pcivil-badge">
+                            <span class="pcivil-badge-dot"></span>
+                            Protecci�n Civil � Ayuntamiento de Portal Institucional Municipal
+                        </div>
+
+                        <h2 class="pcivil-text-title">
+                            Labor de Protecci�n Civil
+                        </h2>
+
+                        <div class="pcivil-divider"></div>
+
+                        <p class="pcivil-paragraph">
+                            Trabajamos para prevenir riesgos, responder de manera inmediata ante emergencias
+                            y proteger la vida de la ciudadan�a.
+                        </p>
+
+                        <p class="pcivil-paragraph pcivil-paragraph-strong">
+                            Realizamos inspecciones, capacitaciones, simulacros y atenci�n directa en incidentes,
+                            siempre con el compromiso de mantener a Portal Institucional Municipal seguro, preparado y protegido.
+                        </p>
+
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <!-- =============== SECCI�N RALLY PROTECCI�N CIVIL =============== -->
+        <!-- =============== SECCI�N RALLY PROTECCI�N CIVIL =============== -->
+        <!-- =============== SECCI�N RALLY PROTECCI�N CIVIL =============== -->
+        <section class="pcivil-rally-section" id="rally-ninos">
+            <div class="pcivil-rally-inner">
+
+                <!-- TEXTO IZQUIERDA -->
+                <article class="pcivil-rally-text">
+                    <span class="pcivil-rally-pill">Protecci�n Civil � Portal Institucional Municipal</span>
+                    <h2 class="pcivil-rally-title">
+                        Segundo Rally de Emergencias<br>
+                        D�a del Ni�o
+                    </h2>
+                    <p class="pcivil-rally-paragraph">
+                        En el marco de la celebraci�n del D�a del Ni�o, Protecci�n Civil Municipal llev� a cabo el
+                        segundo rally de emergencias con los peque�os, en donde adem�s de divertirse, aprendieron
+                        diversas t�cnicas de protecci�n y prevenci�n a cargo de los elementos de PC.
+                    </p>
+                </article>
+
+                <!-- CARRUSEL DERECHA -->
+                <div class="pcivil-rally-carousel">
+                    <div class="pcivil-rally-frame">
+                        <!-- principal primero -->
+                        <img src="../static/img/proteccioncivil/principal.jpg"
+                            alt="Segundo rally de emergencias D�a del Ni�o - Protecci�n Civil"
+                            class="pcivil-rally-image pcivil-rally-image-active" data-index="0">
+
+                        <!-- resto de im�genes -->
+                        <img src="../static/img/proteccioncivil/11.jpg" alt="Rally Protecci�n Civil 11"
+                            class="pcivil-rally-image" data-index="1">
+                        <img src="../static/img/proteccioncivil/22.jpg" alt="Rally Protecci�n Civil 22"
+                            class="pcivil-rally-image" data-index="2">
+                        <img src="../static/img/proteccioncivil/33.jpg" alt="Rally Protecci�n Civil 33"
+                            class="pcivil-rally-image" data-index="3">
+                        <img src="../static/img/proteccioncivil/44.jpg" alt="Rally Protecci�n Civil 44"
+                            class="pcivil-rally-image" data-index="4">
+                        <img src="../static/img/proteccioncivil/55.jpg" alt="Rally Protecci�n Civil 55"
+                            class="pcivil-rally-image" data-index="5">
+                        <img src="../static/img/proteccioncivil/66.jpg" alt="Rally Protecci�n Civil 66"
+                            class="pcivil-rally-image" data-index="6">
+                        <img src="../static/img/proteccioncivil/77.jpg" alt="Rally Protecci�n Civil 77"
+                            class="pcivil-rally-image" data-index="7">
+                        <img src="../static/img/proteccioncivil/88.jpg" alt="Rally Protecci�n Civil 88"
+                            class="pcivil-rally-image" data-index="8">
+                        <img src="../static/img/proteccioncivil/99.jpg" alt="Rally Protecci�n Civil 99"
+                            class="pcivil-rally-image" data-index="9">
+                        <img src="../static/img/proteccioncivil/100.jpg" alt="Rally Protecci�n Civil 100"
+                            class="pcivil-rally-image" data-index="10">
+                    </div>
+
+                    <!-- Flechas -->
+                    <button class="pcivil-rally-arrow pcivil-rally-prev" type="button" aria-label="Foto anterior">
+                        �
+                    </button>
+                    <button class="pcivil-rally-arrow pcivil-rally-next" type="button" aria-label="Foto siguiente">
+                        �
+                    </button>
+
+                    <!-- Puntos -->
+                    <div class="pcivil-rally-dots">
+                        <button class="pcivil-rally-dot pcivil-rally-dot-active" data-index="0"
+                            aria-label="Foto 1"></button>
+                        <button class="pcivil-rally-dot" data-index="1" aria-label="Foto 2"></button>
+                        <button class="pcivil-rally-dot" data-index="2" aria-label="Foto 3"></button>
+                        <button class="pcivil-rally-dot" data-index="3" aria-label="Foto 4"></button>
+                        <button class="pcivil-rally-dot" data-index="4" aria-label="Foto 5"></button>
+                        <button class="pcivil-rally-dot" data-index="5" aria-label="Foto 6"></button>
+                        <button class="pcivil-rally-dot" data-index="6" aria-label="Foto 7"></button>
+                        <button class="pcivil-rally-dot" data-index="7" aria-label="Foto 8"></button>
+                        <button class="pcivil-rally-dot" data-index="8" aria-label="Foto 9"></button>
+                        <button class="pcivil-rally-dot" data-index="9" aria-label="Foto 10"></button>
+                        <button class="pcivil-rally-dot" data-index="10" aria-label="Foto 11"></button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+    </main>
+
+    <!-- ========================================= -->
+    <!-- SECCI�N: CONTACTO + HORARIOS (BLANCO)    -->
+    <!-- ========================================= -->
+    <section class="contact-hours-section">
+        <div class="contact-hours-inner">
+
+            <!-- FILA PRINCIPAL: CONTACTO + HORARIOS (SIN MAPA) -->
+            <div class="ch-main-row">
+
+                <!-- COLUMNA CONTACTO -->
+                <div class="ch-contact">
+                    <h2>Contacto</h2>
+
+                    <ul class="ch-contact-list">
+                        <li>
+                            <img src="../static/img/location.png" alt="Direcci�n">
+                            <div>
+                                <span class="ch-label">Direcci�n</span>
+                                <p>
+                                    Plaza Principal S/N, Centro<br>
+                                    Ciudad Demo, México, M�xico
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <img src="../static/img/phone.png" alt="Tel�fono">
+                            <div>
+                                <span class="ch-label">Tel�fono</span>
+                                <p>(771) 123-4567</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <img src="../static/img/mail.png" alt="Correo Electr�nico">
+                            <div>
+                                <span class="ch-label">Correo Electr�nico</span>
+                                <p>
+                                    <a href="mailto:contacto@municipio.demo">
+                                        contacto@municipio.demo
+                                    </a>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- TARJETA HORARIOS -->
+                <div class="ch-hours-card">
+                    <h3>Horarios de Atenci�n</h3>
+
+                    <div class="ch-hours-content">
+                        <div class="ch-hours-row">
+                            <span class="ch-day">Lunes a Viernes</span>
+                            <span class="ch-time">8:00 AM � 4:00 PM</span>
+                        </div>
+
+                        <div class="ch-hours-row">
+                            <span class="ch-day">S�bados</span>
+                            <span class="ch-time">9:00 AM � 1:00 PM</span>
+                        </div>
+
+                        <div class="ch-hours-row">
+                            <span class="ch-day">Domingos</span>
+                            <span class="ch-time ch-closed">Cerrado</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- ========== FIN SECCI�N CONTACTO+HORARIOS ========== -->
+
+    <!-- ========================================= -->
+    <!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+    <!-- ========================================= -->
+    <!-- ========================================= -->
+<!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+<!-- ========================================= -->
+<!-- ========================================= -->
+<!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+<!-- ========================================= -->
+<!-- ========================================= -->
+<!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+<!-- ========================================= -->
+<!-- ========================================= -->
+<!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+<!-- ========================================= -->
+<footer class="main-footer">
+    <div class="footer-inner">
+
+        <div class="footer-grid">
+
+            <div class="footer-column">
+                <h4>Gobierno Municipal</h4>
+                <ul>
+                    <li><a href="hayuntamiento.html">H. Ayuntamiento</a></li>
+                    <li><a href="directoriomunicipal.html">Directorio Municipal</a></li>
+                    <li><a href="comisiones.html">Comisiones</a></li>
+                    <li><a href="poel.html">POEL</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>�reas</h4>
+                <ul>
+                    <li><a href="dif.html">DIF</a></li>
+                    <li><a href="turismo.html">Turismo</a></li>
+                    <li><a href="multideportivo.html">Multideportivo</a></li>
+                    <li><a href="pcivil.html">Protecci�n Civil</a></li>
+                    <li><a href="ubr.html">Unidad B�sica de Rehabilitaci�n</a></li>
+                    <li><a href="ob.html">Obra P�blica</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Transparencia</h4>
+                <ul>
+                    <li><a href="transparencia.html">Portal de Transparencia</a></li>
+                    <li><a href="tramitesyservicios.html">Tr�mites y Servicios</a></li>
+                    <li><a href="registrofamiliar.html">Registro Familiar</a></li>
+                    <li><a href="videos.html">Videos</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Enlaces de Inter�s</h4>
+                <ul>
+                    <li><a href="https://www.valleverde.gob.example.com/" target="_blank">Gobierno del Estado</a></li>
+                    <li><a href="https://www.gob.mx/" target="_blank">Gobierno Federal</a></li>
+                    <li><a href="https://www.inegi.org.mx/" target="_blank">INEGI</a></li>
+                    <li><a href="https://www.plataformadetransparencia.org.mx/" target="_blank">Plataforma Nacional</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <span class="footer-divider"></span>
+
+        <div class="footer-copy">
+            � 2025 Portal Institucional Municipal. Todos los derechos reservados.
+        </div>
+
+    </div>
+</footer>
+<!-- ========== FIN FOOTER REAL ========== -->
+
+    <!-- Link al archivo JavaScript externo -->
+    <script src="../static/js/menu.js"></script>
+    <script src="../static/js/pcivil.js"></script>
+    <!-- Para im�genes din�micas -->
+    <script src="../static/js/dynamic-image-loader.js"></script>
+
+    <!-- Para PDFs din�micos (solo en p�ginas de transparencia) -->
+    <script src="../static/js/transparencia-loader.js"></script>
+
+
+</body>
+
+</html>
+
+
+
+

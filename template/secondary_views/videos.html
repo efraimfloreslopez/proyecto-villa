@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos - Sistema TIC</title>
+    <link rel="stylesheet" href="../static/css/dashboard.css">
+    <link rel="stylesheet" href="../static/css/videos.css">
+</head>
+
+<body>
+    <!-- Sidebar (same as publicaciones.html) -->
+    <aside class="sidebar">
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <header class="top-bar">
+            <button class="menu-toggle" id="menuToggle">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+
+            <h1 class="page-title">Videos</h1>
+
+            <div class="user-menu">
+                <span class="user-name" id="userName">Admin TIC</span>
+                <div class="user-avatar">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="8" r="4" fill="currentColor" />
+                        <path d="M20 21C20 16.5817 16.4183 13 12 13C7.58172 13 4 16.5817 4 21" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </div>
+            </div>
+        </header>
+
+        <div class="videos-content">
+            <div class="action-bar">
+                <button class="btn btn-primary" id="newVideoBtn">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                        <line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                    </svg>
+                    Agregar Video
+                </button>
+
+                <input type="text" id="searchVideo" placeholder="Buscar video..." class="search-input">
+            </div>
+
+            <div class="videos-grid" id="videosGrid">
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="play-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 3L19 12L5 21V3Z" fill="currentColor" />
+                            </svg>
+                        </div>
+                        <span class="video-duration">15:23</span>
+                    </div>
+                    <div class="video-content">
+                        <h3>Sesión de Cabildo Enero 2025</h3>
+                        <p class="video-date">10/01/2025</p>
+                        <p class="video-views">1,234 visualizaciones</p>
+                        <div class="video-actions">
+                            <button class="action-btn edit">Editar</button>
+                            <button class="action-btn delete">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="play-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 3L19 12L5 21V3Z" fill="currentColor" />
+                            </svg>
+                        </div>
+                        <span class="video-duration">8:45</span>
+                    </div>
+                    <div class="video-content">
+                        <h3>Inauguración Plaza Cívica</h3>
+                        <p class="video-date">28/12/2024</p>
+                        <p class="video-views">2,567 visualizaciones</p>
+                        <div class="video-actions">
+                            <button class="action-btn edit">Editar</button>
+                            <button class="action-btn delete">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="play-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 3L19 12L5 21V3Z" fill="currentColor" />
+                            </svg>
+                        </div>
+                        <span class="video-duration">12:10</span>
+                    </div>
+                    <div class="video-content">
+                        <h3>Feria del Pueblo 2024</h3>
+                        <p class="video-date">15/11/2024</p>
+                        <p class="video-views">3,891 visualizaciones</p>
+                        <div class="video-actions">
+                            <button class="action-btn edit">Editar</button>
+                            <button class="action-btn delete">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Video Modal -->
+    <div class="modal" id="videoModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Agregar Video</h2>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <form class="video-form" id="videoForm">
+                <div class="form-group">
+                    <label for="videoTitle">Título del video</label>
+                    <input type="text" id="videoTitle" required placeholder="Título del video">
+                </div>
+
+                <div class="form-group">
+                    <label for="videoUrl">URL del video (YouTube, Vimeo, etc.)</label>
+                    <input type="url" id="videoUrl" required placeholder="https://youtube.com/watch?v=...">
+                </div>
+
+                <div class="form-group">
+                    <label for="videoDescription">Descripción (opcional)</label>
+                    <textarea id="videoDescription" rows="4" placeholder="Descripción del video..."></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelVideo">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Agregar Video</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../static/js/admin-common.js"></script>
+    <script>
+        const newVideoBtn = document.getElementById('newVideoBtn');
+        const videoModal = document.getElementById('videoModal');
+        const closeModal = document.getElementById('closeModal');
+        const cancelVideo = document.getElementById('cancelVideo');
+
+        newVideoBtn.addEventListener('click', () => {
+            videoModal.style.display = 'flex';
+        });
+
+        closeModal.addEventListener('click', () => {
+            videoModal.style.display = 'none';
+        });
+
+        cancelVideo.addEventListener('click', () => {
+            videoModal.style.display = 'none';
+        });
+
+        document.getElementById('videoForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Video agregado exitosamente!');
+            videoModal.style.display = 'none';
+        });
+
+        // Search
+        document.getElementById('searchVideo').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.video-card');
+
+            cards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+
+                if (title.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    <!-- Para imágenes dinámicas -->
+    <script src="../static/js/dynamic-image-loader.js"></script>
+
+    <!-- Para PDFs dinámicos (solo en páginas de transparencia) -->
+    <script src="../static/js/transparencia-loader.js"></script>
+</body>
+
+</html>
+
+
+
+

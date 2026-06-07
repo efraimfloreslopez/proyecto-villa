@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tr�mites y Servicios - Portal Institucional Municipal</title>
+    <link rel="icon" href="../static/img/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/global.css">
+    <link rel="stylesheet" href="../static/css/tramites.css">
+    <!-- jsPDF para generar PDFs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Franja negra superior -->
+    <div class="header-top"></div>
+
+    <!-- Contenedor dorado con esquinas inferiores redondeadas -->
+    <header class="site-header">
+        <div class="header-inner">
+
+            <!-- FILA 1: Contacto primero, luego redes sociales -->
+            <div class="top-contact-row">
+                <!-- Contacto items primero -->
+                <div class="contact-items">
+                    <div class="contact-item">
+                        <img src="../static/img/phone.png" alt="">
+                        <span>Tel: (771) 123-4567</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <img src="../static/img/mail.png" alt="">
+                        <a href="mailto:contacto@municipio.demo">
+                            contacto@municipio.demo
+                        </a>
+                    </div>
+
+                    <div class="contact-item">
+                        <img src="../static/img/location.png" alt="">
+                        <span>Ciudad Demo, México</span>
+                    </div>
+                </div>
+
+                <!-- Redes sociales despu�s -->
+                <div class="social-icons">
+                    <a href="#" title="Instagram">
+                        <img src="../static/img/instagram.png" alt="">
+                    </a>
+                    <a href="#" target="_blank" title="Facebook">
+                        <img src="../static/img/facebook.png" alt="">
+                    </a>
+                    <a href="#" target="_blank" title="YouTube">
+                        <img src="../static/img/youtube.png" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <!-- L�nea blanca separadora -->
+            <div class="separator-line"></div>
+
+            <!-- FILA 2: IZQUIERDA LOGO+TEXTOS, DERECHA MEN� -->
+            <div class="brand-row">
+                <!-- Logo + textos (izquierda) -->
+                <div class="brand">
+                    <a href="/" class="brand-logo-circle">
+                        <img src="../static/img/logo.svg" alt="">
+                    </a>
+                    <div class="brand-texts">
+                        <div class="brand-text-main">Portal Institucional Municipal</div>
+                        <div class="brand-text-sub">Administraci�n Municipal 2022-2026</div>
+                    </div>
+                </div>
+
+                <!-- Men� (derecha) -->
+                <nav class="main-nav">
+                    <!-- Bot�n hamburguesa -->
+                    <div class="hamburger" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <!-- Bot�n X para cerrar el men� m�vil -->
+                    <button class="menu-close-btn" onclick="toggleMenu()">?</button>
+
+                    <ul id="navMenu">
+                        <li><a href="tramitesyservicios.html">TR�MITES Y SERVICIOS</a></li>
+                        <li><a href="directoriomunicipal.html">DIRECTORIO MUNICIPAL</a></li>
+                        <li><a href="hayuntamiento.html">H. AYUNTAMIENTO</a></li>
+                        <li><a href="registrofamiliar.html">REGISTRO FAMILIAR</a></li>
+                        <li><a href="poel.html">POEL</a></li>
+
+                        <!-- �REAS con atributo data-submenu-id para control consistente -->
+                        <li class="has-submenu" data-submenu-id="areas" onclick="toggleSubmenu(event)">
+                            <a href="#">�REAS <span class="arrow">?</span></a>
+                            <ul class="submenu">
+                                <li><a href="dif.html">DIF</a></li>
+                                <li><a href="turismo.html">TURISMO</a></li>
+                                <li><a href="multideportivo.html">MULTIDEPORTIVO</a></li>
+                                <li><a href="pcivil.html">PROTECCI�N CIVIL</a></li>
+                                <li><a href="ubr.html">UNIDAD B�SICA DE REHABILITACI�N</a></li>
+                                <li><a href="ob.html">OBRA P�BLICA</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="transparencia.html">TRANSPARENCIA</a></li>
+                        <li><a href="comisiones.html">COMISIONES</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- CONTENIDO DE LA P�GINA -->
+    <main class="contenido">
+
+        <!-- ========================================================= -->
+        <!-- == INICIO SECCI�N REGISTRO FAMILIAR � PDF DIN�MICO ====== -->
+        <!-- ========================================================= -->
+
+        <section class="regfam-din-section" id="registro-familiar">
+            <div class="regfam-din-inner">
+
+                <!-- Encabezado -->
+                <header class="regfam-din-header">
+                    <img src="../static/img/logo.svg" alt="Ayuntamiento de Portal Institucional Municipal" class="regfam-din-logo">
+                    <div class="regfam-din-header-text">
+                        <h2 class="regfam-din-title">Registro del Estado Familiar</h2>
+                        <p class="regfam-din-subtitle">
+                            Genera y visualiza en l�nea los formatos y requisitos principales del Registro del Estado
+                            Familiar.
+                            Al dar clic en �Ver� se abrir� el documento, y desde la ventana podr�s descargar el PDF.
+                        </p>
+                    </div>
+                </header>
+
+                <!-- Grid 3 x 3 -->
+                <div class="regfam-din-grid">
+                    <!-- 1 -->
+                    <article class="regfam-din-card" data-doc-type="inex-hijos">
+                        <h3 class="regfam-din-card-title">Constancia de inexistencia de hijos</h3>
+                        <p class="regfam-din-card-text">
+                            Formato para acreditar que no existen hijos registrados a la fecha de la solicitud.
+                        </p>
+                        <button type="button" class="regfam-din-btn regfam-din-btn-view">
+                            Ver
+                        </button>
+                    </article>
+
+                    <!-- 2 -->
+                    <article class="regfam-din-card" data-doc-type="inex-registro">
+                        <h3 class="regfam-din-card-title">Constancia de inexistencia de registro</h3>
+                        <p class="regfam-din-card-text">
+                            Constancia para confirmar que no existe inscripci�n previa en los libros del Registro.
+                        </p>
+                        <button type="button" class="regfam-din-btn regfam-din-btn-view">
+                            Ver
+                        </button>
+                    </article>
+
+                    <!-- 3 -->
+                    <article class="regfam-din-card" data-doc-type="inex-matrimonio">
+                        <h3 class="regfam-din-card-title">Constancia de inexistencia de matrimonio</h3>
+                        <p class="regfam-din-card-text">
+                            Formato para acreditar que no existe asiento de matrimonio a nombre de la persona
+                            interesada.
+                        </p>
+                        <button type="button" class="regfam-din-btn regfam-din-btn-view">
+                            Ver
+                        </button>
+                    </article>
+
+                    <!-- 4 -->
+                    <article class="regfam-din-card" data-doc-type="divorcio">
+                        <h3 class="regfam-din-card-title">Requisitos para acta de divorcio</h3>
+                        <p class="regfam-din-card-text">
+                            Relaci�n de documentos necesarios para expedir el acta de divorcio.
+                        </p>
+                        <button type="button" class="regfam-din-btn regfam-din-btn-view">
+                            Ver
+                        </button>
+                    </article>
+
+                    <!-- 5 -->
+                    <article class="regfam-din-card" data-doc-type="defuncion">
+                        <h3 class="regfam-din-card-title">Requisitos para acta de defunci�n</h3>
+                        <p class="regfam-din-card-text">
+                            Documentos necesarios para el levantamiento del acta de defunci�n.
+                        </p>
+                        <button type="button" class="regfam-din-btn regfam-din-btn-view">
+                            Ver
+                        </button>
+                    </article>
+
+                    <!-- 6 -->
+                    <article class="regfam-din-card" data-doc-type="adopcion">
+                        <h3 class="regfam-din-card-title">Inscripci�n de adopci�n</h3>
+                        <p class="regfam-din-card-text">
+                            Requisitos b�sicos para inscribir la resoluci�n judicial de adopci�n.
+                        </p>
+                        <button type="button" class="regfam-din-btn regfam-din-btn-view">
+                            Ver
+                        </button>
+                    </article>
+
+                    <!-- 7 -->
+                    <article class="regfam-din-card" data-doc-type="anotacion">
+                        <h3 class="regfam-din-card-title">Anotaci�n marginal</h3>
+                        <p class="regfam-din-card-text">
+                            Documentos requeridos para asentar anotaciones marginales en actas registrales.
+                        </p>
+                        <button type="button" class="regfam-din-btn regfam-din-btn-view">
+                            Ver
+                        </button>
+                    </article>
+
+                    <!-- 8 -->
+                    <article class="regfam-din-card" data-doc-type="concubinato">
+                        <h3 class="regfam-din-card-title">Inscripci�n de concubinato</h3>
+                        <p class="regfam-din-card-text">
+                            Requisitos para inscribir el concubinato en el Registro del Estado Familiar.
+                        </p>
+                        <button type="button" class="regfam-din-btn regfam-din-btn-view">
+                            Ver
+                        </button>
+                    </article>
+
+                    <!-- 9 -->
+                    <article class="regfam-din-card" data-doc-type="identidad">
+                        <h3 class="regfam-din-card-title">Juicio de identidad</h3>
+                        <p class="regfam-din-card-text">
+                            Relaci�n de documentos para inscribir la sentencia de juicio de identidad.
+                        </p>
+                        <button type="button" class="regfam-din-btn regfam-din-btn-view">
+                            Ver
+                        </button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODAL PREVISUALIZACI�N PDF -->
+        <div class="regfam-modal" id="regfam-modal" aria-hidden="true">
+            <div class="regfam-modal-backdrop" data-close-modal></div>
+
+            <div class="regfam-modal-dialog">
+                <button type="button" class="regfam-modal-close" data-close-modal>&times;</button>
+
+                <header class="regfam-modal-header">
+                    <h3 class="regfam-modal-title" id="regfam-modal-title">
+                        Documento
+                    </h3>
+                </header>
+
+                <div class="regfam-modal-body">
+                    <iframe id="regfam-modal-iframe" class="regfam-modal-iframe"
+                        title="Vista previa del documento"></iframe>
+                </div>
+
+                <footer class="regfam-modal-footer">
+                    <button type="button" class="regfam-din-btn" id="regfam-modal-download">
+                        Descargar PDF
+                    </button>
+                </footer>
+            </div>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- == FIN SECCI�N REGISTRO FAMILIAR � PDF DIN�MICO ========= -->
+        <!-- ========================================================= -->
+
+    </main>
+
+    <!-- Modal para Formulario de C�dula -->
+    <div id="formModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeFormModal()">&times;</span>
+            <h2 id="modalTitle">C�dula de Inscripci�n - Talleres Art�sticos</h2>
+            <p id="modalSubtitle" class="modal-subtitle"></p>
+
+            <form id="cedulaForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nombreAlumno">Nombre del Alumno(a)*</label>
+                        <input type="text" id="nombreAlumno" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="apellidoPaterno">Apellido Paterno*</label>
+                        <input type="text" id="apellidoPaterno" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidoMaterno">Apellido Materno*</label>
+                        <input type="text" id="apellidoMaterno" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="edad">Edad*</label>
+                        <input type="number" id="edad" required min="5" max="100">
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaNacimiento">Fecha de Nacimiento*</label>
+                        <input type="date" id="fechaNacimiento" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="domicilio">Domicilio*</label>
+                        <input type="text" id="domicilio" required placeholder="Calle, N�mero">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="colonia">Colonia*</label>
+                        <input type="text" id="colonia" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="municipio">Municipio*</label>
+                        <input type="text" id="municipio" value="Portal Institucional Municipal" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <label for="telefono">Tel�fono*</label>
+                        <input type="tel" id="telefono" required placeholder="(771) 123-4567">
+                    </div>
+                </div>
+
+                <h3 class="form-section-title">Tipo de Taller</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="tipoTaller">Seleccione el taller*</label>
+                        <select id="tipoTaller" required>
+                            <option value="">Seleccione...</option>
+                            <option value="Pintura">Pintura</option>
+                            <option value="Danza">Danza</option>
+                            <option value="M�sica">M�sica</option>
+                            <option value="Teatro">Teatro</option>
+                            <option value="Manualidades">Manualidades</option>
+                            <option value="Literatura">Literatura</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="horario">Horario*</label>
+                        <select id="horario" required>
+                            <option value="">Seleccione...</option>
+                            <option value="Matutino (9:00 - 12:00)">Matutino (9:00 - 12:00)</option>
+                            <option value="Vespertino (15:00 - 18:00)">Vespertino (15:00 - 18:00)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <h3 class="form-section-title">Nombre y Firma del Alumno(a) o Tutor</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nombreTutor">Nombre Completo del Tutor*</label>
+                        <input type="text" id="nombreTutor" required>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel" onclick="closeFormModal()">Cancelar</button>
+                    <button type="submit" class="btn-submit">Generar PDF</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ========================================= -->
+    <!-- SECCI�N: CONTACTO + HORARIOS (BLANCO)    -->
+    <!-- ========================================= -->
+    <section class="contact-hours-section">
+        <div class="contact-hours-inner">
+
+            <!-- FILA PRINCIPAL: CONTACTO + HORARIOS (SIN MAPA) -->
+            <div class="ch-main-row">
+
+                <!-- COLUMNA CONTACTO -->
+                <div class="ch-contact">
+                    <h2>Contacto</h2>
+
+                    <ul class="ch-contact-list">
+                        <li>
+                            <img src="../static/img/location.png" alt="Direcci�n">
+                            <div>
+                                <span class="ch-label">Direcci�n</span>
+                                <p>
+                                    Plaza Principal S/N, Centro<br>
+                                    Ciudad Demo, México, M�xico
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <img src="../static/img/phone.png" alt="Tel�fono">
+                            <div>
+                                <span class="ch-label">Tel�fono</span>
+                                <p>(771) 123-4567</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <img src="../static/img/mail.png" alt="Correo Electr�nico">
+                            <div>
+                                <span class="ch-label">Correo Electr�nico</span>
+                                <p>
+                                    <a href="mailto:contacto@municipio.demo">
+                                        contacto@municipio.demo
+                                    </a>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- TARJETA HORARIOS -->
+                <div class="ch-hours-card">
+                    <h3>Horarios de Atenci�n</h3>
+
+                    <div class="ch-hours-content">
+                        <div class="ch-hours-row">
+                            <span class="ch-day">Lunes a Viernes</span>
+                            <span class="ch-time">8:00 AM � 4:00 PM</span>
+                        </div>
+
+                        <div class="ch-hours-row">
+                            <span class="ch-day">S�bados</span>
+                            <span class="ch-time">9:00 AM � 1:00 PM</span>
+                        </div>
+
+                        <div class="ch-hours-row">
+                            <span class="ch-day">Domingos</span>
+                            <span class="ch-time ch-closed">Cerrado</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- ========== FIN SECCI�N CONTACTO+HORARIOS ========== -->
+
+    <!-- ========================================= -->
+    <!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+    <!-- ========================================= -->
+    <!-- ========================================= -->
+    <!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+    <!-- ========================================= -->
+    <!-- ========================================= -->
+    <!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+    <!-- ========================================= -->
+    <!-- ========================================= -->
+    <!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+    <!-- ========================================= -->
+    <!-- ========================================= -->
+    <!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+    <!-- ========================================= -->
+    <footer class="main-footer">
+        <div class="footer-inner">
+
+            <div class="footer-grid">
+
+                <div class="footer-column">
+                    <h4>Gobierno Municipal</h4>
+                    <ul>
+                        <li><a href="hayuntamiento.html">H. Ayuntamiento</a></li>
+                        <li><a href="directoriomunicipal.html">Directorio Municipal</a></li>
+                        <li><a href="comisiones.html">Comisiones</a></li>
+                        <li><a href="poel.html">POEL</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>�reas</h4>
+                    <ul>
+                        <li><a href="dif.html">DIF</a></li>
+                        <li><a href="turismo.html">Turismo</a></li>
+                        <li><a href="multideportivo.html">Multideportivo</a></li>
+                        <li><a href="pcivil.html">Protecci�n Civil</a></li>
+                        <li><a href="ubr.html">Unidad B�sica de Rehabilitaci�n</a></li>
+                        <li><a href="ob.html">Obra P�blica</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Transparencia</h4>
+                    <ul>
+                        <li><a href="transparencia.html">Portal de Transparencia</a></li>
+                        <li><a href="tramitesyservicios.html">Tr�mites y Servicios</a></li>
+                        <li><a href="registrofamiliar.html">Registro Familiar</a></li>
+                        <li><a href="videos.html">Videos</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Enlaces de Inter�s</h4>
+                    <ul>
+                        <li><a href="https://www.valleverde.gob.example.com/" target="_blank">Gobierno del Estado</a></li>
+                        <li><a href="https://www.gob.mx/" target="_blank">Gobierno Federal</a></li>
+                        <li><a href="https://www.inegi.org.mx/" target="_blank">INEGI</a></li>
+                        <li><a href="https://www.plataformadetransparencia.org.mx/" target="_blank">Plataforma
+                                Nacional</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <span class="footer-divider"></span>
+
+            <div class="footer-copy">
+                � 2025 Portal Institucional Municipal. Todos los derechos reservados.
+            </div>
+
+        </div>
+    </footer>
+    <!-- ========== FIN FOOTER REAL ========== -->
+
+    <!-- JavaScript Files -->
+    <script src="../static/js/menu.js"></script>
+    <script src="../static/js/tramites.js"></script>
+    <!-- Para im�genes din�micas -->
+    <script src="../static/js/dynamic-image-loader.js"></script>
+
+    <!-- Para PDFs din�micos (solo en p�ginas de transparencia) -->
+    <script src="../static/js/transparencia-loader.js"></script>
+
+</body>
+
+</html>
+
+
+
+

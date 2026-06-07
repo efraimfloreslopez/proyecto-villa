@@ -1,0 +1,85 @@
+/* ============================= */
+/* contenedores de villa         */
+/* ============================= */
+
+.transparencia-villa {
+    padding: 60px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.transp-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.transp-logo {
+    width: 120px;
+    margin-bottom: 18px;
+}
+
+.transp-title {
+    font-size: 27px;
+    color: #27a620;
+}
+.transp-desc {
+    font-size: 18px;
+    color: #444;
+}
+
+/* Grid estilo Tizayuca */
+.transp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 26px;
+}
+
+/* Tarjeta */
+.transp-card {
+    background: #ffffff;
+    padding: 26px 22px;
+    border-radius: 18px;
+    text-align: center;
+    color: #221f1f;
+    text-decoration: none;
+    box-shadow: 0 10px 26px rgba(0,0,0,0.08);
+    transition: transform .2s ease, box-shadow .2s ease;
+    border: 2px solid #97732c22; /* borde oro suave */
+}
+
+.transp-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(0,0,0,0.14);
+    border-color: #97732c;
+}
+
+/* Icono romano */
+.transp-icon {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 12px;
+}
+
+/* Título */
+.transp-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .transparencia-villa {
+        padding: 40px 20px;
+    }
+
+    .transp-card {
+        padding: 22px 18px;
+    }
+}
+
+
+
+
+

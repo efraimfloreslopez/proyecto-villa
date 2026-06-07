@@ -1,0 +1,500 @@
+/* ========================================================= */
+/* =============== BANNER DIF ============================== */
+/* ========================================================= */
+
+.dif-banner {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    min-height: 200px;
+    /* hero bajito */
+    background: #000;
+    /* por si tarda en cargar la imagen */
+}
+
+.dif-banner-media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* Capa dorada arriba de la imagen */
+.dif-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(151, 115, 44, 0.55);
+    /* gold #97732c con transparencia */
+    z-index: 2;
+}
+
+/* Contenedor para centrar la pastilla */
+.dif-banner-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(10px, 3vw, 20px);
+}
+
+/* Pastilla dorada con el título dentro */
+.dif-banner-title-box {
+    background: var(--gold, #97732c);
+    padding: clamp(6px, 1vw, 10px) clamp(18px, 3vw, 32px);
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 90%;
+}
+
+/* Texto dentro de la pastilla */
+.dif-banner-title {
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: clamp(16px, 3vw, 24px);
+    letter-spacing: clamp(1px, 0.4vw, 3px);
+    font-family: "Montserrat", sans-serif;
+}
+
+@media (min-width: 768px) {
+    .dif-banner {
+        min-height: 220px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .dif-banner {
+        min-height: 260px;
+    }
+}
+
+
+
+/* ========================================================= */
+/* =============== INFO DIF (VIDEO + TEXTO) ================ */
+/* ========================================================= */
+
+.dif-info-section {
+    width: 100%;
+    padding: 48px 16px 56px;
+    display: flex;
+    justify-content: center;
+    background: #ffffff;
+    box-sizing: border-box;
+}
+
+.dif-info-layout {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* -------- VIDEO -------- */
+
+.dif-video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    /* tamaño base */
+    aspect-ratio: 9 / 16;
+    /* vertical en móvil/tablet */
+    margin: 0 auto;
+    border-radius: 22px;
+    overflow: hidden;
+    background: #000;
+    box-shadow:
+        0 16px 40px rgba(0, 0, 0, 0.20),
+        0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.dif-video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* Glow dorado como en Protección Civil */
+.dif-video-glow {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right,
+            rgba(151, 115, 44, 0.35),
+            rgba(0, 0, 0, 0.0) 60%,
+            transparent 80%);
+    mix-blend-mode: screen;
+}
+
+/* -------- TEXTO -------- */
+
+.dif-text-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.dif-text-card {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 24px 24px 26px;
+    box-shadow:
+        0 16px 40px rgba(0, 0, 0, 0.06),
+        0 0 0 1px rgba(0, 0, 0, 0.02);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-top: 3px solid rgba(151, 115, 44, 0.85);
+}
+
+/* Badge superior */
+.dif-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    color: var(--gold, #97732c);
+    background: rgba(151, 115, 44, 0.08);
+    padding: 6px 14px;
+    border-radius: 999px;
+    align-self: flex-start;
+}
+
+.dif-badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold, #97732c);
+    animation: dif-pulse 2s ease-in-out infinite;
+}
+
+@keyframes dif-pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(0.85);
+    }
+}
+
+.dif-text-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--black, #221f1f);
+    margin: 2px 0 0 0;
+    line-height: 1.4;
+    letter-spacing: -0.2px;
+}
+
+.dif-divider {
+    width: 72px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold, #97732c), transparent);
+    margin: 2px 0 4px 0;
+}
+
+.dif-paragraph {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #444;
+    margin: 0;
+    text-align: justify;
+}
+
+.dif-paragraph-strong {
+    font-weight: 600;
+    color: var(--black, #221f1f);
+}
+
+/* -------- RESPONSIVE -------- */
+
+/* Escritorio: lado a lado y video cuadrado/compacto */
+@media (min-width: 900px) {
+    .dif-info-layout {
+        flex-direction: row;
+        align-items: stretch;
+        gap: 40px;
+    }
+
+    .dif-video-wrapper {
+        flex: 0 0 260px;
+        max-width: 260px;
+        aspect-ratio: 1 / 1;
+        /* cuadrado en desktop */
+        margin: 0;
+    }
+
+    .dif-text-container {
+        flex: 1;
+    }
+
+    .dif-text-card {
+        padding: 28px 28px 30px;
+    }
+
+    .dif-text-title {
+        font-size: 22px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 899px) and (min-width: 600px) {
+    .dif-info-section {
+        padding: 44px 20px 52px;
+    }
+
+    .dif-video-wrapper {
+        max-width: 320px;
+        aspect-ratio: 9 / 16;
+    }
+}
+
+/* Móviles */
+@media (max-width: 599px) {
+    .dif-info-section {
+        padding: 36px 12px 44px;
+    }
+
+    .dif-video-wrapper {
+        max-width: 280px;
+        aspect-ratio: 9 / 16;
+        /* vertical tipo celular */
+    }
+
+    .dif-text-card {
+        border-radius: 20px;
+        padding: 22px 18px 24px;
+    }
+
+    .dif-text-title {
+        font-size: 18px;
+    }
+
+    .dif-paragraph {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+}
+
+
+
+/* ========================================================= */
+/* =============== SECCIÓN DIF: EVENTOS ==================== */
+/* ========================================================= */
+
+.dif-events-section {
+    width: 100%;
+    padding: 80px 20px;
+    background: #ffffff;
+    /* BLANCO puro de fondo */
+    box-sizing: border-box;
+}
+
+.dif-events-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ========== ENCABEZADO ========== */
+.dif-events-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.dif-events-main-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 34px;
+    /* un poco más sobrio */
+    font-weight: 600;
+    color: var(--black, #221f1f);
+    margin: 0 0 16px 0;
+    letter-spacing: -0.3px;
+}
+
+.dif-events-divider {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold, #97732c), transparent);
+    margin: 0 auto;
+}
+
+/* ========== GRID DE EVENTOS ========== */
+.dif-events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+    box-sizing: border-box;
+}
+
+/* ========== TARJETA DE EVENTO ========== */
+.dif-event-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow:
+        0 2px 8px rgba(34, 31, 31, 0.04),
+        0 0 0 1px rgba(151, 115, 44, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.dif-event-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gold, #97732c);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.dif-event-card:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 10px 26px rgba(34, 31, 31, 0.12),
+        0 0 0 1px var(--gold, #97732c);
+}
+
+.dif-event-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* ========== IMAGEN ========== */
+.dif-event-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+.dif-event-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.dif-event-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+            transparent 0%,
+            rgba(34, 31, 31, 0.02) 100%);
+    pointer-events: none;
+}
+
+.dif-event-card:hover .dif-event-image {
+    transform: scale(1.08);
+}
+
+/* ========== CONTENIDO ========== */
+.dif-event-body {
+    padding: 18px 20px 20px;
+    background: #ffffff;
+}
+
+.dif-event-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--black, #221f1f);
+    margin: 0;
+    letter-spacing: 0.2px;
+    text-align: justify;
+}
+
+/* ========================================================= */
+/* =============== RESPONSIVE =============================== */
+/* ========================================================= */
+
+@media (min-width: 768px) {
+    .dif-events-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+}
+
+@media (max-width: 767px) {
+    .dif-events-section {
+        padding: 60px 16px;
+    }
+
+    .dif-events-header {
+        margin-bottom: 36px;
+    }
+
+    .dif-events-main-title {
+        font-size: 28px;
+    }
+
+    .dif-events-grid {
+        gap: 22px;
+    }
+
+    .dif-event-image-wrapper {
+        height: 200px;
+    }
+
+    .dif-event-body {
+        padding: 16px 18px 18px;
+    }
+
+    .dif-event-title {
+        font-size: 13.5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dif-events-main-title {
+        font-size: 24px;
+    }
+
+    .dif-event-card {
+        border-radius: 10px;
+    }
+
+    .dif-event-image-wrapper {
+        height: 180px;
+    }
+
+    .dif-event-body {
+        padding: 14px 16px 16px;
+    }
+
+    .dif-event-title {
+        font-size: 13px;
+    }
+}
+
+
+
+

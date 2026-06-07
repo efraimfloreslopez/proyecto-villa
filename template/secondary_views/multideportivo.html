@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head><meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Institucional Municipal</title>
+    <link rel="icon" href="../static/img/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/global.css">
+    <link rel="stylesheet" href="../static/css/areas/multideportivo.css">
+</head>
+
+<body>
+
+    <!-- Franja negra superior -->
+    <div class="header-top"></div>
+
+    <!-- Contenedor dorado con esquinas inferiores redondeadas -->
+    <header class="site-header">
+        <div class="header-inner">
+
+            <!-- FILA 1: Contacto primero, luego redes sociales -->
+            <div class="top-contact-row">
+                <!-- Contacto items primero -->
+                <div class="contact-items">
+                    <div class="contact-item">
+                        <img src="../static/img/phone.png" alt="">
+                        <span>Tel: (771) 123-4567</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <img src="../static/img/mail.png" alt="">
+                        <a href="mailto:contacto@municipio.demo">
+                            contacto@municipio.demo
+                        </a>
+                    </div>
+
+                    <div class="contact-item">
+                        <img src="../static/img/location.png" alt="">
+                        <span>Ciudad Demo, México</span>
+                    </div>
+                </div>
+
+                <!-- Redes sociales despu�s -->
+                <div class="social-icons">
+                    <a href="#" title="Instagram">
+                        <img src="../static/img/instagram.png" alt="">
+                    </a>
+                    <a href="#" target="_blank" title="Facebook">
+                        <img src="../static/img/facebook.png" alt="">
+                    </a>
+                    <a href="#" target="_blank" title="YouTube">
+                        <img src="../static/img/youtube.png" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <!-- L�nea blanca separadora -->
+            <div class="separator-line"></div>
+
+            <!-- FILA 2: IZQUIERDA LOGO+TEXTOS, DERECHA MEN� -->
+            <div class="brand-row">
+                <!-- Logo + textos (izquierda) -->
+                <div class="brand">
+                    <a href="/" class="brand-logo-circle">
+                        <img src="../static/img/logo.svg" alt="">
+                    </a>
+                    <div class="brand-texts">
+                        <div class="brand-text-main">Portal Institucional Municipal</div>
+                        <div class="brand-text-sub">Administraci�n Municipal 2022-2026</div>
+                    </div>
+                </div>
+
+                <!-- Men� (derecha) -->
+                <nav class="main-nav">
+                    <!-- Bot�n hamburguesa -->
+                    <div class="hamburger" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <!-- Bot�n X para cerrar el men� m�vil -->
+                    <button class="menu-close-btn" onclick="toggleMenu()">?</button>
+
+                    <ul id="navMenu">
+                        <li><a href="tramitesyservicios.html">TR�MITES Y SERVICIOS</a></li>
+                        <li><a href="directoriomunicipal.html">DIRECTORIO MUNICIPAL</a></li>
+                        <li><a href="hayuntamiento.html">H. AYUNTAMIENTO</a></li>
+                        <li><a href="registrofamiliar.html">REGISTRO FAMILIAR</a></li>
+                        <li><a href="poel.html">POEL</a></li>
+
+                        <!-- �REAS con atributo data-submenu-id para control consistente -->
+                        <li class="has-submenu" data-submenu-id="areas" onclick="toggleSubmenu(event)">
+                            <a href="#">�REAS <span class="arrow">?</span></a>
+                            <ul class="submenu">
+                                <li><a href="dif.html">DIF</a></li>
+                                <li><a href="turismo.html">TURISMO</a></li>
+                                <li><a href="multideportivo.html">MULTIDEPORTIVO</a></li>
+                                <li><a href="pcivil.html">PROTECCI�N CIVIL</a></li>
+                                <li><a href="ubr.html">UNIDAD B�SICA DE REHABILITACI�N</a></li>
+                                <li><a href="ob.html">OBRA P�BLICA</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="transparencia.html">TRANSPARENCIA</a></li>
+                        <li><a href="comisiones.html">COMISIONES</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- CONTENIDO DE LA P�GINA -->
+    <main class="contenido">
+
+        <!-- ========================================================= -->
+        <!-- ============ SECCI�N MULTIDEPORTE (BANNER) ============= -->
+        <!-- ========================================================= -->
+        <section class="mdeport-banner">
+            <!-- Imagen de fondo del banner -->
+            <img src="../static/img/multideportivo/multideportivo.png" alt="Multideportivo Portal Institucional Municipal"
+                class="mdeport-banner-media">
+
+            <!-- Capa de color -->
+            <div class="mdeport-banner-overlay"></div>
+
+            <!-- Contenido centrado -->
+            <div class="mdeport-banner-content">
+                <div class="mdeport-banner-title-box">
+                    <h2 class="mdeport-banner-title">
+                        Multideportivo Portal Institucional Municipal
+                    </h2>
+                </div>
+            </div>
+        </section>
+        <!-- ========== FIN BANNER MULTIDEPORTE ===================== -->
+
+
+
+        <!-- ========================================================= -->
+        <!-- ======= SECCI�N MULTIDEPORTE (VIDEO + TEXTO) =========== -->
+        <!-- ========================================================= -->
+        <section class="mdeport-info-section">
+            <div class="mdeport-info-layout">
+
+                <!-- VIDEO -->
+                <div class="mdeport-video-wrapper">
+                    <video class="mdeport-video" src="../static/img/multideportivo/Multideportivo.mp4" controls
+                        playsinline></video>
+                    <div class="mdeport-video-glow"></div>
+                </div>
+
+                <!-- TARJETA DE TEXTO -->
+                <div class="mdeport-text-container">
+                    <article class="mdeport-text-card">
+                        <div class="mdeport-badge">
+                            <span class="mdeport-badge-dot"></span>
+                            Alberca semiol�mpica y gimnasio
+                        </div>
+
+                        <h3 class="mdeport-text-title">
+                            Un espacio completo para aprender, entrenar y convivir
+                        </h3>
+
+                        <div class="mdeport-divider"></div>
+
+                        <p class="mdeport-paragraph">
+                            El Multideportivo de Portal Institucional Municipal cuenta con una
+                            <span class="mdeport-paragraph-strong">alberca semiol�mpica con una de las mayores
+                                profundidades del
+                                estado</span>,
+                            ideal para aprender a nadar, perfeccionar estilos o entrenar de forma constante por una
+                            cuota
+                            accesible.
+                        </p>
+
+                        <p class="mdeport-paragraph">
+                            Este espacio inici� en el trienio 1991�1994 como un centro recreativo para ofrecer a las y
+                            los
+                            j�venes un lugar
+                            seguro donde nadar. Con el tiempo se han realizado mejoras como colectores solares y una
+                            remodelaci�n integral,
+                            convirti�ndose hoy en una escuela de nataci�n donde cada mes entrenan decenas de personas.
+                        </p>
+
+                        <p class="mdeport-paragraph">
+                            <span class="mdeport-paragraph-strong">
+                                Es reconocida como una de las albercas m�s limpias del estado,
+                            </span>
+                            con personal de nataci�n y acondicionamiento f�sico certificado y en constante
+                            actualizaci�n,
+                            as� como equipo de mantenimiento especializado.
+                        </p>
+
+                        <p class="mdeport-paragraph">
+                            Adem�s de la alberca, el Multideportivo ofrece <span
+                                class="mdeport-paragraph-strong">gimnasio, �rea
+                                de ejercicio al aire libre</span>,
+                            un peque�o embalse para remar y zonas de convivencia ideales para familias y personas
+                            adultas
+                            mayores.
+                            Para conocer reglamento, cursos, horarios y paquetes, se puede consultar la red social
+                            oficial
+                            del Multideportivo Portal Institucional Municipal.
+                        </p>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+        <!-- ===== FIN SECCI�N MULTIDEPORTE (VIDEO + TEXTO) ========= -->
+
+
+        <!-- ========================================================= -->
+        <!-- ============ SECCI�N MULTIDEPORTE DIF =================== -->
+        <!-- ========================================================= -->
+        <section class="multi-section">
+            <div class="multi-inner">
+
+                <!-- Encabezado -->
+                <header class="multi-header">
+                    <h2 class="multi-title">Multideportivo � Costos y servicios</h2>
+                    <p class="multi-subtitle">
+                        Paquetes de nataci�n, gimnasio y nado libre en la alberca semiol�mpica
+                        del Multideportivo Portal Institucional Municipal.
+                    </p>
+                </header>
+
+                <!-- GRID PRINCIPAL (2 columnas en escritorio, 1 en m�vil) -->
+                <div class="multi-grid">
+
+                    <!-- Fila 1: NATACI�N | GIMNASIO -->
+                    <article class="multi-card multi-card--natacion">
+                        <h3 class="multi-card-title">Nataci�n</h3>
+                        <ul class="multi-list">
+                            <li class="multi-row">
+                                <span class="multi-label">1 clase (s�bado)</span>
+                                <span class="multi-price">$ 255.00</span>
+                            </li>
+                            <li class="multi-row">
+                                <span class="multi-label">2 clases (mar�jue)</span>
+                                <span class="multi-price">$ 414.00</span>
+                            </li>
+                            <li class="multi-row">
+                                <span class="multi-label">3 clases (lu�mi�vi)</span>
+                                <span class="multi-price">$ 573.00</span>
+                            </li>
+                            <li class="multi-row">
+                                <span class="multi-label">Lunes a viernes</span>
+                                <span class="multi-price">$ 891.00</span>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="multi-card multi-card--gimnasio">
+                        <h3 class="multi-card-title">Gimnasio</h3>
+                        <ul class="multi-list">
+                            <li class="multi-row">
+                                <span class="multi-label">Lunes a viernes</span>
+                                <span class="multi-price">$ 265.00</span>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <!-- Fila 2: NATACI�N + GIMNASIO | NADO LIBRE -->
+                    <article class="multi-card multi-card--combo">
+                        <h3 class="multi-card-title">Nataci�n y 5 d�as de gimnasio</h3>
+                        <ul class="multi-list">
+                            <li class="multi-row">
+                                <span class="multi-label">2 clases nataci�n (ma�ju)</span>
+                                <span class="multi-price">$ 573.00</span>
+                            </li>
+                            <li class="multi-row">
+                                <span class="multi-label">3 clases nataci�n (lu�mi�vi)</span>
+                                <span class="multi-price">$ 732.00</span>
+                            </li>
+                            <li class="multi-row">
+                                <span class="multi-label">5 clases nataci�n (lun a vier)</span>
+                                <span class="multi-price">$ 997.00</span>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="multi-card multi-card--nado">
+                        <h3 class="multi-card-title">Nado libre</h3>
+                        <ul class="multi-list">
+                            <li class="multi-row">
+                                <span class="multi-label">1 clases</span>
+                                <span class="multi-price">$ 194.00</span>
+                            </li>
+                            <li class="multi-row">
+                                <span class="multi-label">2 clases</span>
+                                <span class="multi-price">$ 286.00</span>
+                            </li>
+                            <li class="multi-row">
+                                <span class="multi-label">3 clases</span>
+                                <span class="multi-price">$ 371.00</span>
+                            </li>
+                            <li class="multi-row">
+                                <span class="multi-label">Lun a vier</span>
+                                <span class="multi-price">$ 626.00</span>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <!-- Fila 3: CLASES �NICAS | REQUISITOS -->
+                    <article class="multi-card multi-card--clases">
+                        <h3 class="multi-card-title">Clases �nicas</h3>
+                        <ul class="multi-list">
+                            <li class="multi-row">
+                                <span class="multi-label">Clase �nica nataci�n</span>
+                                <span class="multi-price">$ 85.00</span>
+                            </li>
+                            <li class="multi-row">
+                                <span class="multi-label">Clase �nica gimnasio</span>
+                                <span class="multi-price">$ 32.00</span>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="multi-card multi-card--requirements">
+                        <h3 class="multi-card-title">Requisitos</h3>
+                        <ul class="multi-tags">
+                            <li>Certificado m�dico</li>
+                            <li>INE</li>
+                            <li>CURP</li>
+                        </ul>
+                    </article>
+
+                    <!-- Fila 4: CONTACTO (ocupa las 2 columnas en escritorio) -->
+                    <aside class="multi-contact-card">
+                        <h3 class="multi-contact-title">�Cont�ctanos!</h3>
+                        <p class="multi-contact-text">
+                            Para inscripciones y horarios detallados, comun�cate directamente al multideportivo.
+                        </p>
+                        <div class="multi-contact-phones">
+                            <a href="tel:7437411243" class="multi-phone">
+                                <span class="multi-phone-label">Tel�fono 1</span>
+                                <span class="multi-phone-number">743 741 1243</span>
+                            </a>
+                            <a href="tel:7711631288" class="multi-phone">
+                                <span class="multi-phone-label">Tel�fono 2</span>
+                                <span class="multi-phone-number">771 163 1288</span>
+                            </a>
+                        </div>
+                    </aside>
+
+                </div>
+            </div>
+        </section>
+        <!-- ========== FIN SECCI�N MULTIDEPORTE DIF ================ -->
+
+
+
+    </main>
+
+    <!-- ========================================= -->
+    <!-- SECCI�N: CONTACTO + HORARIOS (BLANCO)    -->
+    <!-- ========================================= -->
+    <section class="contact-hours-section">
+        <div class="contact-hours-inner">
+
+            <!-- FILA PRINCIPAL: CONTACTO + HORARIOS (SIN MAPA) -->
+            <div class="ch-main-row">
+
+                <!-- COLUMNA CONTACTO -->
+                <div class="ch-contact">
+                    <h2>Contacto</h2>
+
+                    <ul class="ch-contact-list">
+                        <li>
+                            <img src="../static/img/location.png" alt="Direcci�n">
+                            <div>
+                                <span class="ch-label">Direcci�n</span>
+                                <p>
+                                    Plaza Principal S/N, Centro<br>
+                                    Ciudad Demo, México, M�xico
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <img src="../static/img/phone.png" alt="Tel�fono">
+                            <div>
+                                <span class="ch-label">Tel�fono</span>
+                                <p>(771) 123-4567</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <img src="../static/img/mail.png" alt="Correo Electr�nico">
+                            <div>
+                                <span class="ch-label">Correo Electr�nico</span>
+                                <p>
+                                    <a href="mailto:contacto@municipio.demo">
+                                        contacto@municipio.demo
+                                    </a>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- TARJETA HORARIOS -->
+                <div class="ch-hours-card">
+                    <h3>Horarios de Atenci�n</h3>
+
+                    <div class="ch-hours-content">
+                        <div class="ch-hours-row">
+                            <span class="ch-day">Lunes a Viernes</span>
+                            <span class="ch-time">8:00 AM � 4:00 PM</span>
+                        </div>
+
+                        <div class="ch-hours-row">
+                            <span class="ch-day">S�bados</span>
+                            <span class="ch-time">9:00 AM � 1:00 PM</span>
+                        </div>
+
+                        <div class="ch-hours-row">
+                            <span class="ch-day">Domingos</span>
+                            <span class="ch-time ch-closed">Cerrado</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- ========== FIN SECCI�N CONTACTO+HORARIOS ========== -->
+
+    <!-- ========================================= -->
+    <!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+    <!-- ========================================= -->
+    <!-- ========================================= -->
+<!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+<!-- ========================================= -->
+<!-- ========================================= -->
+<!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+<!-- ========================================= -->
+<!-- ========================================= -->
+<!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+<!-- ========================================= -->
+<!-- ========================================= -->
+<!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+<!-- ========================================= -->
+<footer class="main-footer">
+    <div class="footer-inner">
+
+        <div class="footer-grid">
+
+            <div class="footer-column">
+                <h4>Gobierno Municipal</h4>
+                <ul>
+                    <li><a href="hayuntamiento.html">H. Ayuntamiento</a></li>
+                    <li><a href="directoriomunicipal.html">Directorio Municipal</a></li>
+                    <li><a href="comisiones.html">Comisiones</a></li>
+                    <li><a href="poel.html">POEL</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>�reas</h4>
+                <ul>
+                    <li><a href="dif.html">DIF</a></li>
+                    <li><a href="turismo.html">Turismo</a></li>
+                    <li><a href="multideportivo.html">Multideportivo</a></li>
+                    <li><a href="pcivil.html">Protecci�n Civil</a></li>
+                    <li><a href="ubr.html">Unidad B�sica de Rehabilitaci�n</a></li>
+                    <li><a href="ob.html">Obra P�blica</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Transparencia</h4>
+                <ul>
+                    <li><a href="transparencia.html">Portal de Transparencia</a></li>
+                    <li><a href="tramitesyservicios.html">Tr�mites y Servicios</a></li>
+                    <li><a href="registrofamiliar.html">Registro Familiar</a></li>
+                    <li><a href="videos.html">Videos</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Enlaces de Inter�s</h4>
+                <ul>
+                    <li><a href="https://www.valleverde.gob.example.com/" target="_blank">Gobierno del Estado</a></li>
+                    <li><a href="https://www.gob.mx/" target="_blank">Gobierno Federal</a></li>
+                    <li><a href="https://www.inegi.org.mx/" target="_blank">INEGI</a></li>
+                    <li><a href="https://www.plataformadetransparencia.org.mx/" target="_blank">Plataforma Nacional</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <span class="footer-divider"></span>
+
+        <div class="footer-copy">
+            � 2025 Portal Institucional Municipal. Todos los derechos reservados.
+        </div>
+
+    </div>
+</footer>
+<!-- ========== FIN FOOTER REAL ========== -->
+
+    <!-- Link al archivo JavaScript externo -->
+    <script src="../static/js/menu.js"></script>
+    <!-- Para im�genes din�micas -->
+    <script src="../static/js/dynamic-image-loader.js"></script>
+
+    <!-- Para PDFs din�micos (solo en p�ginas de transparencia) -->
+    <script src="../static/js/transparencia-loader.js"></script>
+
+
+</body>
+
+</html>
+
+
+
+

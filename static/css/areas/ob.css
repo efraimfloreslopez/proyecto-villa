@@ -1,0 +1,793 @@
+/* ========================================================= */
+/* ============ SECCIÓN OBRA PÚBLICA (TABLA) =============== */
+/* ========================================================= */
+
+.obra-publica-section {
+    width: 100%;
+    padding: 40px 16px 48px;
+    background: #ffffff;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+.obra-table-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow-x: auto;
+}
+
+/* Tabla base */
+.obra-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 720px;
+    /* para scroll horizontal en pantallas chicas */
+}
+
+.obra-table th,
+.obra-table td {
+    padding: 10px 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    vertical-align: top;
+    text-align: left;
+    font-size: 13px;
+}
+
+.obra-table thead th {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: 600;
+    color: var(--black, #221f1f);
+    background: rgba(151, 115, 44, 0.08);
+}
+
+/* Zebra */
+.obra-table tbody tr:nth-child(odd) {
+    background: #fafafa;
+}
+
+/* Texto de la columna OBRA */
+.obra-table td:first-child {
+    font-weight: 500;
+}
+
+/* Botones */
+.obra-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(151, 115, 44, 0.7);
+    background: #ffffff;
+    color: var(--black, #221f1f);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.obra-btn:hover {
+    background: rgba(151, 115, 44, 0.08);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+/* ========================================================= */
+/* =================== MODALES GRANDES ===================== */
+/* ========================================================= */
+
+.obra-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    display: none;
+    /* se muestra con .is-open */
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    z-index: 9999;
+}
+
+.obra-modal.is-open {
+    display: flex;
+}
+
+.obra-modal-inner {
+    background: #ffffff;
+    border-radius: 18px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    padding: 16px 18px 18px;
+    box-sizing: border-box;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35),
+        0 0 0 1px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+
+/* Botón cerrar (X) */
+.obra-modal-close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 0, 0, 0.06);
+    color: #333333;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.obra-modal-close:hover {
+    background: rgba(0, 0, 0, 0.12);
+}
+
+.obra-modal-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 4px 32px 8px 0;
+    /* deja hueco para la X */
+    color: var(--black, #221f1f);
+}
+
+/* Contenedor grande para el iframe (mapa) */
+.obra-modal-iframe-wrapper {
+    flex: 1;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    max-height: 70vh;
+    min-height: 320px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #000;
+}
+
+.obra-modal-iframe-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* ========================================================= */
+/* =================== CARRUSEL GRANDE ===================== */
+/* ========================================================= */
+
+.obra-carousel-large {
+    position: relative;
+    flex: 1;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    max-height: 70vh;
+    min-height: 320px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #000;
+    display: flex;
+}
+
+.obra-carousel-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.obra-carousel-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* que se vea completa y grande */
+    background: #000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+
+.obra-carousel-image.is-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Flechas del carrusel */
+.obra-carousel-prev,
+.obra-carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.92);
+    color: #222;
+    font-size: 18px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.obra-carousel-prev {
+    left: 10px;
+}
+
+.obra-carousel-next {
+    right: 10px;
+}
+
+.obra-carousel-prev:hover,
+.obra-carousel-next:hover {
+    transform: translateY(-50%) scale(1.06);
+    background: #ffffff;
+}
+
+/* ========================================================= */
+/* ======================= RESPONSIVE ====================== */
+/* ========================================================= */
+
+@media (max-width: 899px) {
+    .obra-publica-section {
+        padding: 32px 12px 40px;
+    }
+
+    .obra-table th,
+    .obra-table td {
+        font-size: 12px;
+        padding: 8px 8px;
+    }
+
+    .obra-modal-inner {
+        max-width: 100%;
+        max-height: 90vh;
+        padding: 14px 14px 16px;
+        border-radius: 16px;
+    }
+
+    .obra-modal-iframe-wrapper,
+    .obra-carousel-large {
+        max-height: 65vh;
+        min-height: 260px;
+    }
+}
+
+@media (max-width: 599px) {
+    .obra-table {
+        min-width: 640px;
+    }
+
+    .obra-btn {
+        font-size: 10px;
+        padding: 5px 8px;
+    }
+
+    .obra-modal-title {
+        font-size: 14px;
+    }
+
+    .obra-modal-close {
+        width: 26px;
+        height: 26px;
+        font-size: 17px;
+    }
+}
+
+/* ========================================================= */
+/* ========== SECCIÓN DOCUMENTOS OBRA (PDF) =============== */
+/* ========================================================= */
+
+.obra-pdf-section {
+    width: 100%;
+    padding: 40px 16px 52px;
+    background: #ffffff;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+.obra-pdf-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.obra-pdf-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--black, #221f1f);
+    margin: 0 0 6px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.obra-pdf-subtitle {
+    font-size: 13px;
+    color: #666666;
+    margin: 0 0 22px 0;
+}
+
+/* Grid de tarjetas */
+
+.obra-pdf-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.obra-pdf-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 16px 18px 18px;
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.04),
+        0 0 0 1px rgba(0, 0, 0, 0.03);
+    position: relative;
+}
+
+/* Línea dorada arriba */
+.obra-pdf-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 14px;
+    right: 14px;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(90deg,
+            var(--gold, #97732c),
+            var(--green, #57a639),
+            transparent);
+    opacity: 0.95;
+}
+
+.obra-pdf-name {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 4px 0 8px 0;
+    color: var(--black, #221f1f);
+}
+
+.obra-pdf-desc {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #444444;
+    margin: 0 0 12px 0;
+}
+
+/* Botón de ver PDF */
+
+.obra-pdf-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(151, 115, 44, 0.85);
+    background: #ffffff;
+    color: var(--black, #221f1f);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+    cursor: pointer;
+    transition: background 0.15s ease,
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.obra-pdf-btn:hover {
+    background: rgba(151, 115, 44, 0.08);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+}
+
+/* ========================================================= */
+/* ================ MODALES PDF GRANDES ==================== */
+/* ========================================================= */
+
+.obra-pdf-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    display: none;
+    /* se muestra con .is-open */
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    z-index: 9999;
+}
+
+.obra-pdf-modal.is-open {
+    display: flex;
+}
+
+.obra-pdf-modal-inner {
+    background: #ffffff;
+    border-radius: 18px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    padding: 16px 18px 18px;
+    box-sizing: border-box;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35),
+        0 0 0 1px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+
+/* Botón cerrar */
+
+.obra-pdf-close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 0, 0, 0.06);
+    color: #333333;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.obra-pdf-close:hover {
+    background: rgba(0, 0, 0, 0.12);
+}
+
+.obra-pdf-modal-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 4px 32px 8px 0;
+    /* hueco para la X */
+    color: var(--black, #221f1f);
+}
+
+/* Recuadro para ver el PDF */
+
+.obra-pdf-frame {
+    flex: 1;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    /* rectángulo horizontal */
+    max-height: 70vh;
+    min-height: 320px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #f0f0f0;
+}
+
+.obra-pdf-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* ========================================================= */
+/* ====================== RESPONSIVE ======================= */
+/* ========================================================= */
+
+@media (max-width: 899px) {
+    .obra-pdf-section {
+        padding: 32px 12px 40px;
+    }
+
+    .obra-pdf-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .obra-pdf-modal-inner {
+        max-width: 100%;
+        max-height: 90vh;
+        padding: 14px 14px 16px;
+    }
+
+    .obra-pdf-frame {
+        max-height: 65vh;
+        min-height: 260px;
+    }
+}
+
+@media (max-width: 599px) {
+    .obra-pdf-title {
+        font-size: 20px;
+    }
+
+    .obra-pdf-card {
+        border-radius: 12px;
+        padding: 14px 14px 16px;
+    }
+
+    .obra-pdf-name {
+        font-size: 13px;
+    }
+
+    .obra-pdf-desc {
+        font-size: 12.5px;
+    }
+
+    .obra-pdf-btn {
+        font-size: 10px;
+        padding: 6px 12px;
+    }
+
+    .obra-pdf-close {
+        width: 26px;
+        height: 26px;
+        font-size: 17px;
+    }
+
+    .obra-pdf-modal-title {
+        font-size: 14px;
+    }
+}
+
+/* ========================================================= */
+/* ======== FIN SECCIÓN DOCUMENTOS OBRA (PDF) CSS ========= */
+/* ========================================================= */
+
+/* ========================================================= */
+/* ======== SECCIÓN LICITACIONES PÚBLICAS (PDF) CSS ======== */
+/* ========================================================= */
+
+.licitaciones-section {
+    width: 100%;
+    padding: 40px 16px 52px;
+    background: #ffffff;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+.licitaciones-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Tarjetas de licitación */
+
+.licitacion-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 16px 18px 18px;
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.04),
+        0 0 0 1px rgba(0, 0, 0, 0.03);
+    position: relative;
+}
+
+/* Línea dorada */
+.licitacion-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 14px;
+    right: 14px;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(90deg,
+            var(--gold, #97732c),
+            var(--green, #57a639),
+            transparent);
+    opacity: 0.95;
+}
+
+.licitacion-title {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 4px 0 6px 0;
+    color: var(--black, #221f1f);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.licitacion-text {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #444444;
+    margin: 0 0 10px 0;
+}
+
+.licitacion-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* Reusa el botón de PDFs (obra-pdf-btn) de la sección anterior */
+/* Si no lo tienes, aquí va de nuevo: */
+
+.obra-pdf-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(151, 115, 44, 0.85);
+    background: #ffffff;
+    color: var(--black, #221f1f);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+    cursor: pointer;
+    transition: background 0.15s ease,
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.obra-pdf-btn:hover {
+    background: rgba(151, 115, 44, 0.08);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+}
+
+/* ========== MODALES PDF (mismo estilo que antes) ========= */
+
+.obra-pdf-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    z-index: 9999;
+}
+
+.obra-pdf-modal.is-open {
+    display: flex;
+}
+
+.obra-pdf-modal-inner {
+    background: #ffffff;
+    border-radius: 18px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    padding: 16px 18px 18px;
+    box-sizing: border-box;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35),
+        0 0 0 1px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+
+/* Botón cerrar */
+
+.obra-pdf-close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 0, 0, 0.06);
+    color: #333333;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.obra-pdf-close:hover {
+    background: rgba(0, 0, 0, 0.12);
+}
+
+.obra-pdf-modal-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 4px 32px 8px 0;
+    color: var(--black, #221f1f);
+}
+
+/* Frame del PDF */
+
+.obra-pdf-frame {
+    flex: 1;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    max-height: 70vh;
+    min-height: 320px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #f0f0f0;
+}
+
+.obra-pdf-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* =================== RESPONSIVE =================== */
+
+@media (max-width: 899px) {
+    .licitaciones-section {
+        padding: 32px 12px 40px;
+    }
+
+    .licitaciones-inner {
+        gap: 16px;
+    }
+
+    .obra-pdf-modal-inner {
+        max-width: 100%;
+        max-height: 90vh;
+        padding: 14px 14px 16px;
+    }
+
+    .obra-pdf-frame {
+        max-height: 65vh;
+        min-height: 260px;
+    }
+}
+
+@media (max-width: 599px) {
+    .licitacion-title {
+        font-size: 14px;
+    }
+
+    .licitacion-card {
+        border-radius: 12px;
+        padding: 14px 14px 16px;
+    }
+
+    .licitacion-text {
+        font-size: 12.5px;
+    }
+
+    .obra-pdf-btn {
+        font-size: 10px;
+        padding: 6px 12px;
+    }
+
+    .obra-pdf-close {
+        width: 26px;
+        height: 26px;
+        font-size: 17px;
+    }
+
+    .obra-pdf-modal-title {
+        font-size: 14px;
+    }
+}
+
+/* ========================================================= */
+/* ===== FIN SECCIÓN LICITACIONES PÚBLICAS (PDF) CSS ======= */
+/* ========================================================= */
+
+
+
+

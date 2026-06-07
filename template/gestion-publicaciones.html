@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Noticias - Admin Demo</title>
+    <link rel="stylesheet" href="../static/css/global.css">
+    <link rel="stylesheet" href="../static/css/dashboard.css">
+    <style>
+        .admin-body { display: flex; min-height: 100vh; background: #f4f7f6; font-family: sans-serif; margin: 0; }
+        .admin-sidebar { width: 260px; background: #0a1f44; color: white; display: flex; flex-direction: column; padding: 20px; }
+        .sidebar-header { display: flex; align-items: center; gap: 10px; font-size: 1.2rem; font-weight: bold; margin-bottom: 30px; }
+        .sidebar-logo { width: 40px; height: 40px; }
+        .sidebar-nav { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+        .sidebar-nav a { color: rgba(255,255,255,0.7); text-decoration: none; padding: 12px; border-radius: 6px; transition: 0.3s; }
+        .sidebar-nav a:hover, .sidebar-nav a.active { background: rgba(255,255,255,0.1); color: white; }
+        .admin-main { flex: 1; padding: 30px; }
+        .admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+        .user-info { display: flex; align-items: center; gap: 10px; }
+        .user-avatar { width: 35px; height: 35px; background: #c9a961; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+        .btn-logout { background: #e74c3c; color: white; border: none; padding: 10px; border-radius: 6px; cursor: pointer; width: 100%; margin-top: 20px; }
+        .btn-primary { background: #0a1f44; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; }
+    </style>
+    <script src="../static/js/auth-demo.js"></script>
+    <script src="../static/js/mock-api.js"></script>
+</head>
+<body class="admin-body">
+    <aside class="admin-sidebar">
+        <div class="sidebar-header">
+            <img src="../static/img/logo.svg" alt="Logo" class="sidebar-logo">
+            <span>Admin Demo</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="gestion-gobierno.html" class="">📊 Dashboard</a>
+            <a href="gestion-publicaciones.html" class="active">📰 Noticias</a>
+            <a href="gestion-pdfs.html" class="">📄 Documentos</a>
+            <a href="gestion-imagenes.html" class="">🖼️ Galería</a>
+            <a href="gestion-videos.html" class="">🎥 Videos</a>
+        </nav>
+        <div class="sidebar-footer">
+            <button onclick="Auth.logout()" class="btn-logout">Cerrar Sesión</button>
+        </div>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-header">
+            <h1>Gestión de Noticias</h1>
+            <div class="user-info">
+                <span style="background:#fff4e5;padding:4px 10px;border-radius:4px;font-size:0.8rem;margin-right:8px;">Modo demo</span>
+                <span data-user-email>admin@municipio.demo</span>
+                <div class="user-avatar">A</div>
+            </div>
+        </header>
+
+        <section style="background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h2>Artículos Publicados</h2>
+                <button class="btn-primary" id="add-pub-btn">+ Nueva Publicación</button>
+            </div>
+            <div id="publications-grid"></div>
+        </section>
+    </main>
+    <script src="../static/js/publications-manager.js"></script>
+    <script src="../static/js/admin-common.js"></script>
+</body>
+</html>

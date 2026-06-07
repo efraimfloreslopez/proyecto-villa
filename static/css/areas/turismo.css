@@ -1,0 +1,1778 @@
+/* =============== BANNER TURISMO (ALTURA BAJA) =============== */
+
+.turismo-banner {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    min-height: 160px;
+}
+
+.turismo-banner-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.turismo-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(151, 115, 44, 0.55);
+    /* gold con transparencia */
+    z-index: 2;
+}
+
+.turismo-banner-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(10px, 3vw, 20px);
+}
+
+.turismo-banner-title-box {
+    background: #97732c;
+    padding: clamp(6px, 1vw, 10px) clamp(18px, 3vw, 32px);
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 90%;
+}
+
+.turismo-banner-title {
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: clamp(16px, 3vw, 24px);
+    letter-spacing: clamp(1px, 0.4vw, 3px);
+}
+
+@media (min-width: 768px) {
+    .turismo-banner {
+        min-height: 190px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .turismo-banner {
+        min-height: 220px;
+    }
+}
+
+/* =============== SECCIÓN TEXTO + VIDEO TURISMO =============== */
+
+.turismo-info-section {
+    width: 100%;
+    padding: 60px 16px 80px;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, #fafafa 0%, #ffffff 100%);
+}
+
+.turismo-info-layout {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* VIDEO IZQUIERDA */
+
+.turismo-video-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(34, 31, 31, 0.15), 0 2px 8px rgba(151, 115, 44, 0.1);
+    background: #000;
+    min-height: 280px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.turismo-video-wrapper:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 28px 70px rgba(34, 31, 31, 0.2), 0 4px 12px rgba(151, 115, 44, 0.15);
+}
+
+.turismo-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.turismo-video-glow {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right,
+            rgba(151, 115, 44, 0.35),
+            rgba(87, 166, 57, 0.1) 50%,
+            transparent 70%);
+    mix-blend-mode: screen;
+    z-index: 2;
+}
+
+/* TEXTO DERECHA */
+
+.turismo-info-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.turismo-info-card {
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 16px 45px rgba(34, 31, 31, 0.08), 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 28px 26px 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    border: 1px solid rgba(151, 115, 44, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.turismo-info-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold) 0%, var(--green) 100%);
+}
+
+.ti-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(151, 115, 44, 0.08);
+    padding: 5px 12px;
+    border-radius: 20px;
+    align-self: flex-start;
+}
+
+.ti-badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.ti-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--black);
+    margin: 6px 0 0 0;
+    line-height: 1.3;
+    letter-spacing: -0.3px;
+}
+
+.ti-title-accent {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: var(--gold);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.ti-divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
+    margin: 2px 0;
+}
+
+.ti-lead {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--black);
+    margin: 0;
+    font-weight: 500;
+    text-align: justify;
+}
+
+.ti-secondary {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #5a5a5a;
+    margin: 0;
+    font-weight: 400;
+    text-align: justify;
+}
+
+.ti-footer {
+    margin-top: 6px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(151, 115, 44, 0.12);
+}
+
+.ti-stats {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--green);
+    letter-spacing: 0.3px;
+    flex-wrap: wrap;
+}
+
+.ti-stat-icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--green) 0%, var(--gold) 100%);
+    position: relative;
+    flex-shrink: 0;
+}
+
+.ti-stat-icon::after {
+    content: "?";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.ti-logo {
+    height: 26px;
+    width: auto;
+    object-fit: contain;
+    margin-left: auto;
+}
+
+/* RESPONSIVE TEXTO + VIDEO */
+
+@media (min-width: 768px) {
+    .turismo-info-layout {
+        flex-direction: row;
+        align-items: stretch;
+        gap: 40px;
+    }
+
+    .turismo-video-wrapper {
+        flex: 2;
+        min-height: 340px;
+    }
+
+    .turismo-info-container {
+        flex: 1;
+    }
+
+    .ti-title {
+        font-size: 20px;
+    }
+
+    .ti-lead {
+        font-size: 15px;
+    }
+
+    .ti-secondary {
+        font-size: 14px;
+    }
+
+    .ti-logo {
+        height: 30px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .turismo-info-section {
+        padding: 80px 16px 100px;
+    }
+
+    .turismo-video-wrapper {
+        flex: 2.2;
+        min-height: 380px;
+    }
+
+    .turismo-info-card {
+        padding: 36px 32px 38px;
+    }
+
+    .ti-title {
+        font-size: 22px;
+    }
+
+    .ti-title-accent {
+        font-size: 12px;
+    }
+
+    .ti-lead {
+        font-size: 16px;
+        line-height: 1.65;
+    }
+
+    .ti-secondary {
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+    .ti-logo {
+        height: 34px;
+    }
+}
+
+@media (max-width: 460px) {
+    .turismo-info-section {
+        padding: 40px 12px 50px;
+    }
+
+    .turismo-info-card {
+        padding: 22px 18px 24px;
+        border-radius: 20px;
+        gap: 12px;
+    }
+
+    .ti-title {
+        font-size: 15px;
+        letter-spacing: -0.2px;
+    }
+
+    .ti-title-accent {
+        font-size: 9px;
+    }
+
+    .ti-lead {
+        font-size: 12px;
+        line-height: 1.55;
+    }
+
+    .ti-secondary {
+        font-size: 11px;
+        line-height: 1.55;
+    }
+
+    .turismo-video-wrapper {
+        min-height: 200px;
+        border-radius: 20px;
+    }
+
+    .ti-logo {
+        height: 22px;
+    }
+
+    .ti-badge {
+        font-size: 9px;
+        padding: 4px 10px;
+    }
+
+    .ti-stats {
+        font-size: 10px;
+    }
+}
+
+/* =============== COLLAGE TURISMO =============== */
+/* =============== COLLAGE TURISMO =============== */
+/* =============== COLLAGE TURISMO =============== */
+
+.turismo-collage-section {
+    width: 100%;
+    padding: 60px 20px 80px;
+    background: linear-gradient(to bottom, #ffffff 0%, var(--white) 100%);
+    display: flex;
+    justify-content: center;
+}
+
+.turismo-collage-inner {
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+}
+
+/* Badge superior */
+
+.tc-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 24px;
+    background: linear-gradient(135deg, var(--gold) 0%, #c29a45 100%);
+    border-radius: 50px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 12px rgba(151, 115, 44, 0.25);
+}
+
+.tc-badge-icon {
+    color: var(--white);
+    font-size: 10px;
+    opacity: 0.9;
+}
+
+.tc-badge-text {
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Línea decorativa */
+
+.tc-decorative-line {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, var(--gold), transparent);
+    margin-bottom: 24px;
+    border-radius: 2px;
+}
+
+/* Encabezado */
+
+.tc-header {
+    margin-bottom: 40px;
+}
+
+.tc-title {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 14px;
+}
+
+.tc-title-main {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--black);
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+}
+
+.tc-title-accent {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.5px;
+}
+
+.tc-subtitle {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #666;
+    max-width: 600px;
+    font-weight: 400;
+}
+
+/* ========== GRID COLLAGE (ESCRITORIO) ========== */
+/* 3 chicas a la izquierda + 1 grande derecha en la fila de arriba */
+
+.turismo-collage-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-rows: 170px;
+    gap: 16px;
+    margin-bottom: 50px;
+}
+
+.tc-item {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--black);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.tc-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, var(--gold), var(--green));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 3;
+}
+
+.tc-item:hover::before {
+    opacity: 1;
+}
+
+.tc-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tc-item-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(151, 115, 44, 0.4) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 2;
+}
+
+.tc-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
+
+.tc-item:hover img {
+    transform: scale(1.08);
+}
+
+.tc-item:hover .tc-item-overlay {
+    opacity: 1;
+}
+
+/* POSICIONES ESCRITORIO (solo PC) */
+
+.tc-item-1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.tc-item-2 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.tc-item-3 {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.tc-item-4 {
+    grid-column: 4;
+    grid-row: 1 / span 2;
+    /* grande derecha */
+}
+
+.tc-item-5 {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+}
+
+.tc-item-6 {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.tc-item-7 {
+    grid-column: 1 / span 2;
+    grid-row: 3;
+}
+
+.tc-item-8 {
+    grid-column: 3 / span 2;
+    grid-row: 3;
+}
+
+/* Footer decorativo */
+
+.tc-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.tc-footer-line {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+}
+
+.tc-footer-text {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* ========== TABLET ========== */
+
+@media (max-width: 992px) {
+    .turismo-collage-section {
+        padding: 50px 18px 60px;
+    }
+
+    .tc-title-main {
+        font-size: 30px;
+    }
+
+    .tc-title-accent {
+        font-size: 18px;
+    }
+
+    .tc-subtitle {
+        font-size: 14px;
+    }
+
+    .turismo-collage-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-auto-rows: 150px;
+        gap: 14px;
+    }
+
+    .tc-item {
+        border-radius: 14px;
+    }
+
+    /* En tablet relajamos los spans para que no se rompa */
+    .tc-item-1,
+    .tc-item-2,
+    .tc-item-3,
+    .tc-item-4,
+    .tc-item-5,
+    .tc-item-6,
+    .tc-item-7,
+    .tc-item-8 {
+        grid-column: auto;
+        grid-row: auto;
+    }
+}
+
+/* ========== MÓVIL (donde estaba feo) ========== */
+
+@media (max-width: 768px) {
+    .turismo-collage-section {
+        padding: 40px 16px 50px;
+    }
+
+    .tc-badge {
+        padding: 6px 18px;
+    }
+
+    .tc-badge-text {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .tc-decorative-line {
+        width: 60px;
+        height: 2px;
+        margin-bottom: 18px;
+    }
+
+    .tc-header {
+        margin-bottom: 30px;
+    }
+
+    .tc-title-main {
+        font-size: 26px;
+    }
+
+    .tc-title-accent {
+        font-size: 16px;
+    }
+
+    .tc-subtitle {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .turismo-collage-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: 130px;
+        gap: 12px;
+        margin-bottom: 40px;
+    }
+
+    .tc-item {
+        border-radius: 14px;
+    }
+
+    /* IMPORTANTE: en móvil quitamos TODAS las posiciones fijas
+       para que se acomoden solitas y no se rompa nada */
+    .tc-item-1,
+    .tc-item-2,
+    .tc-item-3,
+    .tc-item-4,
+    .tc-item-5,
+    .tc-item-6,
+    .tc-item-7,
+    .tc-item-8 {
+        grid-column: auto !important;
+        grid-row: auto !important;
+    }
+
+    .tc-footer-line {
+        width: 40px;
+    }
+
+    .tc-footer-text {
+        font-size: 11px;
+    }
+}
+
+/* ========== MÓVIL MUY PEQUEÑO ========== */
+
+@media (max-width: 480px) {
+    .turismo-collage-section {
+        padding: 30px 12px 40px;
+    }
+
+    .tc-badge {
+        padding: 5px 14px;
+    }
+
+    .tc-badge-text {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .tc-badge-icon {
+        font-size: 8px;
+    }
+
+    .tc-header {
+        margin-bottom: 24px;
+    }
+
+    .tc-title-main {
+        font-size: 22px;
+    }
+
+    .tc-title-accent {
+        font-size: 14px;
+    }
+
+    .tc-subtitle {
+        font-size: 12px;
+    }
+
+    .turismo-collage-grid {
+        grid-auto-rows: 120px;
+        gap: 10px;
+    }
+
+    .tc-item {
+        border-radius: 12px;
+    }
+
+    .tc-footer {
+        gap: 12px;
+    }
+
+    .tc-footer-line {
+        width: 30px;
+    }
+
+    .tc-footer-text {
+        font-size: 10px;
+    }
+}
+
+/* =============== SECCIÓN VIDEOS TURISMO =============== */
+/* =============== SECCIÓN VIDEOS TURISMO =============== */
+/* =============== SECCIÓN VIDEOS TURISMO =============== */
+/* =============== SECCIÓN VIDEOS TURISMO =============== */
+/* =============== SECCIÓN VIDEOS TURISMO =============== */
+/* =============== SECCIÓN VIDEOS TURISMO =============== */
+/* =============== SECCIÓN VIDEOS TURISMO =============== */
+/* ============================================
+   SECCIÓN VIDEOS - ESTILO MINIMALISTA PREMIUM
+   ============================================ */
+
+.tv-section {
+    width: 100%;
+    padding: 80px 20px;
+    background: #ffffff;
+    position: relative;
+}
+
+.tv-container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* ========== HEADER ========== */
+
+.tv-header {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.tv-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #888888;
+    margin-bottom: 16px;
+}
+
+.tv-title {
+    font-size: 42px;
+    font-weight: 300;
+    letter-spacing: -1px;
+    color: #0a0a0a;
+    margin: 0 0 20px 0;
+    line-height: 1.1;
+}
+
+.tv-description {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #666666;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* ========== CAROUSEL BASE (MÓVIL) ========== */
+
+.tv-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.tv-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+}
+
+.tv-slide {
+    flex: 0 0 100%;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+
+/* ========== TARJETA VIDEO ========== */
+
+.tv-card {
+    background: #fafafa;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.tv-card:hover {
+    transform: translateY(-2px);
+}
+
+.tv-video-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    background: #000000;
+    overflow: hidden;
+}
+
+.tv-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.tv-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0) 60%,
+            rgba(0, 0, 0, 0.4) 100%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tv-card:hover .tv-overlay {
+    opacity: 1;
+}
+
+/* Info del video */
+
+.tv-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 24px;
+    background: #fafafa;
+}
+
+.tv-number {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #0a0a0a;
+    opacity: 0.4;
+}
+
+.tv-caption {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    color: #0a0a0a;
+    margin: 0;
+}
+
+/* ========== CONTROLES MÓVIL ========== */
+
+.tv-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: rgba(255, 255, 255, 0.95);
+    color: #0a0a0a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.tv-prev {
+    left: 16px;
+}
+
+.tv-next {
+    right: 16px;
+}
+
+.tv-control:hover {
+    background: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.tv-control:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+/* Indicadores */
+
+.tv-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 32px;
+}
+
+.tv-dot {
+    width: 6px;
+    height: 6px;
+    border: none;
+    background: #d4d4d4;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.tv-dot:hover {
+    background: #a0a0a0;
+}
+
+.tv-dot-active {
+    width: 24px;
+    border-radius: 3px;
+    background: #0a0a0a;
+}
+
+/* ========== RESPONSIVE: TABLET ========== */
+
+@media (min-width: 768px) {
+    .tv-section {
+        padding: 100px 32px;
+    }
+
+    .tv-header {
+        margin-bottom: 72px;
+    }
+
+    .tv-title {
+        font-size: 52px;
+    }
+
+    .tv-description {
+        font-size: 16px;
+    }
+
+    .tv-track {
+        gap: 24px;
+    }
+
+    .tv-slide {
+        flex: 0 0 calc(50% - 12px);
+        padding: 0;
+    }
+
+    .tv-slide:nth-child(3) {
+        display: none;
+    }
+
+    .tv-control {
+        display: none;
+    }
+}
+
+/* ========== RESPONSIVE: DESKTOP ========== */
+
+@media (min-width: 1024px) {
+    .tv-section {
+        padding: 120px 40px;
+    }
+
+    .tv-header {
+        margin-bottom: 80px;
+    }
+
+    .tv-title {
+        font-size: 56px;
+        letter-spacing: -1.5px;
+    }
+
+    .tv-track {
+        gap: 32px;
+        transform: none !important;
+    }
+
+    .tv-slide {
+        flex: 0 0 calc(33.333% - 22px);
+    }
+
+    .tv-slide:nth-child(3) {
+        display: block;
+    }
+
+    .tv-control,
+    .tv-indicators {
+        display: none;
+    }
+
+    .tv-info {
+        padding: 24px 28px;
+    }
+
+    .tv-number {
+        font-size: 14px;
+    }
+
+    .tv-caption {
+        font-size: 15px;
+    }
+}
+
+/* ========== RESPONSIVE: PANTALLAS GRANDES ========== */
+
+@media (min-width: 1440px) {
+    .tv-container {
+        max-width: 1400px;
+    }
+
+    .tv-track {
+        gap: 40px;
+    }
+
+    .tv-slide {
+        flex: 0 0 calc(33.333% - 27px);
+    }
+}
+
+/* ========== MÓVILES PEQUEÑOS ========== */
+
+@media (max-width: 480px) {
+    .tv-section {
+        padding: 60px 16px;
+    }
+
+    .tv-header {
+        margin-bottom: 48px;
+    }
+
+    .tv-title {
+        font-size: 32px;
+    }
+
+    .tv-description {
+        font-size: 14px;
+    }
+
+    .tv-control {
+        width: 36px;
+        height: 36px;
+    }
+
+    .tv-prev {
+        left: 12px;
+    }
+
+    .tv-next {
+        right: 12px;
+    }
+}
+
+
+
+/* =============== SECCIÓN HOTELES =============== */
+/* =============== SECCIÓN HOTELES =============== */
+/* =============== SECCIÓN HOTELES =============== */
+/* =============== SECCIÓN HOTELES =============== */
+/* =============== SECCIÓN HOTELES =============== */
+/* =============== SECCIÓN HOTELES =============== */
+/* =============== SECCIÓN HOTELES – ESTILO PREMIUM =============== */
+
+.hoteles-section {
+    width: 100%;
+    padding: 72px 16px 90px;
+    display: flex;
+    justify-content: center;
+    background: var(--white);
+}
+
+.hoteles-inner {
+    width: 100%;
+    max-width: 1220px;
+}
+
+/* Encabezado */
+
+.hoteles-header {
+    margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.hoteles-chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.hoteles-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 14px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.hoteles-chip-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--gold), var(--green));
+}
+
+.hoteles-chip-text {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--black);
+}
+
+.hoteles-chip-tag {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    color: #888;
+}
+
+.hoteles-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--black);
+    letter-spacing: -0.3px;
+}
+
+.hoteles-subtitle {
+    font-size: 14px;
+    color: #666;
+    max-width: 640px;
+    line-height: 1.7;
+}
+
+/* GRID */
+
+.hoteles-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+}
+
+/* TARJETA */
+
+.hotel-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 22px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    padding: 18px 20px 22px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow:
+        0 22px 60px rgba(0, 0, 0, 0.05),
+        0 0 0 1px rgba(255, 255, 255, 0.6);
+    overflow: hidden;
+}
+
+/* barra luminosa superior */
+.hotel-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 12px;
+    right: 12px;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(90deg,
+            rgba(151, 115, 44, 0.0) 0%,
+            rgba(151, 115, 44, 0.9) 40%,
+            rgba(87, 166, 57, 0.9) 60%,
+            rgba(151, 115, 44, 0.0) 100%);
+    opacity: 0.8;
+}
+
+/* ligero hover */
+.hotel-card:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 28px 70px rgba(0, 0, 0, 0.07),
+        0 0 0 1px rgba(151, 115, 44, 0.18);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+/* encabezado de tarjeta */
+
+.hotel-card-top {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.hotel-card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hotel-tag {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    padding: 2px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(151, 115, 44, 0.5);
+    color: var(--gold);
+    background: rgba(151, 115, 44, 0.05);
+}
+
+.hotel-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--black);
+}
+
+.hotel-location {
+    font-size: 12px;
+    color: #777;
+}
+
+/* cuerpo */
+
+.hotel-body {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.hotel-column {
+    flex: 1;
+}
+
+.hotel-info-section+.hotel-info-section {
+    margin-top: 10px;
+}
+
+.hotel-section-title {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--gold);
+    margin-bottom: 4px;
+}
+
+.hotel-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.hotel-list li {
+    font-size: 13px;
+    color: #444;
+    line-height: 1.5;
+    padding-left: 12px;
+    position: relative;
+}
+
+.hotel-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--green);
+}
+
+/* bloques de info */
+
+.hotel-info-block {
+    margin-top: 10px;
+    padding: 8px 11px;
+    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.015);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.hotel-info-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.hotel-info-main {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--black);
+    text-decoration: none;
+}
+
+.hotel-info-main:hover {
+    color: var(--gold);
+    text-decoration: underline;
+}
+
+/* MAPAS */
+
+.hotel-card-map .hotel-body {
+    gap: 16px;
+}
+
+.hotel-map-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.hotel-map-card {
+    width: 100%;
+    height: 210px;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    background: #f3f3f3;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.hotel-map-card iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (min-width: 768px) {
+    .hoteles-section {
+        padding: 80px 24px 100px;
+    }
+
+    .hoteles-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    .hotel-body {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .hotel-map-card {
+        height: 220px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hoteles-grid {
+        gap: 26px;
+    }
+
+    .hotel-card {
+        padding: 20px 22px 24px;
+    }
+
+    .hotel-map-card {
+        height: 230px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hoteles-section {
+        padding: 56px 12px 72px;
+    }
+
+    .hotel-card {
+        border-radius: 20px;
+        padding: 16px 16px 20px;
+    }
+
+    .hotel-map-card {
+        height: 190px;
+        border-radius: 16px;
+    }
+}
+
+
+/* =============== SECCIÓN CATÁLOGO TURISMO =============== */
+/* =============== SECCIÓN CATÁLOGO TURISMO =============== */
+/* =============== SECCIÓN CATÁLOGO TURISMO =============== */
+/* =============== SECCIÓN CATÁLOGO TURISMO =============== */
+/* =============== SECCIÓN CATÁLOGO TURISMO =============== */
+/* =============== SECCIÓN CATÁLOGO – VISOR LIMPIO =============== */
+/* =============== SECCIÓN CATÁLOGO – HOJA CON FLECHAS =============== */
+/* =============== SECCIÓN CATÁLOGO – HOJA CON FLECHAS =============== */
+/* =============== SECCIÓN CATÁLOGO – HOJA REESCALADA =============== */
+
+.catalogo-section {
+    width: 100%;
+    padding: 72px 16px 90px;
+    display: flex;
+    justify-content: center;
+    background: var(--white);
+}
+
+.catalogo-inner {
+    width: 100%;
+    max-width: 1100px;
+}
+
+/* Encabezado */
+
+.catalogo-header {
+    margin-bottom: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.catalogo-tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.catalogo-tag-pill {
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--black);
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.catalogo-tag-muni {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    color: #8b8b8b;
+}
+
+.catalogo-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--black);
+    letter-spacing: -0.2px;
+}
+
+.catalogo-subtitle {
+    font-size: 14px;
+    color: #666;
+    max-width: 560px;
+    line-height: 1.7;
+}
+
+/* Contenedor del visor */
+
+.catalogo-viewer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Marco exterior con sombra y lomo */
+
+.catalogo-surface {
+    position: relative;
+    border-radius: 26px;
+    padding: 16px;
+    background:
+        radial-gradient(circle at top left,
+            rgba(0, 0, 0, 0.04),
+            rgba(0, 0, 0, 0.01));
+    box-shadow:
+        0 26px 70px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(0, 0, 0, 0.02);
+    overflow: hidden;
+}
+
+/* Lomo lateral tipo libro */
+
+.catalogo-surface::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 18px;
+    bottom: 18px;
+    width: 5px;
+    border-radius: 0 999px 999px 0;
+    background: linear-gradient(180deg,
+            rgba(151, 115, 44, 0.2),
+            rgba(151, 115, 44, 0.8),
+            rgba(87, 166, 57, 0.35));
+}
+
+/* Borde dorado interior sutil */
+
+.catalogo-surface::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border-radius: 22px;
+    border: 1px solid rgba(151, 115, 44, 0.18);
+    pointer-events: none;
+}
+
+/* Luz superior */
+
+.catalogo-top-glow {
+    position: absolute;
+    top: 10px;
+    left: 60px;
+    right: 40px;
+    height: 40px;
+    border-radius: 999px;
+    background: radial-gradient(circle,
+            rgba(255, 255, 255, 0.9) 0%,
+            rgba(255, 255, 255, 0.3) 40%,
+            transparent 70%);
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Hoja blanca interior – reescalada vertical */
+
+.catalogo-surface-inner {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #f7f7f7;
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.8),
+        inset 0 0 0 1px rgba(0, 0, 0, 0.03);
+
+    /* clave: hoja más pequeña, vertical y centrada */
+    max-width: 720px;
+    /* ancho máximo en escritorio */
+    margin: 0 auto;
+    aspect-ratio: 3 / 4;
+    /* proporción vertical de página */
+}
+
+/* El PDF se adapta a la “hoja” */
+
+.catalogo-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* Enlace inferior */
+
+.catalogo-status-row {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 6px;
+}
+
+.catalogo-link {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--gold);
+    text-decoration: none;
+    letter-spacing: 0.2px;
+}
+
+.catalogo-link:hover {
+    text-decoration: underline;
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (min-width: 1024px) {
+    .catalogo-section {
+        padding: 84px 24px 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .catalogo-section {
+        padding: 56px 12px 72px;
+    }
+
+    .catalogo-surface {
+        padding: 12px;
+        border-radius: 22px;
+    }
+
+    .catalogo-surface::before {
+        inset: 10px;
+        border-radius: 20px;
+    }
+
+    .catalogo-surface-inner {
+        max-width: 100%;
+        aspect-ratio: 3 / 4;
+        /* sigue vertical, pero ocupando el ancho del móvil */
+    }
+}
+
+@media (max-width: 480px) {
+    .catalogo-surface {
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    .catalogo-surface::before {
+        inset: 8px;
+        border-radius: 18px;
+    }
+
+    .catalogo-status-row {
+        justify-content: center;
+    }
+}
+
+/* ===================================================== */
+/* AJUSTES DE ESPACIADO ENTRE SECCIONES (MAIN TURISMO)   */
+/* ===================================================== */
+
+/* Banner: que no deje un hueco gigante debajo */
+.turismo-banner {
+    margin-bottom: 32px;
+}
+
+/* Todas las secciones de contenido dentro de main:
+   bajamos el padding top/bottom para que no haya bloques tan separados */
+.turismo-info-section,
+.turismo-collage-section,
+.tv-section,
+.hoteles-section,
+.catalogo-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+/* En pantallas grandes podemos dar un respiro,
+   pero igual más compacto que antes */
+@media (min-width: 1024px) {
+
+    .turismo-info-section,
+    .turismo-collage-section,
+    .tv-section,
+    .hoteles-section,
+    .catalogo-section {
+        padding-top: 48px;
+        padding-bottom: 52px;
+    }
+
+    .turismo-banner {
+        margin-bottom: 36px;
+    }
+}
+
+/* En móviles aún más juntito para que no se sienta tan largo */
+@media (max-width: 768px) {
+
+    .turismo-info-section,
+    .turismo-collage-section,
+    .tv-section,
+    .hoteles-section,
+    .catalogo-section {
+        padding-top: 28px;
+        padding-bottom: 32px;
+    }
+
+    .turismo-banner {
+        margin-bottom: 24px;
+    }
+}
+
+
+
+

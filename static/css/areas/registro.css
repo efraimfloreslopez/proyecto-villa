@@ -1,0 +1,307 @@
+:root {
+    --gold: #97732c;
+    --black: #221f1f;
+    --green: #57a639;
+    --white: #ffffff;
+}
+
+/* ========================================================= */
+/* === INICIO CSS REGISTRO FAMILIAR – PDF DINÁMICO ========= */
+/* ========================================================= */
+
+.regfam-din-section {
+    width: 100%;
+    padding: 52px 18px 60px;
+    background: #f4f4f8;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+.regfam-din-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+.regfam-din-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.regfam-din-logo {
+    width: 90px;
+    flex-shrink: 0;
+}
+
+.regfam-din-header-text {
+    flex: 1;
+}
+
+.regfam-din-title {
+    margin: 0 0 6px 0;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--black);
+}
+
+.regfam-din-subtitle {
+    margin: 0;
+    font-size: 13px;
+    color: #555;
+}
+
+/* Grid 3x3 escritorio */
+.regfam-din-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+/* Tarjeta */
+.regfam-din-card {
+    background: var(--white);
+    border-radius: 18px;
+    padding: 18px 18px 20px;
+    position: relative;
+    box-shadow:
+        0 14px 30px rgba(0, 0, 0, 0.06),
+        0 0 0 1px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+}
+
+/* borde superior tipo highlight */
+.regfam-din-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 18px;
+    right: 18px;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--gold), var(--green));
+    opacity: 0.9;
+}
+
+/* resplandor suave */
+.regfam-din-card::after {
+    content: "";
+    position: absolute;
+    right: -40px;
+    bottom: -40px;
+    width: 130px;
+    height: 130px;
+    background: radial-gradient(circle, rgba(151, 115, 44, 0.26), transparent 70%);
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.regfam-din-card-title {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 8px 0 6px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--black);
+}
+
+.regfam-din-card-text {
+    margin: 0 0 14px 0;
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Botón principal */
+.regfam-din-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 7px 16px;
+    border-radius: 999px;
+    border: none;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+    cursor: pointer;
+    background: var(--gold);
+    color: var(--white);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+    z-index: 1;
+}
+
+.regfam-din-btn::after {
+    content: "?";
+    font-size: 11px;
+}
+
+.regfam-din-btn:hover {
+    background: var(--green);
+    box-shadow: 0 11px 26px rgba(0, 0, 0, 0.22);
+}
+
+/* ======================= */
+/* MODAL                   */
+/* ======================= */
+
+.regfam-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    /* se activa con clase .is-open */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.regfam-modal.is-open {
+    display: flex;
+}
+
+.regfam-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.regfam-modal-dialog {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 900px;
+    max-height: 90vh;
+    background: var(--white);
+    border-radius: 18px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.regfam-modal-header {
+    padding: 14px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    background: #faf7f0;
+}
+
+.regfam-modal-title {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+    color: var(--black);
+}
+
+.regfam-modal-body {
+    flex: 1;
+    padding: 10px 16px 12px;
+    background: #f2f2f6;
+}
+
+.regfam-modal-iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+    background: var(--white);
+}
+
+.regfam-modal-footer {
+    padding: 10px 18px 14px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Botón cerrar */
+.regfam-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    width: 26px;
+    height: 26px;
+    border-radius: 999px;
+    border: none;
+    background: rgba(0, 0, 0, 0.06);
+    color: var(--black);
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* ======================= */
+/* RESPONSIVE – Tablet     */
+/* ======================= */
+@media (max-width: 1024px) {
+    .regfam-din-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .regfam-din-title {
+        font-size: 22px;
+    }
+}
+
+/* ======================= */
+/* RESPONSIVE – Móvil      */
+/* ======================= */
+@media (max-width: 640px) {
+    .regfam-din-section {
+        padding: 40px 12px 46px;
+    }
+
+    .regfam-din-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .regfam-din-logo {
+        width: 80px;
+    }
+
+    .regfam-din-title {
+        font-size: 19px;
+    }
+
+    .regfam-din-subtitle {
+        font-size: 12px;
+    }
+
+    .regfam-din-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .regfam-din-card {
+        padding: 16px 15px 18px;
+        border-radius: 16px;
+    }
+
+    .regfam-modal-dialog {
+        max-width: 95%;
+        max-height: 88vh;
+        border-radius: 14px;
+    }
+
+    .regfam-modal-iframe {
+        min-height: 360px;
+    }
+}
+
+/* ========================================================= */
+/* === FIN CSS REGISTRO FAMILIAR – PDF DINÁMICO ============ */
+/* ========================================================= */
+
+
+
+

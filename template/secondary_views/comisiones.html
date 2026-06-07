@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head><meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comisiones - Portal Institucional Municipal</title>
+    <link rel="icon" href="../static/img/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/global.css">
+    <link rel="stylesheet" href="../static/css/comisiones.css">
+</head>
+
+<body>
+
+    <!-- Franja negra superior -->
+    <div class="header-top"></div>
+
+    <!-- Contenedor dorado con esquinas inferiores redondeadas -->
+    <header class="site-header">
+        <div class="header-inner">
+
+            <!-- FILA 1: Contacto primero, luego redes sociales -->
+            <div class="top-contact-row">
+                <!-- Contacto items primero -->
+                <div class="contact-items">
+                    <div class="contact-item">
+                        <img src="../static/img/phone.png" alt="">
+                        <span>Tel: (771) 123-4567</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <img src="../static/img/mail.png" alt="">
+                        <a href="mailto:contacto@municipio.demo">
+                            contacto@municipio.demo
+                        </a>
+                    </div>
+
+                    <div class="contact-item">
+                        <img src="../static/img/location.png" alt="">
+                        <span>Ciudad Demo, México</span>
+                    </div>
+                </div>
+
+                <!-- Redes sociales despu�s -->
+                <div class="social-icons">
+                    <a href="#" title="Instagram">
+                        <img src="../static/img/instagram.png" alt="">
+                    </a>
+                    <a href="#" target="_blank" title="Facebook">
+                        <img src="../static/img/facebook.png" alt="">
+                    </a>
+                    <a href="#" target="_blank" title="YouTube">
+                        <img src="../static/img/youtube.png" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <!-- L�nea blanca separadora -->
+            <div class="separator-line"></div>
+
+            <!-- FILA 2: IZQUIERDA LOGO+TEXTOS, DERECHA MEN� -->
+            <div class="brand-row">
+                <!-- Logo + textos (izquierda) -->
+                <div class="brand">
+                    <a href="/" class="brand-logo-circle">
+                        <img src="../static/img/logo.svg" alt="">
+                    </a>
+                    <div class="brand-texts">
+                        <div class="brand-text-main">Portal Institucional Municipal</div>
+                        <div class="brand-text-sub">Administraci�n Municipal 2022-2026</div>
+                    </div>
+                </div>
+
+                <!-- Men� (derecha) -->
+                <nav class="main-nav">
+                    <!-- Bot�n hamburguesa -->
+                    <div class="hamburger" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <!-- Bot�n X para cerrar el men� m�vil -->
+                    <button class="menu-close-btn" onclick="toggleMenu()">?</button>
+
+                    <ul id="navMenu">
+                        <li><a href="tramitesyservicios.html">TR�MITES Y SERVICIOS</a></li>
+                        <li><a href="directoriomunicipal.html">DIRECTORIO MUNICIPAL</a></li>
+                        <li><a href="hayuntamiento.html">H. AYUNTAMIENTO</a></li>
+                        <li><a href="registrofamiliar.html">REGISTRO FAMILIAR</a></li>
+                        <li><a href="poel.html">POEL</a></li>
+
+                        <!-- �REAS con atributo data-submenu-id para control consistente -->
+                        <li class="has-submenu" data-submenu-id="areas" onclick="toggleSubmenu(event)">
+                            <a href="#">�REAS <span class="arrow">?</span></a>
+                            <ul class="submenu">
+                                <li><a href="dif.html">DIF</a></li>
+                                <li><a href="turismo.html">TURISMO</a></li>
+                                <li><a href="multideportivo.html">MULTIDEPORTIVO</a></li>
+                                <li><a href="pcivil.html">PROTECCI�N CIVIL</a></li>
+                                <li><a href="ubr.html">UNIDAD B�SICA DE REHABILITACI�N</a></li>
+                                <li><a href="ob.html">OBRA P�BLICA</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="transparencia.html">TRANSPARENCIA</a></li>
+                        <li><a href="comisiones.html" class="active">COMISIONES</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- CONTENIDO DE LA P�GINA -->
+    <main class="main-content">
+        <div class="container">
+            <h1 class="page-title">Comisiones Municipales</h1>
+            <p class="page-subtitle">Documentos y actas de las comisiones del H. Ayuntamiento de Portal Institucional Municipal</p>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" class="search-input" id="searchInput"
+                    placeholder="Buscar comisi�n por nombre o tema...">
+                <span class="search-icon">??</span>
+            </div>
+
+            <!-- Commissions Grid -->
+            <div class="commissions-grid" id="commissionsGrid">
+                <!-- Mejora Regulatoria - Primera Sesi�n Extraordinaria -->
+                <div class="commission-card">
+                    <div class="commission-code">COM-MR-001</div>
+                    <h3 class="commission-title">Mejora Regulatoria - Primera Sesi�n Extraordinaria</h3>
+                    <p class="commission-description">Acta de la primera sesi�n extraordinaria de la Comisi�n de Mejora
+                        Regulatoria celebrada el 26 de diciembre de 2024.</p>
+                    <div class="commission-actions">
+                        <a href="#" class="btn btn-primary"
+                            onclick="viewDocument('COM-MR-001', 'Mejora Regulatoria - Primera Sesi�n Extraordinaria', 'Acta de la primera sesi�n extraordinaria de la Comisi�n de Mejora Regulatoria celebrada el 26 de diciembre de 2024.', 'Presencial', '26/12/2024', 245); return false;">Ver
+                            Documento</a>
+                        <span class="btn btn-download-card" onclick="downloadDocument('COM-MR-001')">?? Descargar</span>
+                    </div>
+                </div>
+
+                <!-- Mejora Regulatoria - Segunda Sesi�n Extraordinaria -->
+                <div class="commission-card">
+                    <div class="commission-code">COM-MR-002</div>
+                    <h3 class="commission-title">Mejora Regulatoria - Segunda Sesi�n Extraordinaria</h3>
+                    <p class="commission-description">Acta de la segunda sesi�n extraordinaria de la Comisi�n de Mejora
+                        Regulatoria celebrada el 30 de diciembre de 2024.</p>
+                    <div class="commission-actions">
+                        <a href="#" class="btn btn-primary"
+                            onclick="viewDocument('COM-MR-002', 'Mejora Regulatoria - Segunda Sesi�n Extraordinaria', 'Acta de la segunda sesi�n extraordinaria de la Comisi�n de Mejora Regulatoria celebrada el 30 de diciembre de 2024.', 'Presencial', '30/12/2024', 312); return false;">Ver
+                            Documento</a>
+                        <span class="btn btn-download-card" onclick="downloadDocument('COM-MR-002')">?? Descargar</span>
+                    </div>
+                </div>
+
+                <!-- Protecci�n Civil - Primera Sesi�n Ordinaria -->
+                <div class="commission-card">
+                    <div class="commission-code">COM-PC-001</div>
+                    <h3 class="commission-title">Protecci�n Civil - Primera Sesi�n Ordinaria</h3>
+                    <p class="commission-description">Acta de la primera sesi�n ordinaria de la Comisi�n de Protecci�n
+                        Civil celebrada el 14 de noviembre de 2024.</p>
+                    <div class="commission-actions">
+                        <a href="#" class="btn btn-primary"
+                            onclick="viewDocument('COM-PC-001', 'Protecci�n Civil - Primera Sesi�n Ordinaria', 'Acta de la primera sesi�n ordinaria de la Comisi�n de Protecci�n Civil celebrada el 14 de noviembre de 2024.', 'Presencial', '14/11/2024', 189); return false;">Ver
+                            Documento</a>
+                        <span class="btn btn-download-card" onclick="downloadDocument('COM-PC-001')">?? Descargar</span>
+                    </div>
+                </div>
+
+                <!-- Mejora Regulatoria - Primera Sesi�n Ordinaria -->
+                <div class="commission-card">
+                    <div class="commission-code">COM-MR-003</div>
+                    <h3 class="commission-title">Mejora Regulatoria - Primera Sesi�n Ordinaria</h3>
+                    <p class="commission-description">Acta de la primera sesi�n ordinaria de la Comisi�n de Mejora
+                        Regulatoria celebrada el 16 de diciembre de 2024.</p>
+                    <div class="commission-actions">
+                        <a href="#" class="btn btn-primary"
+                            onclick="viewDocument('COM-MR-003', 'Mejora Regulatoria - Primera Sesi�n Ordinaria', 'Acta de la primera sesi�n ordinaria de la Comisi�n de Mejora Regulatoria celebrada el 16 de diciembre de 2024.', 'Presencial', '16/12/2024', 278); return false;">Ver
+                            Documento</a>
+                        <span class="btn btn-download-card" onclick="downloadDocument('COM-MR-003')">?? Descargar</span>
+                    </div>
+                </div>
+
+                <!-- Desarrollo Agropecuario - Primera Sesi�n Ordinaria -->
+                <div class="commission-card">
+                    <div class="commission-code">COM-DA-001</div>
+                    <h3 class="commission-title">Desarrollo Agropecuario - Primera Sesi�n Ordinaria</h3>
+                    <p class="commission-description">Acta de la primera sesi�n ordinaria de la Comisi�n de Desarrollo
+                        Agropecuario celebrada el 17 de diciembre de 2024.</p>
+                    <div class="commission-actions">
+                        <a href="#" class="btn btn-primary"
+                            onclick="viewDocument('COM-DA-001', 'Desarrollo Agropecuario - Primera Sesi�n Ordinaria', 'Acta de la primera sesi�n ordinaria de la Comisi�n de Desarrollo Agropecuario celebrada el 17 de diciembre de 2024.', 'Presencial', '17/12/2024', 203); return false;">Ver
+                            Documento</a>
+                        <span class="btn btn-download-card" onclick="downloadDocument('COM-DA-001')">?? Descargar</span>
+                    </div>
+                </div>
+
+                <!-- Derechos Humanos e Igualdad - Segunda Sesi�n Ordinaria -->
+                <div class="commission-card">
+                    <div class="commission-code">COM-DH-002</div>
+                    <h3 class="commission-title">Derechos Humanos e Igualdad - Segunda Sesi�n Ordinaria</h3>
+                    <p class="commission-description">Acta de la segunda sesi�n ordinaria de la Comisi�n de Derechos
+                        Humanos, Atenci�n a Personas con Discapacidad e Igualdad de G�nero celebrada el 20 de diciembre
+                        de 2024.</p>
+                    <div class="commission-actions">
+                        <a href="#" class="btn btn-primary"
+                            onclick="viewDocument('COM-DH-002', 'Derechos Humanos e Igualdad - Segunda Sesi�n Ordinaria', 'Acta de la segunda sesi�n ordinaria de la Comisi�n de Derechos Humanos, Atenci�n a Personas con Discapacidad e Igualdad de G�nero celebrada el 20 de diciembre de 2024.', 'Presencial', '20/12/2024', 298); return false;">Ver
+                            Documento</a>
+                        <span class="btn btn-download-card" onclick="downloadDocument('COM-DH-002')">?? Descargar</span>
+                    </div>
+                </div>
+
+                <!-- Prevenci�n contra Adicciones - Tercera Sesi�n Ordinaria -->
+                <div class="commission-card">
+                    <div class="commission-code">COM-PA-003</div>
+                    <h3 class="commission-title">Prevenci�n contra Adicciones - Tercera Sesi�n Ordinaria</h3>
+                    <p class="commission-description">Acta de la tercera sesi�n ordinaria de la Comisi�n de Prevenci�n
+                        contra las Adicciones celebrada el 10 de enero de 2025.</p>
+                    <div class="commission-actions">
+                        <a href="#" class="btn btn-primary"
+                            onclick="viewDocument('COM-PA-003', 'Prevenci�n contra Adicciones - Tercera Sesi�n Ordinaria', 'Acta de la tercera sesi�n ordinaria de la Comisi�n de Prevenci�n contra las Adicciones celebrada el 10 de enero de 2025.', 'Presencial', '10/01/2025', 267); return false;">Ver
+                            Documento</a>
+                        <span class="btn btn-download-card" onclick="downloadDocument('COM-PA-003')">?? Descargar</span>
+                    </div>
+                </div>
+
+                <!-- Obras P�blicas y Desarrollo Urbano - Primera Sesi�n Ordinaria -->
+                <div class="commission-card">
+                    <div class="commission-code">COM-OP-001</div>
+                    <h3 class="commission-title">Obras P�blicas y Desarrollo Urbano - Primera Sesi�n Ordinaria</h3>
+                    <p class="commission-description">Acta de la primera sesi�n ordinaria de la Comisi�n de Obras
+                        P�blicas, Asentamientos Humanos, Desarrollo Urbano y Ordenamiento Territorial celebrada el 17 de
+                        diciembre de 2024.</p>
+                    <div class="commission-actions">
+                        <a href="#" class="btn btn-primary"
+                            onclick="viewDocument('COM-OP-001', 'Obras P�blicas y Desarrollo Urbano - Primera Sesi�n Ordinaria', 'Acta de la primera sesi�n ordinaria de la Comisi�n de Obras P�blicas, Asentamientos Humanos, Desarrollo Urbano y Ordenamiento Territorial celebrada el 17 de diciembre de 2024.', 'Presencial', '17/12/2024', 334); return false;">Ver
+                            Documento</a>
+                        <span class="btn btn-download-card" onclick="downloadDocument('COM-OP-001')">?? Descargar</span>
+                    </div>
+                </div>
+
+                <!-- Desarrollo Econ�mico - Segunda Sesi�n Ordinaria -->
+                <div class="commission-card">
+                    <div class="commission-code">COM-DE-002</div>
+                    <h3 class="commission-title">Desarrollo Econ�mico - Segunda Sesi�n Ordinaria</h3>
+                    <p class="commission-description">Acta de la segunda sesi�n ordinaria de la Comisi�n de Desarrollo
+                        Econ�mico celebrada el 6 de enero de 2025.</p>
+                    <div class="commission-actions">
+                        <a href="#" class="btn btn-primary"
+                            onclick="viewDocument('COM-DE-002', 'Desarrollo Econ�mico - Segunda Sesi�n Ordinaria', 'Acta de la segunda sesi�n ordinaria de la Comisi�n de Desarrollo Econ�mico celebrada el 6 de enero de 2025.', 'Presencial', '06/01/2025', 221); return false;">Ver
+                            Documento</a>
+                        <span class="btn btn-download-card" onclick="downloadDocument('COM-DE-002')">?? Descargar</span>
+                    </div>
+                </div>
+
+                <!-- Seguridad P�blica y Tr�nsito - Primera Sesi�n Ordinaria -->
+                <div class="commission-card">
+                    <div class="commission-code">COM-SP-001</div>
+                    <h3 class="commission-title">Seguridad P�blica y Tr�nsito - Primera Sesi�n Ordinaria</h3>
+                    <p class="commission-description">Acta de la primera sesi�n ordinaria de la Comisi�n de Seguridad
+                        P�blica, Tr�nsito y Vialidad celebrada el 14 de noviembre de 2024.</p>
+                    <div class="commission-actions">
+                        <a href="#" class="btn btn-primary"
+                            onclick="viewDocument('COM-SP-001', 'Seguridad P�blica y Tr�nsito - Primera Sesi�n Ordinaria', 'Acta de la primera sesi�n ordinaria de la Comisi�n de Seguridad P�blica, Tr�nsito y Vialidad celebrada el 14 de noviembre de 2024.', 'Presencial', '14/11/2024', 256); return false;">Ver
+                            Documento</a>
+                        <span class="btn btn-download-card" onclick="downloadDocument('COM-SP-001')">?? Descargar</span>
+                    </div>
+                </div>
+
+                <!-- Seguridad P�blica y Tr�nsito - Segunda Sesi�n Ordinaria -->
+                <div class="commission-card">
+                    <div class="commission-code">COM-SP-002</div>
+                    <h3 class="commission-title">Seguridad P�blica y Tr�nsito - Segunda Sesi�n Ordinaria</h3>
+                    <p class="commission-description">Acta de la segunda sesi�n ordinaria de la Comisi�n de Seguridad
+                        P�blica, Tr�nsito y Vialidad celebrada el 21 de febrero de 2025.</p>
+                    <div class="commission-actions">
+                        <a href="#" class="btn btn-primary"
+                            onclick="viewDocument('COM-SP-002', 'Seguridad P�blica y Tr�nsito - Segunda Sesi�n Ordinaria', 'Acta de la segunda sesi�n ordinaria de la Comisi�n de Seguridad P�blica, Tr�nsito y Vialidad celebrada el 21 de febrero de 2025.', 'Presencial', '21/02/2025', 289); return false;">Ver
+                            Documento</a>
+                        <span class="btn btn-download-card" onclick="downloadDocument('COM-SP-002')">?? Descargar</span>
+                    </div>
+                </div>
+
+                <!-- Adultos Mayores - Tercera Sesi�n Ordinaria -->
+                <div class="commission-card">
+                    <div class="commission-code">COM-AM-003</div>
+                    <h3 class="commission-title">Adultos Mayores - Tercera Sesi�n Ordinaria</h3>
+                    <p class="commission-description">Acta de la tercera sesi�n ordinaria de la Comisi�n de Adultos
+                        Mayores celebrada el 23 de enero de 2025.</p>
+                    <div class="commission-actions">
+                        <a href="#" class="btn btn-primary"
+                            onclick="viewDocument('COM-AM-003', 'Adultos Mayores - Tercera Sesi�n Ordinaria', 'Acta de la tercera sesi�n ordinaria de la Comisi�n de Adultos Mayores celebrada el 23 de enero de 2025.', 'Presencial', '23/01/2025', 198); return false;">Ver
+                            Documento</a>
+                        <span class="btn btn-download-card" onclick="downloadDocument('COM-AM-003')">?? Descargar</span>
+                    </div>
+                </div>
+
+                <!-- Ni�ez y Juventud - Primera Sesi�n Ordinaria -->
+                <div class="commission-card">
+                    <div class="commission-code">COM-NJ-001</div>
+                    <h3 class="commission-title">Ni�ez y Juventud - Primera Sesi�n Ordinaria</h3>
+                    <p class="commission-description">Acta de la primera sesi�n ordinaria de la Comisi�n de Ni�ez y
+                        Juventud celebrada el 14 de noviembre de 2024.</p>
+                    <div class="commission-actions">
+                        <a href="#" class="btn btn-primary"
+                            onclick="viewDocument('COM-NJ-001', 'Ni�ez y Juventud - Primera Sesi�n Ordinaria', 'Acta de la primera sesi�n ordinaria de la Comisi�n de Ni�ez y Juventud celebrada el 14 de noviembre de 2024.', 'Presencial', '14/11/2024', 243); return false;">Ver
+                            Documento</a>
+                        <span class="btn btn-download-card" onclick="downloadDocument('COM-NJ-001')">?? Descargar</span>
+                    </div>
+                </div>
+
+                <!-- Comercio - Primera Sesi�n Ordinaria -->
+                <div class="commission-card">
+                    <div class="commission-code">COM-CO-001</div>
+                    <h3 class="commission-title">Comercio - Primera Sesi�n Ordinaria</h3>
+                    <p class="commission-description">Acta de la primera sesi�n ordinaria de la Comisi�n de Comercio
+                        celebrada el 14 de noviembre de 2024.</p>
+                    <div class="commission-actions">
+                        <a href="#" class="btn btn-primary"
+                            onclick="viewDocument('COM-CO-001', 'Comercio - Primera Sesi�n Ordinaria', 'Acta de la primera sesi�n ordinaria de la Comisi�n de Comercio celebrada el 14 de noviembre de 2024.', 'Presencial', '14/11/2024', 187); return false;">Ver
+                            Documento</a>
+                        <span class="btn btn-download-card" onclick="downloadDocument('COM-CO-001')">?? Descargar</span>
+                    </div>
+                </div>
+
+                <!-- Ni�ez, Juventud, Comercio y Turismo - Segunda Sesi�n Ordinaria -->
+                <div class="commission-card">
+                    <div class="commission-code">COM-NJ-002</div>
+                    <h3 class="commission-title">Ni�ez, Juventud, Comercio y Turismo - Segunda Sesi�n Ordinaria</h3>
+                    <p class="commission-description">Acta de la segunda sesi�n ordinaria de la Comisi�n de Ni�ez,
+                        Juventud, Deporte, Comercio, Abasto y Turismo celebrada el 31 de diciembre de 2024.</p>
+                    <div class="commission-actions">
+                        <a href="#" class="btn btn-primary"
+                            onclick="viewDocument('COM-NJ-002', 'Ni�ez, Juventud, Comercio y Turismo - Segunda Sesi�n Ordinaria', 'Acta de la segunda sesi�n ordinaria de la Comisi�n de Ni�ez, Juventud, Deporte, Comercio, Abasto y Turismo celebrada el 31 de diciembre de 2024.', 'Presencial', '31/12/2024', 305); return false;">Ver
+                            Documento</a>
+                        <span class="btn btn-download-card" onclick="downloadDocument('COM-NJ-002')">?? Descargar</span>
+                    </div>
+                </div>
+
+                <!-- Transparencia y Acceso a la Informaci�n - Primera Sesi�n Ordinaria -->
+                <div class="commission-card">
+                    <div class="commission-code">COM-TR-001</div>
+                    <h3 class="commission-title">Transparencia y Acceso a la Informaci�n - Primera Sesi�n Ordinaria</h3>
+                    <p class="commission-description">Acta de la primera sesi�n ordinaria de la Comisi�n de
+                        Transparencia y Acceso a la Informaci�n P�blica celebrada el 23 de enero de 2025.</p>
+                    <div class="commission-actions">
+                        <a href="#" class="btn btn-primary"
+                            onclick="viewDocument('COM-TR-001', 'Transparencia y Acceso a la Informaci�n - Primera Sesi�n Ordinaria', 'Acta de la primera sesi�n ordinaria de la Comisi�n de Transparencia y Acceso a la Informaci�n P�blica celebrada el 23 de enero de 2025.', 'En l�nea', '23/01/2025', 421); return false;">Ver
+                            Documento</a>
+                        <span class="btn btn-download-card" onclick="downloadDocument('COM-TR-001')">?? Descargar</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- No Results Message -->
+            <div class="no-results hidden" id="noResults">
+                <p>No se encontraron comisiones que coincidan con tu b�squeda.</p>
+                <p>Intenta con otros t�rminos o revisa todas las comisiones disponibles.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal Simple para PDF -->
+    <div class="pdf-modal-overlay" id="pdfModal">
+        <div class="pdf-modal">
+            <div class="modal-header">
+                <div class="modal-title" id="modalTitle">Vista Previa del Documento</div>
+                <button class="close-modal-btn" id="closeModalBtn">�</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="pdf-frame-container">
+                    <iframe class="pdf-frame" id="pdfFrame" title="Vista PDF"></iframe>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn-modal" id="closeBtnModal">Cerrar</button>
+                <button class="btn-modal btn-download-modal" id="downloadBtnModal">Descargar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================= -->
+    <!-- SECCI�N: CONTACTO + HORARIOS (BLANCO)    -->
+    <!-- ========================================= -->
+    <section class="contact-hours-section">
+        <div class="contact-hours-inner">
+
+            <!-- FILA PRINCIPAL: CONTACTO + HORARIOS (SIN MAPA) -->
+            <div class="ch-main-row">
+
+                <!-- COLUMNA CONTACTO -->
+                <div class="ch-contact">
+                    <h2>Contacto</h2>
+
+                    <ul class="ch-contact-list">
+                        <li>
+                            <img src="../static/img/location.png" alt="Direcci�n">
+                            <div>
+                                <span class="ch-label">Direcci�n</span>
+                                <p>
+                                    Plaza Principal S/N, Centro<br>
+                                    Ciudad Demo, México, M�xico
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <img src="../static/img/phone.png" alt="Tel�fono">
+                            <div>
+                                <span class="ch-label">Tel�fono</span>
+                                <p>(771) 123-4567</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <img src="../static/img/mail.png" alt="Correo Electr�nico">
+                            <div>
+                                <span class="ch-label">Correo Electr�nico</span>
+                                <p>
+                                    <a href="mailto:contacto@municipio.demo">
+                                        contacto@municipio.demo
+                                    </a>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- TARJETA HORARIOS -->
+                <div class="ch-hours-card">
+                    <h3>Horarios de Atenci�n</h3>
+
+                    <div class="ch-hours-content">
+                        <div class="ch-hours-row">
+                            <span class="ch-day">Lunes a Viernes</span>
+                            <span class="ch-time">8:00 AM � 4:00 PM</span>
+                        </div>
+
+                        <div class="ch-hours-row">
+                            <span class="ch-day">S�bados</span>
+                            <span class="ch-time">9:00 AM � 1:00 PM</span>
+                        </div>
+
+                        <div class="ch-hours-row">
+                            <span class="ch-day">Domingos</span>
+                            <span class="ch-time ch-closed">Cerrado</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- ========== FIN SECCI�N CONTACTO+HORARIOS ========== -->
+
+    <!-- ========================================= -->
+    <!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+    <!-- ========================================= -->
+    <!-- ========================================= -->
+<!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+<!-- ========================================= -->
+<!-- ========================================= -->
+<!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+<!-- ========================================= -->
+<!-- ========================================= -->
+<!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+<!-- ========================================= -->
+<!-- ========================================= -->
+<!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+<!-- ========================================= -->
+<footer class="main-footer">
+    <div class="footer-inner">
+
+        <div class="footer-grid">
+
+            <div class="footer-column">
+                <h4>Gobierno Municipal</h4>
+                <ul>
+                    <li><a href="hayuntamiento.html">H. Ayuntamiento</a></li>
+                    <li><a href="directoriomunicipal.html">Directorio Municipal</a></li>
+                    <li><a href="comisiones.html">Comisiones</a></li>
+                    <li><a href="poel.html">POEL</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>�reas</h4>
+                <ul>
+                    <li><a href="dif.html">DIF</a></li>
+                    <li><a href="turismo.html">Turismo</a></li>
+                    <li><a href="multideportivo.html">Multideportivo</a></li>
+                    <li><a href="pcivil.html">Protecci�n Civil</a></li>
+                    <li><a href="ubr.html">Unidad B�sica de Rehabilitaci�n</a></li>
+                    <li><a href="ob.html">Obra P�blica</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Transparencia</h4>
+                <ul>
+                    <li><a href="transparencia.html">Portal de Transparencia</a></li>
+                    <li><a href="tramitesyservicios.html">Tr�mites y Servicios</a></li>
+                    <li><a href="registrofamiliar.html">Registro Familiar</a></li>
+                    <li><a href="videos.html">Videos</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Enlaces de Inter�s</h4>
+                <ul>
+                    <li><a href="https://www.valleverde.gob.example.com/" target="_blank">Gobierno del Estado</a></li>
+                    <li><a href="https://www.gob.mx/" target="_blank">Gobierno Federal</a></li>
+                    <li><a href="https://www.inegi.org.mx/" target="_blank">INEGI</a></li>
+                    <li><a href="https://www.plataformadetransparencia.org.mx/" target="_blank">Plataforma Nacional</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <span class="footer-divider"></span>
+
+        <div class="footer-copy">
+            � 2025 Portal Institucional Municipal. Todos los derechos reservados.
+        </div>
+
+    </div>
+</footer>
+<!-- ========== FIN FOOTER REAL ========== -->
+
+    <!-- Scripts -->
+    <script src="../static/js/menu.js"></script>
+    <script src="../static/js/comisiones.js"></script>
+    <!-- Para im�genes din�micas -->
+    <script src="../static/js/dynamic-image-loader.js"></script>
+
+    <!-- Para PDFs din�micos (solo en p�ginas de transparencia) -->
+    <script src="../static/js/transparencia-loader.js"></script>
+
+</body>
+
+</html>
+
+
+
+

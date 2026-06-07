@@ -1,0 +1,1102 @@
+/* Principal */
+.contenido {
+    padding: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ============================= */
+/* SECCIONES NUEVAS DE INICIO   */
+/* ============================= */
+
+/* CONVOCATORIA DELEGADOS */
+.convocatoria-section {
+    padding: 60px 40px 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.convocatoria-inner {
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+.pagos-icon-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(185, 157, 34, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.pagos-icon-circle span,
+.pagos-icon-circle img {
+    font-size: 32px;
+    color: var(--green);
+}
+
+.bolsa-icon-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(116, 38, 167, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.bolsa-icon-circle span,
+.bolsa-icon-circle img {
+    font-size: 32px;
+    color: var(--green);
+}
+
+
+.convocatoria-icon-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(87, 166, 57, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.convocatoria-icon-circle span,
+.convocatoria-icon-circle img {
+    font-size: 32px;
+    color: var(--green);
+}
+
+.convocatoria-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--green);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+.convocatoria-subtitle {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 24px;
+}
+
+.btn-convocatoria {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 32px;
+    border-radius: 999px;
+    background: var(--green);
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 8px 18px rgba(87, 166, 57, 0.35);
+}
+
+.btn-convocatoria:hover {
+    background: #4b9140;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(87, 166, 57, 0.4);
+}
+
+/* BIENVENIDA + IMAGEN */
+.bienvenida-section {
+    padding: 0 40px 60px;
+}
+
+.bienvenida-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.bienvenida-text {
+    flex: 1 1 0;
+}
+
+.bienvenida-text h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #221f1f;
+}
+
+.bienvenida-parrafo {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #444;
+    max-width: 420px;
+}
+
+.bienvenida-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+/* Botones dorados borde redondeado */
+.btn-borde-dorado {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 26px;
+    border-radius: 999px;
+    border: 1.5px solid var(--gold);
+    background: #ffffff;
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.btn-borde-dorado:hover {
+    background: var(--gold);
+    color: #ffffff;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+    transform: translateY(-1px);
+}
+
+.btn-borde-secundario {
+    border-style: solid;
+}
+
+.bienvenida-image {
+    flex: 1 1 0;
+    display: flex;
+    justify-content: center;
+}
+
+.bienvenida-image img {
+    width: 100%;
+    max-width: 560px;
+    border-radius: 26px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+}
+
+/* Línea divisora inferior */
+.home-divider {
+    max-width: 1400px;
+    margin: 40px auto 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+/* Ajustes responsivos para las secciones nuevas */
+@media (max-width: 900px) {
+    .convocatoria-section {
+        padding: 40px 30px 30px;
+    }
+
+    .convocatoria-title {
+        font-size: 26px;
+    }
+
+    .bienvenida-section {
+        padding: 0 30px 50px;
+    }
+
+    .bienvenida-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .bienvenida-text h2 {
+        font-size: 22px;
+    }
+
+    .bienvenida-parrafo {
+        margin: 0 auto;
+    }
+
+    .bienvenida-buttons {
+        justify-content: center;
+    }
+
+    .bienvenida-image img {
+        max-width: 520px;
+    }
+}
+
+@media (max-width: 600px) {
+    .convocatoria-section {
+        padding: 32px 20px 24px;
+    }
+
+    .convocatoria-title {
+        font-size: 22px;
+    }
+
+    .convocatoria-subtitle {
+        font-size: 12px;
+    }
+
+    .btn-convocatoria {
+        font-size: 13px;
+        padding: 10px 24px;
+    }
+
+    .bienvenida-section {
+        padding: 0 20px 40px;
+    }
+
+    .bienvenida-text h2 {
+        font-size: 20px;
+    }
+
+    .bienvenida-parrafo {
+        font-size: 12px;
+    }
+
+    .btn-borde-dorado {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .home-divider {
+        margin-top: 30px;
+    }
+
+}
+
+/* Ajuste del icono dentro del círculo de convocatoria */
+.convocatoria-icon-circle img {
+    width: 40px;
+    /* prueba 32–40px según lo veas */
+    height: 40px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Ajuste del icono dentro del círculo de convocatoria */
+.pagos-icon-circle img {
+    width: 40px;
+    /* prueba 32–40px según lo veas */
+    height: 40px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Ajuste del icono dentro del círculo de convocatoria */
+.bolsa-icon-circle img {
+    width: 40px;
+    /* prueba 32–40px según lo veas */
+    height: 40px;
+    object-fit: contain;
+    display: block;
+}
+
+/* ============================= */
+/* GALERÍA MUNICIPAL             */
+/* ============================= */
+
+.galeria-municipal {
+    padding: 60px 40px 80px;
+}
+
+.galeria-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.galeria-titulo {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #000;
+}
+
+.galeria-row {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 50px;
+    flex-wrap: nowrap;
+}
+
+.galeria-row-bottom {
+    margin-bottom: 0;
+}
+
+.galeria-card {
+    flex: 0 0 28%;
+    max-width: 380px;
+}
+
+.galeria-img-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 40px;
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
+    background: #ffffff;
+}
+
+.galeria-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* Croquis un poquito más alto para que se parezca al ejemplo */
+.galeria-card-croquis .galeria-img-wrapper img {
+    object-fit: cover;
+}
+
+/* Etiquetas sobre la imagen */
+.galeria-label {
+    position: absolute;
+    left: 50%;
+    bottom: 26px;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.82);
+    padding: 8px 24px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #111;
+    text-transform: uppercase;
+    font-family: "Times New Roman", serif;
+}
+
+.galeria-label-largo {
+    padding: 10px 32px;
+    font-size: 18px;
+    line-height: 1.3;
+}
+
+.galeria-label-croquis {
+    top: 24px;
+    bottom: auto;
+}
+
+/* ============================= */
+/* RESPONSIVE GALERÍA (NUEVO)   */
+/* ============================= */
+
+/* Ajustes suaves, manteniendo 3 tarjetas por fila */
+@media (max-width: 1024px) {
+    .galeria-municipal {
+        padding: 40px 30px 60px;
+    }
+
+    .galeria-row {
+        gap: 40px;
+        /* un poco menos de espacio */
+    }
+
+    .galeria-card {
+        flex: 1 1 0;
+        /* las 3 comparten el ancho */
+        max-width: none;
+        /* sin límite fijo */
+    }
+
+    .galeria-img-wrapper {
+        border-radius: 32px;
+    }
+
+    .galeria-label {
+        font-size: 18px;
+        padding: 6px 20px;
+        bottom: 20px;
+    }
+
+    .galeria-label-largo {
+        font-size: 16px;
+    }
+}
+
+/* Más pequeño todavía, pero misma forma (3 por fila) */
+@media (max-width: 768px) {
+    .galeria-municipal {
+        padding: 32px 20px 48px;
+    }
+
+    .galeria-row {
+        gap: 24px;
+    }
+
+    .galeria-card {
+        flex: 1 1 0;
+    }
+
+    .galeria-img-wrapper {
+        border-radius: 24px;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .galeria-label {
+        font-size: 14px;
+        padding: 5px 16px;
+        bottom: 14px;
+    }
+
+    .galeria-label-largo {
+        font-size: 13px;
+    }
+}
+
+/* Muy chico (celulares angostos), siguen siendo 3 pero bien compactos */
+@media (max-width: 480px) {
+    .galeria-municipal {
+        padding: 24px 14px 40px;
+    }
+
+    .galeria-row {
+        gap: 16px;
+    }
+
+    .galeria-label {
+        font-size: 12px;
+        padding: 4px 12px;
+        bottom: 10px;
+    }
+
+    .galeria-label-largo {
+        font-size: 11px;
+    }
+
+    .galeria-titulo {
+        font-size: 20px;
+        margin-bottom: 24px;
+    }
+}
+
+/* ============================= */
+/* TARJETAS DESTACADAS INICIO    */
+/* ============================= */
+
+.servicios-destacados {
+    padding: 40px 40px 70px;
+}
+
+.servicios-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: nowrap;
+}
+
+.servicio-card {
+    flex: 1 1 0;
+    background: #fff6fa;
+    /* base clarita tipo rosa */
+    border-radius: 32px;
+    padding: 32px 30px 30px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Variantes de fondo según tarjeta */
+.servicio-pagos {
+    background: #fff9f2;
+}
+
+.servicio-bolsa {
+    background: #fbf6ff;
+}
+
+/* Icono redondo arriba */
+.servicio-icon-circle {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: #ffe1f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.servicio-icon-gold {
+    background: #ffedd2;
+}
+
+.servicio-icon-purple {
+    background: #f0e1ff;
+}
+
+.servicio-icon-text {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ff4fa3;
+    /* rosa Facebook */
+}
+
+/* Colores de icono personalizados */
+.servicio-pagos .servicio-icon-text {
+    color: var(--gold);
+}
+
+.servicio-bolsa .servicio-icon-text {
+    color: #a453ff;
+}
+
+/* Títulos y texto */
+.servicio-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #111111;
+}
+
+.servicio-subtitle {
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 400;
+    color: #777777;
+    max-width: 280px;
+    line-height: 1.5;
+    margin-bottom: 22px;
+}
+
+/* Botones */
+.servicio-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 32px;
+    border-radius: 999px;
+    border: 1.5px solid;
+    background: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    color: #444;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease;
+}
+
+/* Colores específicos de botón */
+.servicio-btn-pink {
+    border-color: #ff4fa3;
+    color: #ff4fa3;
+}
+
+.servicio-btn-gold {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+.servicio-btn-purple {
+    border-color: #a453ff;
+    color: #a453ff;
+}
+
+.servicio-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+}
+
+.servicio-btn-pink:hover {
+    background: #ff4fa3;
+    color: #ffffff;
+}
+
+.servicio-btn-gold:hover {
+    background: var(--gold);
+    color: #ffffff;
+}
+
+.servicio-btn-purple:hover {
+    background: #a453ff;
+    color: #ffffff;
+}
+
+/* ============================= */
+/* RESPONSIVE TARJETAS (NUEVO)   */
+/* ============================= */
+
+/* Ligeramente más compactas en pantallas medianas */
+@media (max-width: 1200px) {
+    .servicios-destacados {
+        padding: 36px 32px 60px;
+    }
+
+    .servicios-inner {
+        gap: 28px;
+    }
+
+    .servicio-card {
+        padding: 26px 22px 22px;
+        border-radius: 26px;
+    }
+
+    .servicio-icon-circle {
+        width: 64px;
+        height: 64px;
+    }
+
+    .servicio-icon-text {
+        font-size: 28px;
+    }
+
+    .servicio-title {
+        font-size: 18px;
+    }
+
+    .servicio-subtitle {
+        font-size: 13px;
+    }
+
+    .servicio-btn {
+        padding: 8px 26px;
+        font-size: 13px;
+    }
+}
+
+/* Más pequeñas aún, pero siguen siendo 3 tarjetas en fila */
+@media (max-width: 900px) {
+    .servicios-destacados {
+        padding: 30px 24px 50px;
+    }
+
+    .servicios-inner {
+        gap: 22px;
+    }
+
+    .servicio-card {
+        padding: 22px 18px 20px;
+        border-radius: 22px;
+        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.1);
+    }
+
+    .servicio-icon-circle {
+        width: 56px;
+        height: 56px;
+    }
+
+    .servicio-icon-text {
+        font-size: 24px;
+    }
+
+    .servicio-title {
+        font-size: 16px;
+    }
+
+    .servicio-subtitle {
+        font-size: 12px;
+        max-width: 240px;
+    }
+
+    .servicio-btn {
+        padding: 8px 20px;
+        font-size: 12px;
+    }
+}
+
+/* Celulares angostos: mini, pero misma fila y orden */
+@media (max-width: 600px) {
+    .servicios-destacados {
+        padding: 24px 16px 40px;
+    }
+
+    .servicios-inner {
+        gap: 16px;
+    }
+
+    .servicio-card {
+        padding: 18px 14px 18px;
+        border-radius: 18px;
+    }
+
+    .servicio-icon-circle {
+        width: 48px;
+        height: 48px;
+    }
+
+    .servicio-icon-text {
+        font-size: 20px;
+    }
+
+    .servicio-title {
+        font-size: 15px;
+    }
+
+    .servicio-subtitle {
+        font-size: 11px;
+    }
+
+    .servicio-btn {
+        padding: 6px 14px;
+        font-size: 11px;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+    }
+}
+
+/* ============================= */
+/* RESPONSIVE TARJETAS CUADRADAS */
+/* ============================= */
+
+@media (max-width: 1024px) {
+    .servicios-destacados {
+        padding: 36px 30px 60px;
+    }
+
+    .servicios-inner {
+        gap: 28px;
+    }
+
+    .servicio-card {
+        max-width: 280px;
+        /* cuadrado más pequeño */
+        border-radius: 24px;
+        padding: 18px 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .servicios-destacados {
+        padding: 30px 22px 50px;
+    }
+
+    .servicios-inner {
+        gap: 20px;
+    }
+
+    .servicio-card {
+        max-width: 240px;
+        /* aún más pequeño pero cuadrado */
+        border-radius: 22px;
+        padding: 16px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .servicios-destacados {
+        padding: 24px 14px 40px;
+    }
+
+    .servicios-inner {
+        gap: 14px;
+    }
+
+    .servicio-card {
+        max-width: 200px;
+        /* cuadradito compacto */
+        border-radius: 20px;
+        padding: 14px 10px;
+    }
+}
+
+/* pagina de inicio casi terminada */
+
+
+
+/* ============= ASISTENTE MUNICIPAL ============= */
+
+.chat-assistant {
+    position: fixed;
+    right: 1.75rem;
+    bottom: 1.75rem;
+    z-index: 9999;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Botón flotante */
+.chat-assistant-toggle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: #a8732a;
+    /* dorado municipal aproximado */
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.chat-assistant-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.3);
+    background-color: #8c6223;
+}
+
+.chat-assistant-icon {
+    font-size: 22px;
+}
+
+/* Panel principal */
+.chat-assistant-panel {
+    position: absolute;
+    right: 0;
+    bottom: 80px;
+    width: 340px;
+    max-height: 520px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: none;
+    flex-direction: column;
+}
+
+/* mostrar panel */
+.chat-assistant-panel.chat-open {
+    display: flex;
+}
+
+/* Header */
+.chat-assistant-header {
+    background-color: #a8732a;
+    color: #ffffff;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chat-assistant-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.chat-assistant-title {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.chat-assistant-subtitle {
+    font-size: 11px;
+    opacity: 0.9;
+}
+
+.chat-assistant-close {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Cuerpo */
+.chat-assistant-body {
+    padding: 14px 14px 16px;
+    overflow-y: auto;
+}
+
+/* Vistas */
+.chat-view {
+    display: none;
+}
+
+.chat-view.chat-view-active {
+    display: block;
+}
+
+.chat-view-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.chat-view-header h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* burbujas */
+.chat-bubble {
+    border-radius: 16px;
+    padding: 10px 12px;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.chat-bubble-system {
+    background-color: #f3e1c5;
+    border: 1px solid #d1b087;
+}
+
+.chat-bubble-small {
+    font-size: 12px;
+}
+
+/* menú inicial */
+.chat-menu-label {
+    font-size: 12px;
+    margin: 12px 0 6px;
+}
+
+.chat-menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.chat-menu-btn {
+    font-size: 12px;
+    border-radius: 999px;
+    border: 1px solid #d9d9d9;
+    padding: 8px 10px;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.chat-menu-btn:hover {
+    background-color: #f7f2ea;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    transform: translateY(-1px);
+}
+
+/* formulario */
+.chat-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.chat-label {
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.chat-input,
+.chat-textarea,
+.chat-select {
+    border-radius: 10px;
+    border: 1px solid #d0d0d0;
+    padding: 8px 10px;
+    font-size: 12px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.chat-input:focus,
+.chat-textarea:focus {
+    outline: none;
+    border-color: #a8732a;
+    box-shadow: 0 0 0 1px rgba(168, 115, 42, 0.2);
+}
+
+.chat-textarea {
+    resize: vertical;
+    min-height: 70px;
+}
+
+.chat-helper-text {
+    font-size: 10px;
+    color: #777777;
+}
+
+/* botones secundarios */
+.chat-back-btn {
+    border: none;
+    background: transparent;
+    font-size: 11px;
+    cursor: pointer;
+    color: #555555;
+    padding: 0;
+}
+
+/* botón enviar */
+.chat-submit-btn {
+    margin-top: 4px;
+    border-radius: 999px;
+    border: none;
+    background-color: #a8732a;
+    color: #ffffff;
+    padding: 8px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    align-self: flex-end;
+    transition: background-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.chat-submit-btn:hover {
+    background-color: #8c6223;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+}
+
+/* contactos */
+.chat-contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chat-contact-list a {
+    color: #a8732a;
+    text-decoration: none;
+}
+
+/* horarios */
+.chat-hours-card {
+    border-radius: 14px;
+    border: 1px solid #e0e0e0;
+    padding: 10px 12px;
+    font-size: 12px;
+}
+
+.chat-hours-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.chat-hours-row:last-child {
+    border-bottom: none;
+}
+
+.chat-hours-closed {
+    color: #c0392b;
+    font-weight: 600;
+}
+
+/* responsive: panel más ancho en móvil pequeño */
+@media (max-width: 600px) {
+    .chat-assistant {
+        right: 1rem;
+        bottom: 1rem;
+    }
+
+    .chat-assistant-panel {
+        width: 100vw;
+        max-width: 360px;
+        right: -0.5rem;
+    }
+}
+
+
+
+

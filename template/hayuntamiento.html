@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H. Ayuntamiento - Portal Institucional Municipal</title>
+    <link rel="icon" href="../static/img/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/global.css">
+    <link rel="stylesheet" href="../static/css/ayuntamiento.css">
+    <!-- [PRIVACIDAD] Cabildo cargado dinámicamente con datos ficticios -->
+    <script src="../static/js/protection.js"></script>
+    <script src="../static/js/Asistente.js"></script>
+</head>
+
+<body>
+
+    <div class="header-top"></div>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="top-contact-row">
+                <div class="contact-items">
+                    <div class="contact-item">
+                        <img src="../static/img/phone.png" alt="">
+                        <span>Tel: (555) 100-0000</span>
+                    </div>
+                    <div class="contact-item">
+                        <img src="../static/img/mail.png" alt="">
+                        <a href="mailto:contacto@municipio.demo">contacto@municipio.demo</a>
+                    </div>
+                    <div class="contact-item">
+                        <img src="../static/img/location.png" alt="">
+                        <span>Ciudad Demo, México</span>
+                    </div>
+                </div>
+                <div class="social-icons">
+                    <a href="#" title="Instagram"><img src="../static/img/instagram.png" alt=""></a>
+                    <a href="#" title="Facebook"><img src="../static/img/facebook.png" alt=""></a>
+                    <a href="#" title="YouTube"><img src="../static/img/youtube.png" alt=""></a>
+                </div>
+            </div>
+            <div class="separator-line"></div>
+            <div class="brand-row">
+                <div class="brand">
+                    <a href="index.html" class="brand-logo-circle">
+                        <img src="../static/img/logo.svg" alt="Logo">
+                    </a>
+                    <div class="brand-texts">
+                        <div class="brand-text-main">Portal Institucional Municipal</div>
+                        <div class="brand-text-sub">Administración Municipal 2024-2027</div>
+                    </div>
+                </div>
+                <nav class="main-nav">
+                    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+                    <button class="menu-close-btn" onclick="toggleMenu()">×</button>
+                    <ul id="navMenu">
+                        <li><a href="tramitesyservicios.html">TRÁMITES Y SERVICIOS</a></li>
+                        <li><a href="directoriomunicipal.html">DIRECTORIO MUNICIPAL</a></li>
+                        <li><a href="hayuntamiento.html">H. AYUNTAMIENTO</a></li>
+                        <li><a href="secondary_views/registrofamiliar.html">REGISTRO FAMILIAR</a></li>
+                        <li><a href="secondary_views/poel.html">POEL</a></li>
+                        <li class="has-submenu" data-submenu-id="areas" onclick="toggleSubmenu(event)">
+                            <a href="#">ÁREAS <span class="arrow">?</span></a>
+                            <ul class="submenu">
+                                <li><a href="secondary_views/dif.html">DIF</a></li>
+                                <li><a href="secondary_views/turismo.html">TURISMO</a></li>
+                                <li><a href="secondary_views/multideportivo.html">MULTIDEPORTIVO</a></li>
+                                <li><a href="secondary_views/pcivil.html">PROTECCIÓN CIVIL</a></li>
+                                <li><a href="secondary_views/ubr.html">UBR</a></li>
+                                <li><a href="secondary_views/ob.html">OBRA PÚBLICA</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="transparencia.html">TRANSPARENCIA</a></li>
+                        <li><a href="secondary_views/comisiones.html">COMISIONES</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="page-header">
+                <h2>H. Ayuntamiento — Portal Institucional Municipal</h2>
+                <p>Integrantes del cabildo (datos de demostración)</p>
+            </section>
+
+            <section class="president-highlight">
+                <div class="president-photo">
+                    <img src="../static/img/user-placeholder.svg" alt="Presidente Municipal (demo)">
+                </div>
+                <div class="president-info">
+                    <h3>LIC. CARLOS MENDOZA RIVERA</h3>
+                    <div class="president-position">Presidente Municipal</div>
+                    <div class="president-bio">
+                        Representación legal del municipio. Información ficticia para demostración de portafolio.
+                    </div>
+                    <div class="president-contact">
+                        <h4>Información de Contacto</h4>
+                        <div class="contact-item-president">
+                            <div class="contact-icon">??</div>
+                            <span><strong>Dirección:</strong> Av. Constitución #100, Ciudad Demo, México C.P. 00000</span>
+                        </div>
+                        <div class="contact-item-president">
+                            <div class="contact-icon">??</div>
+                            <span><strong>Teléfono:</strong> (555) 100-0000</span>
+                        </div>
+                        <div class="contact-item-president">
+                            <div class="contact-icon">?</div>
+                            <span><strong>Correo:</strong> <a href="mailto:presidente@municipio.demo">presidente@municipio.demo</a></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- [PRIVACIDAD] Grid poblado por officials-loader.js -->
+            <section class="officials-grid"></section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-inner">
+            <div class="footer-copy">
+                © 2025 Portal Institucional Municipal — Proyecto de demostración para portafolio.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../static/js/menu.js"></script>
+    <script src="../static/js/mock-api.js"></script>
+    <script src="../static/js/officials-loader.js"></script>
+</body>
+
+</html>

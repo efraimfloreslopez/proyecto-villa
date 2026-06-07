@@ -1,0 +1,46 @@
+/* Estilos para la carga dinámica de documentos */
+.document-list {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.document-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.document-item:hover {
+    background-color: #e9ecef;
+}
+
+.document-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.document-link i {
+    color: #dc3545;
+    /* Color PDF rojo */
+    font-size: 1.2em;
+}
+
+.document-meta {
+    font-size: 0.85em;
+    color: #6c757d;
+    margin-left: 10px;
+}
+
+
+
+

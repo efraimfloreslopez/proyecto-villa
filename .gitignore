@@ -1,0 +1,29 @@
+# Datos y assets de producción (no incluir en portafolio)
+data/
+static/pdf/
+static/video/
+static/img/Directorio_Municipal/
+static/img/Ayuntamiento/
+static/img/**/*.png
+static/img/**/*.jpg
+static/img/**/*.jpeg
+static/img/**/*.webp
+static/img/**/*.gif
+
+# Mantener placeholders SVG del demo
+!static/img/logo.svg
+!static/img/placeholder.svg
+!static/img/user-placeholder.svg
+!static/img/video-placeholder.svg
+
+# Entorno y sistema
+.env
+.env.*
+*.log
+.DS_Store
+Thumbs.db
+node_modules/
+
+# IDE
+.vscode/
+.idea/

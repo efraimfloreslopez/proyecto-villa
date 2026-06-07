@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Institucional Municipal</title>
+    <link rel="icon" href="../static/img/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/global.css">
+    <link rel="stylesheet" href="../static/css/Aviso_y_Privacidad.css">
+</head>
+
+<body>
+
+    <div class="header-top"></div>
+
+    <!-- Contenedor dorado con esquinas inferiores redondeadas -->
+    <header class="site-header">
+        <div class="header-inner">
+
+            <!-- FILA 1: Contacto primero, luego redes sociales -->
+            <div class="top-contact-row">
+                <!-- Contacto items primero -->
+                <div class="contact-items">
+                    <div class="contact-item">
+                        <img src="../static/img/phone.png" alt="">
+                        <span>Tel: (771) 123-4567</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <img src="../static/img/mail.png" alt="">
+                        <a href="mailto:contacto@municipio.demo">
+                            contacto@municipio.demo
+                        </a>
+                    </div>
+
+                    <div class="contact-item">
+                        <img src="../static/img/location.png" alt="">
+                        <span>Ciudad Demo, México</span>
+                    </div>
+                </div>
+
+                <!-- Redes sociales despu�s -->
+                <div class="social-icons">
+                    <a href="#" title="Instagram">
+                        <img src="../static/img/instagram.png" alt="">
+                    </a>
+                    <a href="#" target="_blank" title="Facebook">
+                        <img src="../static/img/facebook.png" alt="">
+                    </a>
+                    <a href="#" target="_blank" title="YouTube">
+                        <img src="../static/img/youtube.png" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <!-- L�nea blanca separadora -->
+            <div class="separator-line"></div>
+
+            <!-- FILA 2: IZQUIERDA LOGO+TEXTOS, DERECHA MEN� -->
+            <div class="brand-row">
+                <!-- Logo + textos (izquierda) -->
+                <div class="brand">
+                    <a href="/" class="brand-logo-circle">
+                        <img src="../static/img/logo.svg" alt="">
+                    </a>
+                    <div class="brand-texts">
+                        <div class="brand-text-main">Portal Institucional Municipal</div>
+                        <div class="brand-text-sub">Administraci�n Municipal 2022-2026</div>
+                    </div>
+                </div>
+
+                <!-- Men� (derecha) -->
+                <nav class="main-nav">
+                    <!-- Bot�n hamburguesa -->
+                    <div class="hamburger" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <!-- Bot�n X para cerrar el men� m�vil -->
+                    <button class="menu-close-btn" onclick="toggleMenu()">?</button>
+
+                    <ul id="navMenu">
+                        <li><a href="tramitesyservicios.html">TR�MITES Y SERVICIOS</a></li>
+                        <li><a href="directoriomunicipal.html">DIRECTORIO MUNICIPAL</a></li>
+                        <li><a href="hayuntamiento.html">H. AYUNTAMIENTO</a></li>
+                        <li><a href="registrofamiliar.html">REGISTRO FAMILIAR</a></li>
+                        <li><a href="poel.html">POEL</a></li>
+
+                        <!-- �REAS con atributo data-submenu-id para control consistente -->
+                        <li class="has-submenu" data-submenu-id="areas" onclick="toggleSubmenu(event)">
+                            <a href="#">�REAS <span class="arrow">?</span></a>
+                            <ul class="submenu">
+                                <li><a href="dif.html">DIF</a></li>
+                                <li><a href="turismo.html">TURISMO</a></li>
+                                <li><a href="multideportivo.html">MULTIDEPORTIVO</a></li>
+                                <li><a href="pcivil.html">PROTECCI�N CIVIL</a></li>
+                                <li><a href="ubr.html">UNIDAD B�SICA DE REHABILITACI�N</a></li>
+                                <li><a href="ob.html">OBRA P�BLICA</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="transparencia.html">TRANSPARENCIA</a></li>
+                        <li><a href="comisiones.html">COMISIONES</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- CONTENIDO DE LA P�GINA -->
+    <main class="contenido">
+        <!-- ================= AVISO DE PRIVACIDAD ================= -->
+        <section class="aviso-privacidad">
+            <div class="aviso-inner">
+
+                <!-- COLUMNA IZQUIERDA -->
+                <div class="aviso-left">
+                    <!-- Si quieres, cambia el href al que te convenga -->
+                    <a href="transparencia.html" class="aviso-back">? Volver</a>
+
+                    <div class="aviso-breadcrumb">
+                        Contralor�a Interna
+                    </div>
+
+                    <h1 class="aviso-title">Contralor�a Interna</h1>
+                    <p class="aviso-code"></p>
+
+                    <div class="aviso-years">
+
+                        <div class="aviso-year-row">
+                            <span class="aviso-year">Programa Anual de Auditoria 2025</span>
+                            <span class="aviso-dots"></span>
+                            <a href="#demo-pdf"
+                                target="_blank" class="aviso-download">
+                                <span class="aviso-download-icon">??</span> Ver Documento
+                            </a>
+                        </div>
+
+                        <div class="aviso-year-row">
+                            <span class="aviso-year">INDICADORES PARA EVALUAR EL CUMPLIMIENTO DEL C�DIGO DE �TICA</span>
+                            <span class="aviso-dots"></span>
+                            <a href="#demo-pdf"
+                                target="_blank" class="aviso-download">
+                                <span class="aviso-download-icon">??</span> Ver Documento
+                            </a>
+                        </div>
+
+                        <div class="aviso-year-row">
+                            <span class="aviso-year">EVALUACION DE DESEMPE�O LABORAL</span>
+                            <span class="aviso-dots"></span>
+                            <a href="#demo-pdf"
+                                target="_blank" class="aviso-download">
+                                <span class="aviso-download-icon">??</span> Ver Documento
+                            </a>
+                        </div>
+
+                        <div class="aviso-year-row">
+                            <span class="aviso-year">GU�A DE CONTROL INTERNO DE LA ADMINISTRACI�N P�BLICA MUNICIPAL DE
+                                Portal Institucional Municipal</span>
+                            <span class="aviso-dots"></span>
+                            <a href="#demo-pdf"
+                                target="_blank" class="aviso-download">
+                                <span class="aviso-download-icon">??</span> Ver Documento
+                            </a>
+                        </div>
+
+                        <div class="aviso-year-row">
+                            <span class="aviso-year">MANUAL PARA LA ADMINISTRACION DE LOS RECURSOS HUMANOS
+                                2020-2024</span>
+                            <span class="aviso-dots"></span>
+                            <a href="#demo-pdf"
+                                target="_blank" class="aviso-download">
+                                <span class="aviso-download-icon">??</span> Ver Documento
+                            </a>
+                        </div>
+
+                        <div class="aviso-year-row">
+                            <span class="aviso-year">PLAN DE SUCESI�N DE LA CONTINGENCIA DERIVADA DE CAMBIOS EN EL
+                                PERSONAL</span>
+                            <span class="aviso-dots"></span>
+                            <a href="#demo-pdf"
+                                target="_blank" class="aviso-download">
+                                <span class="aviso-download-icon">??</span> Ver Documento
+                            </a>
+                        </div>
+
+                        <div class="aviso-year-row">
+                            <span class="aviso-year">MATRIZ DE ADMINISTRACI�N DE RIESGOS 2023</span>
+                            <span class="aviso-dots"></span>
+                            <a href="#demo-pdf"
+                                target="_blank" class="aviso-download">
+                                <span class="aviso-download-icon">??</span> Ver Documento
+                            </a>
+                        </div>
+
+                        <div class="aviso-year-row">
+                            <span class="aviso-year">GU�A DE INTEGRIDAD Y ANTICORRUPCI�N</span>
+                            <span class="aviso-dots"></span>
+                            <a href="#demo-pdf"
+                                target="_blank" class="aviso-download">
+                                <span class="aviso-download-icon">??</span> Ver Documento
+                            </a>
+                        </div>
+
+                        <div class="aviso-year-row">
+                            <span class="aviso-year">CODIGO DE �TICA 2021</span>
+                            <span class="aviso-dots"></span>
+                            <a href="#demo-pdf"
+                                target="_blank" class="aviso-download">
+                                <span class="aviso-download-icon">??</span> Ver Documento
+                            </a>
+                        </div>
+
+                        <div class="aviso-year-row">
+                            <span class="aviso-year">CODIGO DE CONDUCTA 2021</span>
+                            <span class="aviso-dots"></span>
+                            <a href="#demo-pdf"
+                                target="_blank" class="aviso-download">
+                                <span class="aviso-download-icon">??</span> Ver Documento
+                            </a>
+                        </div>
+
+                        <div class="aviso-year-row">
+                            <span class="aviso-year">REGLAMENTO DEL COMITE DE �TICA</span>
+                            <span class="aviso-dots"></span>
+                            <a href="#demo-pdf"
+                                target="_blank" class="aviso-download">
+                                <span class="aviso-download-icon">??</span> Ver Documento
+                            </a>
+                        </div>
+
+                        <div class="aviso-year-row">
+                            <span class="aviso-year">MANUAL DE FUNCIONAMIENTO DEL COMIT� DE CONTROL Y DESEMPE�O
+                                INSTITUCIONAL DEL MUNICIPIO DE Portal Institucional Municipal</span>
+                            <span class="aviso-dots"></span>
+                            <a href="#demo-pdf"
+                                target="_blank" class="aviso-download">
+                                <span class="aviso-download-icon">??</span> Ver Documento
+                            </a>
+                        </div>
+
+                        <div class="aviso-year-row">
+                            <span class="aviso-year">CONVOCATORIA PECS 2022</span>
+                            <span class="aviso-dots"></span>
+                            <a href="#demo-pdf"
+                                target="_blank" class="aviso-download">
+                                <span class="aviso-download-icon">??</span> Ver Documento
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- =============== FIN AVISO DE PRIVACIDAD =============== -->
+    </main>
+    <!-- ========================================= -->
+    <!-- SECCI�N: CONTACTO + HORARIOS (BLANCO)    -->
+    <!-- ========================================= -->
+    <section class="contact-hours-section">
+        <div class="contact-hours-inner">
+
+            <!-- FILA PRINCIPAL: CONTACTO + HORARIOS (SIN MAPA) -->
+            <div class="ch-main-row">
+
+                <!-- COLUMNA CONTACTO -->
+                <div class="ch-contact">
+                    <h2>Contacto</h2>
+
+                    <ul class="ch-contact-list">
+                        <li>
+                            <img src="../static/img/location.png" alt="Direcci�n">
+                            <div>
+                                <span class="ch-label">Direcci�n</span>
+                                <p>
+                                    Plaza Principal S/N, Centro<br>
+                                    Ciudad Demo, México, M�xico
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <img src="../static/img/phone.png" alt="Tel�fono">
+                            <div>
+                                <span class="ch-label">Tel�fono</span>
+                                <p>(771) 123-4567</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <img src="../static/img/mail.png" alt="Correo Electr�nico">
+                            <div>
+                                <span class="ch-label">Correo Electr�nico</span>
+                                <p>
+                                    <a href="mailto:contacto@municipio.demo">
+                                        contacto@municipio.demo
+                                    </a>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- TARJETA HORARIOS -->
+                <div class="ch-hours-card">
+                    <h3>Horarios de Atenci�n</h3>
+
+                    <div class="ch-hours-content">
+                        <div class="ch-hours-row">
+                            <span class="ch-day">Lunes a Viernes</span>
+                            <span class="ch-time">8:00 AM � 4:00 PM</span>
+                        </div>
+
+                        <div class="ch-hours-row">
+                            <span class="ch-day">S�bados</span>
+                            <span class="ch-time">9:00 AM � 1:00 PM</span>
+                        </div>
+
+                        <div class="ch-hours-row">
+                            <span class="ch-day">Domingos</span>
+                            <span class="ch-time ch-closed">Cerrado</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- ========== FIN SECCI�N CONTACTO+HORARIOS ========== -->
+
+    <!-- ========================================= -->
+    <!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+    <!-- ========================================= -->
+    <!-- ========================================= -->
+    <!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+    <!-- ========================================= -->
+    <!-- ========================================= -->
+    <!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+    <!-- ========================================= -->
+    <!-- ========================================= -->
+    <!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+    <!-- ========================================= -->
+    <!-- ========================================= -->
+    <!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+    <!-- ========================================= -->
+    <footer class="main-footer">
+        <div class="footer-inner">
+
+            <div class="footer-grid">
+
+                <div class="footer-column">
+                    <h4>Gobierno Municipal</h4>
+                    <ul>
+                        <li><a href="hayuntamiento.html">H. Ayuntamiento</a></li>
+                        <li><a href="directoriomunicipal.html">Directorio Municipal</a></li>
+                        <li><a href="comisiones.html">Comisiones</a></li>
+                        <li><a href="poel.html">POEL</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>�reas</h4>
+                    <ul>
+                        <li><a href="dif.html">DIF</a></li>
+                        <li><a href="turismo.html">Turismo</a></li>
+                        <li><a href="multideportivo.html">Multideportivo</a></li>
+                        <li><a href="pcivil.html">Protecci�n Civil</a></li>
+                        <li><a href="ubr.html">Unidad B�sica de Rehabilitaci�n</a></li>
+                        <li><a href="ob.html">Obra P�blica</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Transparencia</h4>
+                    <ul>
+                        <li><a href="transparencia.html">Portal de Transparencia</a></li>
+                        <li><a href="tramitesyservicios.html">Tr�mites y Servicios</a></li>
+                        <li><a href="registrofamiliar.html">Registro Familiar</a></li>
+                        <li><a href="videos.html">Videos</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Enlaces de Inter�s</h4>
+                    <ul>
+                        <li><a href="https://www.valleverde.gob.example.com/" target="_blank">Gobierno del Estado</a></li>
+                        <li><a href="https://www.gob.mx/" target="_blank">Gobierno Federal</a></li>
+                        <li><a href="https://www.inegi.org.mx/" target="_blank">INEGI</a></li>
+                        <li><a href="https://www.plataformadetransparencia.org.mx/" target="_blank">Plataforma
+                                Nacional</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <span class="footer-divider"></span>
+
+            <div class="footer-copy">
+                � 2025 Portal Institucional Municipal. Todos los derechos reservados.
+            </div>
+
+        </div>
+    </footer>
+    <!-- ========== FIN FOOTER REAL ========== -->
+
+    <!-- Link al archivo JavaScript externo -->
+    <script src="../static/js/menu.js"></script>
+    <!-- Para im�genes din�micas -->
+    <script src="../static/js/dynamic-image-loader.js"></script>
+
+    <!-- Para PDFs din�micos (solo en p�ginas de transparencia) -->
+    <script src="../static/js/transparencia-loader.js"></script>
+
+</body>
+
+</html>
+
+
+
+

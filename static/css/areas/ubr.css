@@ -1,0 +1,306 @@
+/* ========================================================= */
+/* =============== BANNER UBR ============================== */
+/* ========================================================= */
+
+.ubr-banner {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    min-height: 200px;
+    background: #000;
+    /* por si tarda en cargar la imagen */
+}
+
+.ubr-banner-media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* Filtro dorado igual que DIF */
+.ubr-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(151, 115, 44, 0.55);
+    /* gold #97732c con transparencia */
+    z-index: 2;
+}
+
+/* Contenedor de la pastilla */
+.ubr-banner-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(10px, 3vw, 20px);
+}
+
+/* Pastilla dorada con el título dentro */
+.ubr-banner-title-box {
+    background: var(--gold, #97732c);
+    padding: clamp(6px, 1vw, 10px) clamp(18px, 3vw, 32px);
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 90%;
+}
+
+/* Texto dentro de la pastilla */
+.ubr-banner-title {
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: clamp(16px, 3vw, 24px);
+    letter-spacing: clamp(1px, 0.4vw, 3px);
+    font-family: "Montserrat", sans-serif;
+}
+
+@media (min-width: 768px) {
+    .ubr-banner {
+        min-height: 220px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .ubr-banner {
+        min-height: 260px;
+    }
+}
+
+
+
+/* ========================================================= */
+/* ====== INFO UBR (VIDEO + TEXTO INFORMATIVO) ============= */
+/* ========================================================= */
+
+.ubr-info-section {
+    width: 100%;
+    padding: 48px 16px 56px;
+    display: flex;
+    justify-content: center;
+    background: #f7f7f7;
+    box-sizing: border-box;
+}
+
+.ubr-info-layout {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* -------- VIDEO -------- */
+
+.ubr-video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    /* tamaño base */
+    aspect-ratio: 9 / 16;
+    /* vertical en móvil/tablet */
+    margin: 0 auto;
+    border-radius: 22px;
+    overflow: hidden;
+    background: #000;
+    box-shadow:
+        0 18px 42px rgba(0, 0, 0, 0.22),
+        0 2px 8px rgba(0, 0, 0, 0.14);
+}
+
+.ubr-video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* Glow suave dorado/verde */
+.ubr-video-glow {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at top right,
+            rgba(151, 115, 44, 0.35),
+            transparent 55%),
+        radial-gradient(circle at bottom left,
+            rgba(87, 166, 57, 0.25),
+            transparent 60%);
+    mix-blend-mode: screen;
+}
+
+/* -------- TEXTO -------- */
+
+.ubr-text-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.ubr-text-card {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 24px 24px 26px;
+    box-shadow:
+        0 16px 40px rgba(0, 0, 0, 0.06),
+        0 0 0 1px rgba(0, 0, 0, 0.02);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-top: 3px solid rgba(151, 115, 44, 0.85);
+}
+
+/* Badge superior */
+.ubr-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    color: var(--gold, #97732c);
+    background: rgba(151, 115, 44, 0.08);
+    padding: 6px 14px;
+    border-radius: 999px;
+    align-self: flex-start;
+}
+
+.ubr-badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold, #97732c);
+    animation: ubr-pulse 2s ease-in-out infinite;
+}
+
+@keyframes ubr-pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(0.85);
+    }
+}
+
+.ubr-text-title {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--black, #221f1f);
+    margin: 2px 0 0 0;
+    line-height: 1.4;
+    letter-spacing: -0.2px;
+}
+
+.ubr-divider {
+    width: 72px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold, #97732c), transparent);
+    margin: 2px 0 4px 0;
+}
+
+.ubr-paragraph {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #444;
+    margin: 0;
+    text-align: justify;
+}
+
+.ubr-paragraph-strong {
+    font-weight: 600;
+    color: var(--black, #221f1f);
+}
+
+/* -------- RESPONSIVE -------- */
+
+/* Escritorio: lado a lado y video cuadrado/compacto */
+@media (min-width: 900px) {
+    .ubr-info-layout {
+        flex-direction: row;
+        align-items: stretch;
+        gap: 40px;
+    }
+
+    .ubr-video-wrapper {
+        flex: 0 0 260px;
+        max-width: 260px;
+        aspect-ratio: 1 / 1;
+        /* cuadrado en desktop */
+        margin: 0;
+    }
+
+    .ubr-text-container {
+        flex: 1;
+    }
+
+    .ubr-text-card {
+        padding: 28px 28px 30px;
+    }
+
+    .ubr-text-title {
+        font-size: 21px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 899px) and (min-width: 600px) {
+    .ubr-info-section {
+        padding: 44px 20px 52px;
+    }
+
+    .ubr-video-wrapper {
+        max-width: 320px;
+        aspect-ratio: 9 / 16;
+    }
+}
+
+/* Móviles */
+@media (max-width: 599px) {
+    .ubr-info-section {
+        padding: 36px 12px 44px;
+    }
+
+    .ubr-video-wrapper {
+        max-width: 280px;
+        aspect-ratio: 9 / 16;
+        /* vertical tipo celular */
+    }
+
+    .ubr-text-card {
+        border-radius: 20px;
+        padding: 22px 18px 24px;
+    }
+
+    .ubr-text-title {
+        font-size: 18px;
+    }
+
+    .ubr-paragraph {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+}
+
+
+
+

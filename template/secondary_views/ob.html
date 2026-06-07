@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head><meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Institucional Municipal</title>
+    <link rel="icon" href="../static/img/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/global.css">
+    <link rel="stylesheet" href="../static/css/areas/ob.css">
+</head>
+
+<body>
+
+    <!-- Franja negra superior -->
+    <div class="header-top"></div>
+
+    <!-- Contenedor dorado con esquinas inferiores redondeadas -->
+    <header class="site-header">
+        <div class="header-inner">
+
+            <!-- FILA 1: Contacto primero, luego redes sociales -->
+            <div class="top-contact-row">
+                <!-- Contacto items primero -->
+                <div class="contact-items">
+                    <div class="contact-item">
+                        <img src="../static/img/phone.png" alt="">
+                        <span>Tel: (771) 123-4567</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <img src="../static/img/mail.png" alt="">
+                        <a href="mailto:contacto@municipio.demo">
+                            contacto@municipio.demo
+                        </a>
+                    </div>
+
+                    <div class="contact-item">
+                        <img src="../static/img/location.png" alt="">
+                        <span>Ciudad Demo, México</span>
+                    </div>
+                </div>
+
+                <!-- Redes sociales despu�s -->
+                <div class="social-icons">
+                    <a href="#" title="Instagram">
+                        <img src="../static/img/instagram.png" alt="">
+                    </a>
+                    <a href="#" target="_blank" title="Facebook">
+                        <img src="../static/img/facebook.png" alt="">
+                    </a>
+                    <a href="#" target="_blank" title="YouTube">
+                        <img src="../static/img/youtube.png" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <!-- L�nea blanca separadora -->
+            <div class="separator-line"></div>
+
+            <!-- FILA 2: IZQUIERDA LOGO+TEXTOS, DERECHA MEN� -->
+            <div class="brand-row">
+                <!-- Logo + textos (izquierda) -->
+                <div class="brand">
+                    <a href="/" class="brand-logo-circle">
+                        <img src="../static/img/logo.svg" alt="">
+                    </a>
+                    <div class="brand-texts">
+                        <div class="brand-text-main">Portal Institucional Municipal</div>
+                        <div class="brand-text-sub">Administraci�n Municipal 2022-2026</div>
+                    </div>
+                </div>
+
+                <!-- Men� (derecha) -->
+                <nav class="main-nav">
+                    <!-- Bot�n hamburguesa -->
+                    <div class="hamburger" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <!-- Bot�n X para cerrar el men� m�vil -->
+                    <button class="menu-close-btn" onclick="toggleMenu()">?</button>
+
+                    <ul id="navMenu">
+                        <li><a href="tramitesyservicios.html">TR�MITES Y SERVICIOS</a></li>
+                        <li><a href="directoriomunicipal.html">DIRECTORIO MUNICIPAL</a></li>
+                        <li><a href="hayuntamiento.html">H. AYUNTAMIENTO</a></li>
+                        <li><a href="registrofamiliar.html">REGISTRO FAMILIAR</a></li>
+                        <li><a href="poel.html">POEL</a></li>
+
+                        <!-- �REAS con atributo data-submenu-id para control consistente -->
+                        <li class="has-submenu" data-submenu-id="areas" onclick="toggleSubmenu(event)">
+                            <a href="#">�REAS <span class="arrow">?</span></a>
+                            <ul class="submenu">
+                                <li><a href="dif.html">DIF</a></li>
+                                <li><a href="turismo.html">TURISMO</a></li>
+                                <li><a href="multideportivo.html">MULTIDEPORTIVO</a></li>
+                                <li><a href="pcivil.html">PROTECCI�N CIVIL</a></li>
+                                <li><a href="ubr.html">UNIDAD B�SICA DE REHABILITACI�N</a></li>
+                                <li><a href="ob.html">OBRA P�BLICA</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="transparencia.html">TRANSPARENCIA</a></li>
+                        <li><a href="comisiones.html">COMISIONES</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- CONTENIDO DE LA P�GINA -->
+    <main class="contenido">
+
+
+        <!-- ========================================================= -->
+        <!-- ========== SECCI�N DOCUMENTOS OBRA (PDF) =============== -->
+        <!-- ========================================================= -->
+
+        <section class="obra-pdf-section">
+            <div class="obra-pdf-inner">
+                <h2 class="obra-pdf-title">Documentos de Obra P�blica</h2>
+                <p class="obra-pdf-subtitle">
+                    Consulta las bases de invitaci�n a cuando menos tres personas de los procedimientos vigentes.
+                </p>
+
+                <div class="obra-pdf-grid">
+                    <!-- -------- CARD 1: PAVIMENTO CONSTITUCI�N -------- -->
+                    <article class="obra-pdf-card">
+                        <h3 class="obra-pdf-name">
+                            NO. PMSM/OP/REPO/INV-001/2025
+                        </h3>
+                        <p class="obra-pdf-desc">
+                            CONSTRUCCI�N DEL PAVIMENTO HIDR�ULICO EN CALLE CONSTITUCI�N ENTRE CALLE CUITL�HUAC Y
+                            CALLE DIVISI�N DEL NORTE EN LA COLONIA BENITO JU�REZ, MUNICIPIO DE Portal Institucional Municipal.
+                        </p>
+                        <button class="obra-pdf-btn" data-pdf-modal="pdf-1">
+                            Ver bases en PDF
+                        </button>
+                    </article>
+
+                    <!-- -------- CARD 2: REHABILITACI�N FORJADORES ----- -->
+                    <article class="obra-pdf-card">
+                        <h3 class="obra-pdf-name">
+                            NO. PMSM/OP/FDOGP/INV-001/2025
+                        </h3>
+                        <p class="obra-pdf-desc">
+                            Las bases correspondientes al procedimiento de invitaci�n a cuando menos tres personas
+                            de la obra denominada: Rehabilitaci�n de calles en fraccionamiento Forjadores.
+                        </p>
+                        <button class="obra-pdf-btn" data-pdf-modal="pdf-2">
+                            Ver bases en PDF
+                        </button>
+                    </article>
+                </div>
+            </div>
+
+            <!-- ================== MODAL PDF 1 ====================== -->
+            <div id="pdf-1" class="obra-pdf-modal">
+                <div class="obra-pdf-modal-inner">
+                    <button class="obra-pdf-close" type="button">&times;</button>
+                    <h3 class="obra-pdf-modal-title">
+                        Bases de invitaci�n � NO. PMSM/OP/REPO/INV-001/2025
+                    </h3>
+                    <div class="obra-pdf-frame">
+                        <iframe
+                            src="../static/img/ob/bases-de-invitacion-01-pavimentacion.pdf#toolbar=1&navpanes=0&scrollbar=1"
+                            title="Bases pavimentaci�n Constituci�n" loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================== MODAL PDF 2 ====================== -->
+            <div id="pdf-2" class="obra-pdf-modal">
+                <div class="obra-pdf-modal-inner">
+                    <button class="obra-pdf-close" type="button">&times;</button>
+                    <h3 class="obra-pdf-modal-title">
+                        Bases de invitaci�n � NO. PMSM/OP/FDOGP/INV-001/2025
+                    </h3>
+                    <div class="obra-pdf-frame">
+                        <iframe src="../static/img/ob/bases-forjadores.pdf#toolbar=1&navpanes=0&scrollbar=1"
+                            title="Bases rehabilitaci�n Forjadores" loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- ======== FIN SECCI�N DOCUMENTOS OBRA (PDF) ============= -->
+        <!-- ========================================================= -->
+
+
+        <!-- ========================================================= -->
+        <!-- =============== SECCI�N OBRA P�BLICA ==================== -->
+        <!-- ========================================================= -->
+        <section class="obra-publica-section">
+            <div class="obra-table-wrapper">
+                <table class="obra-table">
+                    <thead>
+                        <tr>
+                            <th>OBRA</th>
+                            <th>COMUNIDAD</th>
+                            <th>UBICACI�N</th>
+                            <th>FOTOS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 1) BACHEO ACCESO A VILLA -->
+                        <tr>
+                            <td>
+                                BACHEO CON MEZCLA ASF�LTICA EN BOULEVARD DE ACCESO A Portal Institucional Municipal
+                            </td>
+                            <td>Portal Institucional Municipal</td>
+                            <td>
+                                <button class="obra-btn obra-btn-map" data-modal="map-1">
+                                    Ver mapa
+                                </button>
+                            </td>
+                            <td>
+                                <button class="obra-btn obra-btn-photos" data-modal="photos-1">
+                                    Ver fotos
+                                </button>
+                            </td>
+                        </tr>
+
+                        <!-- 2) BACHEO CAMINO A COMUNIDADES -->
+                        <tr>
+                            <td>
+                                BACHEO CON MEZCLA ASF�LTICA EN CAMINO DE ACCESO A DIFERENTES COMUNIDADES
+                                AL MUNICIPIO DE Portal Institucional Municipal.
+                            </td>
+                            <td>Portal Institucional Municipal</td>
+                            <td>
+                                <button class="obra-btn obra-btn-map" data-modal="map-2">
+                                    Ver mapa
+                                </button>
+                            </td>
+                            <td>
+                                <button class="obra-btn obra-btn-photos" data-modal="photos-2">
+                                    Ver fotos
+                                </button>
+                            </td>
+                        </tr>
+
+                        <!-- 3) AGUA POTABLE TEZONTLE (COL. GUADALUPE) -->
+                        <tr>
+                            <td>
+                                CONSTRUCCI�N DE LA RED DE AGUA POTABLE EN CALLE TEZONTLE ENTRE AV. PICACHO
+                                Y CALLE BARRANCA DEL MAMUT EN COLONIA GUADALUPE, MUNICIPIO DE Portal Institucional Municipal,
+                                ESTADO DE Valle Verde
+                            </td>
+                            <td>COLONIA GUADALUPE</td>
+                            <td>
+                                <button class="obra-btn obra-btn-map" data-modal="map-3">
+                                    Ver mapa
+                                </button>
+                            </td>
+                            <td>
+                                <button class="obra-btn obra-btn-photos" data-modal="photos-3">
+                                    Ver fotos
+                                </button>
+                            </td>
+                        </tr>
+
+                        <!-- 4) DRENAJE REGALES (COL. GUADALUPE) -->
+                        <tr>
+                            <td>
+                                CONSTRUCCI�N DE LA RED DE DRENAJE SANITARIO EN CALLE REGALES ENTRE CALLE OBSIDIANA
+                                Y CALLE TEZONTLE EN COLONIA GUADALUPE, MUNICIPIO DE Portal Institucional Municipal, ESTADO DE
+                                Valle Verde
+                            </td>
+                            <td>COLONIA GUADALUPE</td>
+                            <td>
+                                <button class="obra-btn obra-btn-map" data-modal="map-4">
+                                    Ver mapa
+                                </button>
+                            </td>
+                            <td>
+                                <button class="obra-btn obra-btn-photos" data-modal="photos-4">
+                                    Ver fotos
+                                </button>
+                            </td>
+                        </tr>
+
+                        <!-- 5) DRENAJE EL CHOPO (COL. MORELOS) -->
+                        <tr>
+                            <td>
+                                CONSTRUCCI�N DE LA RED DE DRENAJE SANITARIO EN CALLE EL CHOPO EN LA COLONIA MORELOS
+                                DEL MUNICIPIO DE Portal Institucional Municipal, ESTADO DE Valle Verde
+                            </td>
+                            <td>COLONIA MORELOS</td>
+                            <td>
+                                <button class="obra-btn obra-btn-map" data-modal="map-5">
+                                    Ver mapa
+                                </button>
+                            </td>
+                            <td>
+                                <button class="obra-btn obra-btn-photos" data-modal="photos-5">
+                                    Ver fotos
+                                </button>
+                            </td>
+                        </tr>
+
+                        <!-- 6) REHAB RED AGUA EL CHOPO (COL. MORELOS) -->
+                        <tr>
+                            <td>
+                                REHABILITACI�N DE LA RED DE AGUA POTABLE EN CALLE EL CHOPO ENTRE CALLE AHUEHUETE Y CALLE
+                                NOGAL,
+                                EN LA COLONIA MORELOS EN EL MUNICIPIO DE Portal Institucional Municipal, ESTADO DE Valle Verde
+                            </td>
+                            <td>COLONIA MORELOS</td>
+                            <td>
+                                <button class="obra-btn obra-btn-map" data-modal="map-6">
+                                    Ver mapa
+                                </button>
+                            </td>
+                            <td>
+                                <button class="obra-btn obra-btn-photos" data-modal="photos-6">
+                                    Ver fotos
+                                </button>
+                            </td>
+                        </tr>
+
+                        <!-- 7) PAVIMENTO HIDR�ULICO EL CHOPO (COL. MORELOS) -->
+                        <tr>
+                            <td>
+                                CONSTRUCCI�N DE PAVIMENTO HIDR�ULICO EN CALLE EL CHOPO EN LA COLONIA MORELOS DEL
+                                MUNICIPIO
+                                DE Portal Institucional Municipal, ESTADO DE Valle Verde
+                            </td>
+                            <td>COLONIA MORELOS</td>
+                            <td>
+                                <button class="obra-btn obra-btn-map" data-modal="map-7">
+                                    Ver mapa
+                                </button>
+                            </td>
+                            <td>
+                                <button class="obra-btn obra-btn-photos" data-modal="photos-7">
+                                    Ver fotos
+                                </button>
+                            </td>
+                        </tr>
+
+                        <!-- 8) MANTENIMIENTO PRESIDENCIA (COL. CENTRO) -->
+                        <tr>
+                            <td>
+                                MANTENIMIENTO DE LAS INSTALACIONES DE LA PRESIDENCIA DE Portal Institucional Municipal, HGO
+                            </td>
+                            <td>COLONIA CENTRO</td>
+                            <td>
+                                <button class="obra-btn obra-btn-map" data-modal="map-8">
+                                    Ver mapa
+                                </button>
+                            </td>
+                            <td>
+                                <button class="obra-btn obra-btn-photos" data-modal="photos-8">
+                                    Ver fotos
+                                </button>
+                            </td>
+                        </tr>
+
+                        <!-- 9) MANTENIMIENTO UBR (COL. CENTRO) -->
+                        <tr>
+                            <td>
+                                MANTENIMIENTO DE LAS INSTALACIONES DE LA UNIDAD B�SICA DE REHABILITACI�N DE VILLA
+                                DE Portal Institucional Municipal, HGO
+                            </td>
+                            <td>COLONIA CENTRO</td>
+                            <td>
+                                <button class="obra-btn obra-btn-map" data-modal="map-9">
+                                    Ver mapa
+                                </button>
+                            </td>
+                            <td>
+                                <button class="obra-btn obra-btn-photos" data-modal="photos-9">
+                                    Ver fotos
+                                </button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ================= MODALES DE MAPA ================== -->
+
+            <!-- MAP 1 -->
+            <div id="map-1" class="obra-modal">
+                <div class="obra-modal-inner">
+                    <button class="obra-modal-close" type="button">&times;</button>
+                    <h3 class="obra-modal-title">
+                        Ubicaci�n � Bacheo con mezcla asf�ltica en boulevard de acceso a Portal Institucional Municipal
+                    </h3>
+                    <div class="obra-modal-iframe-wrapper">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!4v1764132656237!6m8!1m7!1scBjVJvW0dUpNb3du2kv7Rg!2m2!1d19.89933470054001!2d-98.84206507623416!3f134.10751!4f0!5f0.7820865974627469"
+                            width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MAP 2 -->
+            <div id="map-2" class="obra-modal">
+                <div class="obra-modal-inner">
+                    <button class="obra-modal-close" type="button">&times;</button>
+                    <h3 class="obra-modal-title">
+                        Ubicaci�n � Bacheo con mezcla asf�ltica en camino de acceso a diferentes comunidades
+                    </h3>
+                    <div class="obra-modal-iframe-wrapper">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!4v1764132656237!6m8!1m7!1scBjVJvW0dUpNb3du2kv7Rg!2m2!1d19.89933470054001!2d-98.84206507623416!3f134.10751!4f0!5f0.7820865974627469"
+                            width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MAP 3 -->
+            <div id="map-3" class="obra-modal">
+                <div class="obra-modal-inner">
+                    <button class="obra-modal-close" type="button">&times;</button>
+                    <h3 class="obra-modal-title">
+                        Ubicaci�n � Construcci�n de la red de agua potable (Calle Tezontle, Col. Guadalupe)
+                    </h3>
+                    <div class="obra-modal-iframe-wrapper">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d214.2714780381597!2d-98.76585583258877!3d19.9384514496799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e1!3m2!1sen!2smx!4v1764132926021!5m2!1sen!2smx"
+                            width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MAP 4 -->
+            <div id="map-4" class="obra-modal">
+                <div class="obra-modal-inner">
+                    <button class="obra-modal-close" type="button">&times;</button>
+                    <h3 class="obra-modal-title">
+                        Ubicaci�n � Drenaje sanitario en Calle Regales (Col. Guadalupe)
+                    </h3>
+                    <div class="obra-modal-iframe-wrapper">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d234.4170872685901!2d-98.76613390278283!3d19.938163381062417!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTnCsDU2JzE3LjQiTiA5OMKwNDUnNTcuOCJX!5e0!3m2!1sen!2smx!4v1764133332279!5m2!1sen!2smx"
+                            width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MAP 5 -->
+            <div id="map-5" class="obra-modal">
+                <div class="obra-modal-inner">
+                    <button class="obra-modal-close" type="button">&times;</button>
+                    <h3 class="obra-modal-title">
+                        Ubicaci�n � Drenaje sanitario en Calle El Chopo (Col. Morelos)
+                    </h3>
+                    <div class="obra-modal-iframe-wrapper">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!4v1764133583815!6m8!1m7!1sVTj3ipbqWJLfsqs5RTrQ0Q!2m2!1d19.89386811112801!2d-98.81558061391218!3f130.32158!4f0!5f0.7820865974627469"
+                            width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MAP 6 -->
+            <div id="map-6" class="obra-modal">
+                <div class="obra-modal-inner">
+                    <button class="obra-modal-close" type="button">&times;</button>
+                    <h3 class="obra-modal-title">
+                        Ubicaci�n � Rehabilitaci�n red de agua potable en Calle El Chopo (Col. Morelos)
+                    </h3>
+                    <div class="obra-modal-iframe-wrapper">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!4v1764133691951!6m8!1m7!1sVTj3ipbqWJLfsqs5RTrQ0Q!2m2!1d19.89386811112801!2d-98.81558061391218!3f130.32158!4f0!5f0.7820865974627469"
+                            width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MAP 7 -->
+            <div id="map-7" class="obra-modal">
+                <div class="obra-modal-inner">
+                    <button class="obra-modal-close" type="button">&times;</button>
+                    <h3 class="obra-modal-title">
+                        Ubicaci�n � Construcci�n de pavimento hidr�ulico en Calle El Chopo (Col. Morelos)
+                    </h3>
+                    <div class="obra-modal-iframe-wrapper">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!4v1764133691951!6m8!1m7!1sVTj3ipbqWJLfsqs5RTrQ0Q!2m2!1d19.89386811112801!2d-98.81558061391218!3f130.32158!4f0!5f0.7820865974627469"
+                            width="100%" height="100%" style="border:0;" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MAP 8 -->
+            <div id="map-8" class="obra-modal">
+                <div class="obra-modal-inner">
+                    <button class="obra-modal-close" type="button">&times;</button>
+                    <h3 class="obra-modal-title">
+                        Ubicaci�n � Mantenimiento instalaciones Presidencia Municipal
+                    </h3>
+                    <div class="obra-modal-iframe-wrapper">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!4v1764134069699!6m8!1m7!1s9PB0d5FFNVmVTTdCNiRQwA!2m2!1d19.87986946122513!2d-98.81942694644093!3f109.49751!4f0!5f0.7820865974627469"
+                            width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MAP 9 -->
+            <div id="map-9" class="obra-modal">
+                <div class="obra-modal-inner">
+                    <button class="obra-modal-close" type="button">&times;</button>
+                    <h3 class="obra-modal-title">
+                        Ubicaci�n � Mantenimiento instalaciones Unidad B�sica de Rehabilitaci�n
+                    </h3>
+                    <div class="obra-modal-iframe-wrapper">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!4v1764134259975!6m8!1m7!1sGWwn1FuewlctDk6RFXMFtQ!2m2!1d19.87642537455586!2d-98.82198863862932!3f39.794563!4f0!5f0.7820865974627469"
+                            width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= MODALES DE FOTOS ================== -->
+
+            <!-- PHOTOS 1 -->
+            <div id="photos-1" class="obra-modal">
+                <div class="obra-modal-inner">
+                    <button class="obra-modal-close" type="button">&times;</button>
+                    <h3 class="obra-modal-title">
+                        Fotos � Bacheo boulevard acceso a Portal Institucional Municipal
+                    </h3>
+                    <div class="obra-carousel-large">
+                        <div class="obra-carousel-inner">
+                            <img src="../static/img/ob/ob1/ob1.jpg" alt="Obra 1 - Foto 1"
+                                class="obra-carousel-image is-active">
+                            <img src="../static/img/ob/ob1/ob2.jpg" alt="Obra 1 - Foto 2" class="obra-carousel-image">
+                            <img src="../static/img/ob/ob1/ob3.jpg" alt="Obra 1 - Foto 3" class="obra-carousel-image">
+                        </div>
+                        <button class="obra-carousel-prev" type="button">&#10094;</button>
+                        <button class="obra-carousel-next" type="button">&#10095;</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PHOTOS 2 -->
+            <div id="photos-2" class="obra-modal">
+                <div class="obra-modal-inner">
+                    <button class="obra-modal-close" type="button">&times;</button>
+                    <h3 class="obra-modal-title">
+                        Fotos � Bacheo camino de acceso a comunidades
+                    </h3>
+                    <div class="obra-carousel-large">
+                        <div class="obra-carousel-inner">
+                            <img src="../static/img/ob/ob2/ob11.jpg" alt="Obra 2 - Foto 1"
+                                class="obra-carousel-image is-active">
+                            <img src="../static/img/ob/ob2/ob22.jpg" alt="Obra 2 - Foto 2" class="obra-carousel-image">
+                            <img src="../static/img/ob/ob2/ob33.jpg" alt="Obra 2 - Foto 3" class="obra-carousel-image">
+                        </div>
+                        <button class="obra-carousel-prev" type="button">&#10094;</button>
+                        <button class="obra-carousel-next" type="button">&#10095;</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PHOTOS 3 (t1 a t10 solamente) -->
+            <div id="photos-3" class="obra-modal">
+                <div class="obra-modal-inner">
+                    <button class="obra-modal-close" type="button">&times;</button>
+                    <h3 class="obra-modal-title">
+                        Fotos � Red de agua potable (Calle Tezontle, Col. Guadalupe)
+                    </h3>
+                    <div class="obra-carousel-large">
+                        <div class="obra-carousel-inner">
+                            <img src="../static/img/ob/ob3/t1.jpg" alt="Obra 3 - Foto 1"
+                                class="obra-carousel-image is-active">
+                            <img src="../static/img/ob/ob3/t2.jpg" alt="Obra 3 - Foto 2" class="obra-carousel-image">
+                            <img src="../static/img/ob/ob3/t3.jpg" alt="Obra 3 - Foto 3" class="obra-carousel-image">
+                            <img src="../static/img/ob/ob3/t4.jpg" alt="Obra 3 - Foto 4" class="obra-carousel-image">
+                            <img src="../static/img/ob/ob3/t5.jpg" alt="Obra 3 - Foto 5" class="obra-carousel-image">
+                            <img src="../static/img/ob/ob3/t6.jpg" alt="Obra 3 - Foto 6" class="obra-carousel-image">
+                            <img src="../static/img/ob/ob3/t7.jpg" alt="Obra 3 - Foto 7" class="obra-carousel-image">
+                            <img src="../static/img/ob/ob3/t8.jpg" alt="Obra 3 - Foto 8" class="obra-carousel-image">
+                            <img src="../static/img/ob/ob3/t9.jpg" alt="Obra 3 - Foto 9" class="obra-carousel-image">
+                            <img src="../static/img/ob/ob3/t10.jpg" alt="Obra 3 - Foto 10" class="obra-carousel-image">
+                        </div>
+                        <button class="obra-carousel-prev" type="button">&#10094;</button>
+                        <button class="obra-carousel-next" type="button">&#10095;</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PHOTOS 4 -->
+            <div id="photos-4" class="obra-modal">
+                <div class="obra-modal-inner">
+                    <button class="obra-modal-close" type="button">&times;</button>
+                    <h3 class="obra-modal-title">
+                        Fotos � Drenaje sanitario en Calle Regales (Col. Guadalupe)
+                    </h3>
+                    <div class="obra-carousel-large">
+                        <div class="obra-carousel-inner">
+                            <img src="../static/img/ob/ob4/dir1.jpg" alt="Obra 4 - Foto 1"
+                                class="obra-carousel-image is-active">
+                        </div>
+                        <button class="obra-carousel-prev" type="button">&#10094;</button>
+                        <button class="obra-carousel-next" type="button">&#10095;</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PHOTOS 5 -->
+            <div id="photos-5" class="obra-modal">
+                <div class="obra-modal-inner">
+                    <button class="obra-modal-close" type="button">&times;</button>
+                    <h3 class="obra-modal-title">
+                        Fotos � Drenaje sanitario en Calle El Chopo (Col. Morelos)
+                    </h3>
+                    <div class="obra-carousel-large">
+                        <div class="obra-carousel-inner">
+                            <img src="../static/img/ob/ob5/d1.jpg" alt="Obra 5 - Foto 1"
+                                class="obra-carousel-image is-active">
+                            <img src="../static/img/ob/ob5/d2.jpg" alt="Obra 5 - Foto 2" class="obra-carousel-image">
+                            <img src="../static/img/ob/ob5/d3.jpg" alt="Obra 5 - Foto 3" class="obra-carousel-image">
+                            <img src="../static/img/ob/ob5/d4.jpg" alt="Obra 5 - Foto 4" class="obra-carousel-image">
+                            <img src="../static/img/ob/ob5/d5.jpg" alt="Obra 5 - Foto 5" class="obra-carousel-image">
+                        </div>
+                        <button class="obra-carousel-prev" type="button">&#10094;</button>
+                        <button class="obra-carousel-next" type="button">&#10095;</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PHOTOS 6 -->
+            <div id="photos-6" class="obra-modal">
+                <div class="obra-modal-inner">
+                    <button class="obra-modal-close" type="button">&times;</button>
+                    <h3 class="obra-modal-title">
+                        Fotos � Rehabilitaci�n red de agua potable en Calle El Chopo (Col. Morelos)
+                    </h3>
+                    <div class="obra-carousel-large">
+                        <div class="obra-carousel-inner">
+                            <img src="../static/img/ob/ob6/c1.jpg" alt="Obra 6 - Foto 1"
+                                class="obra-carousel-image is-active">
+                            <img src="../static/img/ob/ob6/c2.jpg" alt="Obra 6 - Foto 2" class="obra-carousel-image">
+                            <img src="../static/img/ob/ob6/c3.jpg" alt="Obra 6 - Foto 3" class="obra-carousel-image">
+                            <img src="../static/img/ob/ob6/c4.jpg" alt="Obra 6 - Foto 4" class="obra-carousel-image">
+                        </div>
+                        <button class="obra-carousel-prev" type="button">&#10094;</button>
+                        <button class="obra-carousel-next" type="button">&#10095;</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PHOTOS 7 -->
+            <div id="photos-7" class="obra-modal">
+                <div class="obra-modal-inner">
+                    <button class="obra-modal-close" type="button">&times;</button>
+                    <h3 class="obra-modal-title">
+                        Fotos � Pavimento hidr�ulico en Calle El Chopo (Col. Morelos)
+                    </h3>
+                    <div class="obra-carousel-large">
+                        <div class="obra-carousel-inner">
+                            <img src="../static/img/ob/ob7/a1.jpg" alt="Obra 7 - Foto 1"
+                                class="obra-carousel-image is-active">
+                            <img src="../static/img/ob/ob7/a2.jpg" alt="Obra 7 - Foto 2" class="obra-carousel-image">
+                            <img src="../static/img/ob/ob7/a3.jpg" alt="Obra 7 - Foto 3" class="obra-carousel-image">
+                            <img src="../static/img/ob/ob7/a4.jpg" alt="Obra 7 - Foto 4" class="obra-carousel-image">
+                            <img src="../static/img/ob/ob7/a5.jpg" alt="Obra 7 - Foto 5" class="obra-carousel-image">
+                            <img src="../static/img/ob/ob7/a6.jpg" alt="Obra 7 - Foto 6" class="obra-carousel-image">
+                            <img src="../static/img/ob/ob7/a7.jpg" alt="Obra 7 - Foto 7" class="obra-carousel-image">
+                        </div>
+                        <button class="obra-carousel-prev" type="button">&#10094;</button>
+                        <button class="obra-carousel-next" type="button">&#10095;</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PHOTOS 8 -->
+            <div id="photos-8" class="obra-modal">
+                <div class="obra-modal-inner">
+                    <button class="obra-modal-close" type="button">&times;</button>
+                    <h3 class="obra-modal-title">
+                        Fotos � Mantenimiento instalaciones Presidencia Municipal
+                    </h3>
+                    <div class="obra-carousel-large">
+                        <div class="obra-carousel-inner">
+                            <img src="../static/img/ob/ob8/p1.jpg" alt="Obra 8 - Foto 1"
+                                class="obra-carousel-image is-active">
+                            <img src="../static/img/ob/ob8/p2.jpg" alt="Obra 8 - Foto 2" class="obra-carousel-image">
+                            <img src="../static/img/ob/ob8/p3.jpg" alt="Obra 8 - Foto 3" class="obra-carousel-image">
+                            <img src="../static/img/ob/ob8/p4.jpg" alt="Obra 8 - Foto 4" class="obra-carousel-image">
+                            <img src="../static/img/ob/ob8/p5.jpg" alt="Obra 8 - Foto 5" class="obra-carousel-image">
+                        </div>
+                        <button class="obra-carousel-prev" type="button">&#10094;</button>
+                        <button class="obra-carousel-next" type="button">&#10095;</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PHOTOS 9 -->
+            <div id="photos-9" class="obra-modal">
+                <div class="obra-modal-inner">
+                    <button class="obra-modal-close" type="button">&times;</button>
+                    <h3 class="obra-modal-title">
+                        Fotos � Mantenimiento instalaciones Unidad B�sica de Rehabilitaci�n
+                    </h3>
+                    <div class="obra-carousel-large">
+                        <div class="obra-carousel-inner">
+                            <img src="../static/img/ob/ob9/r1.jpg" alt="Obra 9 - Foto 1"
+                                class="obra-carousel-image is-active">
+                            <img src="../static/img/ob/ob9/r2.jpg" alt="Obra 9 - Foto 2" class="obra-carousel-image">
+                            <img src="../static/img/ob/ob9/r3.jpg" alt="Obra 9 - Foto 3" class="obra-carousel-image">
+                            <img src="../static/img/ob/ob9/r4.jpg" alt="Obra 9 - Foto 4" class="obra-carousel-image">
+                            <img src="../static/img/ob/ob9/r5.jpg" alt="Obra 9 - Foto 5" class="obra-carousel-image">
+                            <img src="../static/img/ob/ob9/r6.jpg" alt="Obra 9 - Foto 6" class="obra-carousel-image">
+                            <img src="../static/img/ob/ob9/r7.jpg" alt="Obra 9 - Foto 7" class="obra-carousel-image">
+                        </div>
+                        <button class="obra-carousel-prev" type="button">&#10094;</button>
+                        <button class="obra-carousel-next" type="button">&#10095;</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ========================================================= -->
+        <!-- ========== SECCI�N LICITACIONES P�BLICAS (PDF) ========= -->
+        <!-- ========================================================= -->
+
+        <section class="licitaciones-section">
+            <div class="licitaciones-inner">
+
+                <!-- ====== BLOQUE 1: LIC. P�BLICA PMSM/FAISM/LICOP/04/2023 ====== -->
+                <article class="licitacion-card">
+                    <h2 class="licitacion-title">
+                        LICITACI�N P�BLICA No. PMSM/FAISM/LICOP/04/2023
+                    </h2>
+                    <p class="licitacion-text">
+                        CONSTRUCCI�N DEL PAVIMENTO HIDR�ULICO EN CALLE CONSTITUCI�N ENTRE CALLE CUITL�HUAC Y
+                        CALLE DIVISI�N DEL NORTE EN LA COLONIA BENITO JU�REZ, MUNICIPIO DE Portal Institucional Municipal.
+                    </p>
+
+                    <div class="licitacion-buttons">
+                        <button class="obra-pdf-btn" data-pdf-modal="lic-pdf-1-convocatoria">
+                            Convocatoria
+                        </button>
+                        <button class="obra-pdf-btn" data-pdf-modal="lic-pdf-1-catalogo">
+                            Cat�logo
+                        </button>
+                        <button class="obra-pdf-btn" data-pdf-modal="lic-pdf-1-proyecto">
+                            Proyecto ejecutivo
+                        </button>
+                    </div>
+                </article>
+
+                <!-- ====== BLOQUE 2: LIC. P�BLICA PMSM/FDOGP/GI-2022-066-006 ====== -->
+                <article class="licitacion-card">
+                    <h2 class="licitacion-title">
+                        LICITACI�N P�BLICA No. PMSM/FDOGP/GI-2022-066-006
+                    </h2>
+                    <p class="licitacion-text">
+                        Bases correspondientes al procedimiento de invitaci�n a cuando menos tres personas
+                        de la obra denominada: Rehabilitaci�n de calles en fraccionamiento Forjadores.
+                    </p>
+
+                    <div class="licitacion-buttons">
+                        <button class="obra-pdf-btn" data-pdf-modal="lic-pdf-2-bases">
+                            Bases de licitaci�n
+                        </button>
+                        <button class="obra-pdf-btn" data-pdf-modal="lic-pdf-2-catalogo">
+                            Cat�logo mudo
+                        </button>
+                    </div>
+                </article>
+
+                <!-- ====== BLOQUE 3: LIC. P�BLICA PMSM/FDOGP/LICOP/02/23 ====== -->
+                <article class="licitacion-card">
+                    <h2 class="licitacion-title">
+                        LICITACI�N P�BLICA No. PMSM/FDOGP/LICOP/02/23
+                    </h2>
+                    <p class="licitacion-text">
+                        Procedimiento de licitaci�n p�blica para obra municipal.
+                    </p>
+
+                    <div class="licitacion-buttons">
+                        <button class="obra-pdf-btn" data-pdf-modal="lic-pdf-3-convocatoria">
+                            Convocatoria
+                        </button>
+                    </div>
+                </article>
+
+                <!-- ====== BLOQUE 4: LIC. P�BLICA PMSM/FDOGP/LICOP/01/23 ====== -->
+                <article class="licitacion-card">
+                    <h2 class="licitacion-title">
+                        LICITACI�N P�BLICA No. PMSM/FDOGP/LICOP/01/23
+                    </h2>
+                    <p class="licitacion-text">
+                        Procedimiento de licitaci�n p�blica para obra municipal.
+                    </p>
+
+                    <div class="licitacion-buttons">
+                        <button class="obra-pdf-btn" data-pdf-modal="lic-pdf-4-convocatoria">
+                            Convocatoria
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- =================== MODALES PDF ==================== -->
+
+            <!-- BLOQUE 1: CONVOCATORIA / CAT�LOGO / PROYECTO -->
+            <div id="lic-pdf-1-convocatoria" class="obra-pdf-modal">
+                <div class="obra-pdf-modal-inner">
+                    <button class="obra-pdf-close" type="button">&times;</button>
+                    <h3 class="obra-pdf-modal-title">
+                        Convocatoria � LIC. P�BLICA No. PMSM/FAISM/LICOP/04/2023
+                    </h3>
+                    <div class="obra-pdf-frame">
+                        <iframe src="../static/img/ob/Convocatoria-1.pdf#toolbar=1&navpanes=0&scrollbar=1"
+                            title="Convocatoria FAISM LICOP 04/2023" loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div id="lic-pdf-1-catalogo" class="obra-pdf-modal">
+                <div class="obra-pdf-modal-inner">
+                    <button class="obra-pdf-close" type="button">&times;</button>
+                    <h3 class="obra-pdf-modal-title">
+                        Cat�logo � LIC. P�BLICA No. PMSM/FAISM/LICOP/04/2023
+                    </h3>
+                    <div class="obra-pdf-frame">
+                        <iframe src="../static/img/ob/CATLOGO.pdf#toolbar=1&navpanes=0&scrollbar=1"
+                            title="Cat�logo FAISM LICOP 04/2023" loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div id="lic-pdf-1-proyecto" class="obra-pdf-modal">
+                <div class="obra-pdf-modal-inner">
+                    <button class="obra-pdf-close" type="button">&times;</button>
+                    <h3 class="obra-pdf-modal-title">
+                        Proyecto ejecutivo � LIC. P�BLICA No. PMSM/FAISM/LICOP/04/2023
+                    </h3>
+                    <div class="obra-pdf-frame">
+                        <iframe src="../static/img/ob/Proyecto_Ejecutivo.pdf#toolbar=1&navpanes=0&scrollbar=1"
+                            title="Proyecto Ejecutivo FAISM LICOP 04/2023" loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOQUE 2: BASES / CAT�LOGO MUDO -->
+            <div id="lic-pdf-2-bases" class="obra-pdf-modal">
+                <div class="obra-pdf-modal-inner">
+                    <button class="obra-pdf-close" type="button">&times;</button>
+                    <h3 class="obra-pdf-modal-title">
+                        Bases de licitaci�n � LIC. P�BLICA No. PMSM/FDOGP/GI-2022-066-006
+                    </h3>
+                    <div class="obra-pdf-frame">
+                        <iframe src="../static/img/ob/BASES_PMSMFDOGPLICOP022023.pdf#toolbar=1&navpanes=0&scrollbar=1"
+                            title="Bases FDOGP GI-2022-066-006" loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div id="lic-pdf-2-catalogo" class="obra-pdf-modal">
+                <div class="obra-pdf-modal-inner">
+                    <button class="obra-pdf-close" type="button">&times;</button>
+                    <h3 class="obra-pdf-modal-title">
+                        Cat�logo mudo � LIC. P�BLICA No. PMSM/FDOGP/GI-2022-066-006
+                    </h3>
+                    <div class="obra-pdf-frame">
+                        <iframe src="../static/img/ob/CATLOGO_MUDO.pdf#toolbar=1&navpanes=0&scrollbar=1"
+                            title="Cat�logo mudo FDOGP GI-2022-066-006" loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOQUE 3: CONVOCATORIA -->
+            <div id="lic-pdf-3-convocatoria" class="obra-pdf-modal">
+                <div class="obra-pdf-modal-inner">
+                    <button class="obra-pdf-close" type="button">&times;</button>
+                    <h3 class="obra-pdf-modal-title">
+                        Convocatoria � LIC. P�BLICA No. PMSM/FDOGP/LICOP/02/23
+                    </h3>
+                    <div class="obra-pdf-frame">
+                        <iframe src="../static/img/ob/Convocatoria2023.pdf#toolbar=1&navpanes=0&scrollbar=1"
+                            title="Convocatoria FDOGP LICOP 02/23" loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOQUE 4: CONVOCATORIA -->
+            <div id="lic-pdf-4-convocatoria" class="obra-pdf-modal">
+                <div class="obra-pdf-modal-inner">
+                    <button class="obra-pdf-close" type="button">&times;</button>
+                    <h3 class="obra-pdf-modal-title">
+                        Convocatoria � LIC. P�BLICA No. PMSM/FDOGP/LICOP/01/23
+                    </h3>
+                    <div class="obra-pdf-frame">
+                        <iframe src="../static/img/ob/Convocatoria-1.pdf#toolbar=1&navpanes=0&scrollbar=1"
+                            title="Convocatoria FDOGP LICOP 01/23" loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- ====== FIN SECCI�N LICITACIONES P�BLICAS (PDF) ========= -->
+        <!-- ========================================================= -->
+
+
+
+    </main>
+
+    <!-- ========================================= -->
+    <!-- SECCI�N: CONTACTO + HORARIOS (BLANCO)    -->
+    <!-- ========================================= -->
+    <section class="contact-hours-section">
+        <div class="contact-hours-inner">
+
+            <!-- FILA PRINCIPAL: CONTACTO + HORARIOS (SIN MAPA) -->
+            <div class="ch-main-row">
+
+                <!-- COLUMNA CONTACTO -->
+                <div class="ch-contact">
+                    <h2>Contacto</h2>
+
+                    <ul class="ch-contact-list">
+                        <li>
+                            <img src="../static/img/location.png" alt="Direcci�n">
+                            <div>
+                                <span class="ch-label">Direcci�n</span>
+                                <p>
+                                    Plaza Principal S/N, Centro<br>
+                                    Ciudad Demo, México, M�xico
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <img src="../static/img/phone.png" alt="Tel�fono">
+                            <div>
+                                <span class="ch-label">Tel�fono</span>
+                                <p>(771) 123-4567</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <img src="../static/img/mail.png" alt="Correo Electr�nico">
+                            <div>
+                                <span class="ch-label">Correo Electr�nico</span>
+                                <p>
+                                    <a href="mailto:contacto@municipio.demo">
+                                        contacto@municipio.demo
+                                    </a>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- TARJETA HORARIOS -->
+                <div class="ch-hours-card">
+                    <h3>Horarios de Atenci�n</h3>
+
+                    <div class="ch-hours-content">
+                        <div class="ch-hours-row">
+                            <span class="ch-day">Lunes a Viernes</span>
+                            <span class="ch-time">8:00 AM � 4:00 PM</span>
+                        </div>
+
+                        <div class="ch-hours-row">
+                            <span class="ch-day">S�bados</span>
+                            <span class="ch-time">9:00 AM � 1:00 PM</span>
+                        </div>
+
+                        <div class="ch-hours-row">
+                            <span class="ch-day">Domingos</span>
+                            <span class="ch-time ch-closed">Cerrado</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- ========== FIN SECCI�N CONTACTO+HORARIOS ========== -->
+
+    <!-- ========================================= -->
+    <!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+    <!-- ========================================= -->
+    <!-- ========================================= -->
+<!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+<!-- ========================================= -->
+<!-- ========================================= -->
+<!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+<!-- ========================================= -->
+<!-- ========================================= -->
+<!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+<!-- ========================================= -->
+<!-- ========================================= -->
+<!-- FOOTER REAL (NEGRO FULL WIDTH)           -->
+<!-- ========================================= -->
+<footer class="main-footer">
+    <div class="footer-inner">
+
+        <div class="footer-grid">
+
+            <div class="footer-column">
+                <h4>Gobierno Municipal</h4>
+                <ul>
+                    <li><a href="hayuntamiento.html">H. Ayuntamiento</a></li>
+                    <li><a href="directoriomunicipal.html">Directorio Municipal</a></li>
+                    <li><a href="comisiones.html">Comisiones</a></li>
+                    <li><a href="poel.html">POEL</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>�reas</h4>
+                <ul>
+                    <li><a href="dif.html">DIF</a></li>
+                    <li><a href="turismo.html">Turismo</a></li>
+                    <li><a href="multideportivo.html">Multideportivo</a></li>
+                    <li><a href="pcivil.html">Protecci�n Civil</a></li>
+                    <li><a href="ubr.html">Unidad B�sica de Rehabilitaci�n</a></li>
+                    <li><a href="ob.html">Obra P�blica</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Transparencia</h4>
+                <ul>
+                    <li><a href="transparencia.html">Portal de Transparencia</a></li>
+                    <li><a href="tramitesyservicios.html">Tr�mites y Servicios</a></li>
+                    <li><a href="registrofamiliar.html">Registro Familiar</a></li>
+                    <li><a href="videos.html">Videos</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Enlaces de Inter�s</h4>
+                <ul>
+                    <li><a href="https://www.valleverde.gob.example.com/" target="_blank">Gobierno del Estado</a></li>
+                    <li><a href="https://www.gob.mx/" target="_blank">Gobierno Federal</a></li>
+                    <li><a href="https://www.inegi.org.mx/" target="_blank">INEGI</a></li>
+                    <li><a href="https://www.plataformadetransparencia.org.mx/" target="_blank">Plataforma Nacional</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <span class="footer-divider"></span>
+
+        <div class="footer-copy">
+            � 2025 Portal Institucional Municipal. Todos los derechos reservados.
+        </div>
+
+    </div>
+</footer>
+<!-- ========== FIN FOOTER REAL ========== -->
+
+    <!-- Link al archivo JavaScript externo -->
+    <script src="../static/js/menu.js"></script>
+    <script src="../static/js/ob.js"></script>
+    <!-- Para im�genes din�micas -->
+    <script src="../static/js/dynamic-image-loader.js"></script>
+
+    <!-- Para PDFs din�micos (solo en p�ginas de transparencia) -->
+    <script src="../static/js/transparencia-loader.js"></script>
+
+</body>
+
+</html>
+
+
+
+
