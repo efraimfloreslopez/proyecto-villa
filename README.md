@@ -23,3 +23,30 @@ Rediseño de portal gubernamental municipal — **proyecto de demostración para
 | Auth demo     | `auth-demo.js` (localStorage)       |
 
 ## Estructura del proyecto
+template/          # Páginas HTML públicas y panel admin
+├── index.html
+├── login.html
+├── gestion-*.html
+└── secondary_views/
+static/
+├── css/
+├── js/
+└── img/
+scripts/           # Utilidades de desarrollo
+
+## Cómo ejecutar localmente
+
+### Opción 1 — Live Server (VS Code)
+- Click derecho en `template/index.html` → **Open with Live Server**
+
+### Opción 2 — Node.js
+```bash
+npx serve .
+### Opción 3 — Python
+Bashpython -m http.server 8080
+Abre: http://localhost:8080/template/index.html
+Panel administrativo (demo)
+
+URL: template/login.html
+Email: admin@municipio.demo
+Contraseña: demo
